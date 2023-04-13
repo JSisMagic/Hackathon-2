@@ -1,0 +1,13 @@
+{
+  "name": "esmodules-homework-solution",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "node test/array-op.tests.js"
+  },
+  "keywords": [],
+  "author": "Telerik Academy",
+  "license": "ISC"
+}

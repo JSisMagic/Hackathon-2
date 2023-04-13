@@ -1,0 +1,16 @@
+{
+  "name": "eslint-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "keywords": [],
+  "author": "Telerik Academy",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.8.0"
+  }
+}
