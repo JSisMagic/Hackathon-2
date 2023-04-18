@@ -21,21 +21,21 @@ const replace = (string, char, replacement) => {
 // hard
 
 const split = (string, separator) => {
+  const seperatedString = [];
+  let singleMember = '';
 
-  let sepStr = '';
-  for (index of string){
-     if (index == separator){
-        continue;
-     }
-    sepStr += index;
-}
 
-let sepAr = [];
-
-for (i=0; i<sepStr.length; i++){
-    sepAr[i]=sepStr[i]
-}
-return sepAr;
+  for (const symbol of string) {
+    if (symbol !== separator) {
+      singleMember += symbol;
+    } else if (symbol.index === (string.length - 1)) {
+      seperatedString.push(singleMember);
+    } else {
+      seperatedString.push(singleMember);
+      singleMember = '';
+    }
+  }
+  return seperatedString;
 };
 
 const trim = (string) => {
