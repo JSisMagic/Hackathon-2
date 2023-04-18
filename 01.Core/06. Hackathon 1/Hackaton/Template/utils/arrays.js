@@ -51,7 +51,14 @@ const indexOf = (array, element) => {
 // hard
 
 const filter = (array, predicate) => {
-  // TODO
+  let outputArray = [];
+  for (let i = 0; i < array.length; i++) {
+    if (predicate(array[i], i, array)) {
+      outputArray.push(array[i]);
+    }
+  }
+  return outputArray;
+  //DONE
 };
 
 const zip = (...arrays) => {

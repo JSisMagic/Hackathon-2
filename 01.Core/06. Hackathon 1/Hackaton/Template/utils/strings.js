@@ -5,7 +5,12 @@ const slice = (string, start = 0, end = string.length) => {
 };
 
 const repeat = (string, n) => {
-  // TODO
+  let outputString = '';
+  for (let i = 0; i < n; i++) {
+    outputString += string;
+  }
+  return outputString;
+  //DONE
 };
 
 // medium
@@ -21,24 +26,21 @@ const replace = (string, char, replacement) => {
 // hard
 
 const split = (string, separator) => {
-  let sepStr = '';
+  const seperatedString = [];
+  let singleMember = '';
 
-for (index of string){
-    if (index == separator){
-        continue;
+
+  for (const symbol of string) {
+    if (symbol !== separator) {
+      singleMember += symbol;
+    } else if (symbol.index === (string.length - 1)) {
+      seperatedString.push(singleMember);
+    } else {
+      seperatedString.push(singleMember);
+      singleMember = '';
     }
-
-    sepStr += index;
-}
-
-let sepAr = [];
-
-for (i=0; i<sepStr.length; i++){
-    sepAr[i]=sepStr[i]
-}
-
-console.log(sepAr);
-
+  }
+  return seperatedString;
 };
 
 const trim = (string) => {

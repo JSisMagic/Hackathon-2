@@ -7,7 +7,11 @@
   "scripts": {
     "start": "node index.js",
     "doc": "jsdoc utils/arrays.js utils/expressions.js utils/math.js utils/objects.js utils/strings.js",
+<<<<<<< HEAD
     "eslint-fix": "eslint . --fix"
+=======
+    "eslint-fix": "eslint . --fix"
+>>>>>>> a6f358ff3f065798614c2cb74aee3577490bed46
   },
   "keywords": [],
   "author": "Telerik Academy",
