@@ -21,7 +21,15 @@ const replace = (string, char, replacement) => {
 // hard
 
 const split = (string, separator) => {
-  // TODO
+  const seperatedAr = [];
+
+    for (index of string){ 
+        if(index == separator){
+            continue;
+        }
+        seperatedAr.push(index)
+    }
+    return seperatedAr
 };
 
 const trim = (string) => {
