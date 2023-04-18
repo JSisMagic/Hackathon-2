@@ -8,7 +8,7 @@ const isMaxLength = (str, maxLength) => null; // TODO
 
 const isIn = (value, possibleValues) => null; // TODO
 
-const isArrayOfType = (arr, type) => null; // TODO
+const isArrayOfType = (arr, type) => arr.every((el) => typeof el === type);
 
 // hard
 

@@ -68,6 +68,17 @@ const arrays = () => {
 
 const min = () => {
   // TODO
+  // const firstTestCase = [2, 4, 5, 6, 0, 7, 1, 3];
+  // const firstOutput = utils.min(firstTestCase);
+  // console.log(firstOutput);
+  //
+  const secondTestCase = [2, 4, 5, 6, 0, -7, 1, 3];
+  const secondOutput = utils.min(secondTestCase);
+  console.log(secondOutput);
+  //
+  // const thirdTestCase = [20, 40, 50, 60, 80, 17, 41, 35];
+  // const thirdOutput = utils.min(thirdTestCase);
+  // console.log(thirdOutput);
 };
 
 const sum = () => {
@@ -121,6 +132,24 @@ const copy = () => {
 
 const typeOfProps = () => {
   // TODO
+  const obj = {
+    cardHolder: 'John',
+    card: '1234****1234',
+    balance: 400,
+    age: 30,
+    hasCar: false,
+    personalInfo: {},
+    lastName: 'Doe',
+  };
+  // const obj = {
+  //   name: 'Peter',
+  //   age: 30,
+  //   hasCar: false,
+  //   personalInfo: {},
+  //   lastName: 'Doe',
+  // };
+  const result = utils.typeOfProps(obj);
+  console.log(result);
 };
 
 const flat = () => {
@@ -173,11 +202,15 @@ const split = () => {
 
 const trim = () => {
   // TODO
+  const testCase = '   home  home';
+  // const testCase = '   Telerik Academy       ';
+  const result = utils.trim(testCase);
+  console.log(result);
 };
 
 const strings = () => {
   const string = utils.repeat('  home', 2); //   home  home
-  const trimmed = utils.trim(string); // home  home
+  const trimmed = utils.trim(strings); // home  home
   const sliced = utils.slice(trimmed, 1, 8); // ome  ho
   const replaced = utils.replace(sliced, 'o', 'ri'); // rime  hri
   const capitalized = utils.capitalize(replaced); // Rime  hri
@@ -202,6 +235,18 @@ const isIn = () => {
 
 const isArrayOfType = () => {
   // TODO
+  const arr = [true, false, true, true];
+  const type = 'boolean';
+  //
+  // const arr = [1, 2, 'Hello', 7, false];
+  // const type = 'boolean';
+  //
+  // const arr = [1, 2, 3, 4, 5];
+  // const type = 'number';
+  //
+  // const arr = ['Hello There', 'Hello'];
+  // const type = 'string';
+  console.log(utils.isArrayOfType(arr, type));
 };
 
 const areValidNumbers = () => {
@@ -251,7 +296,7 @@ const expressions = () => {
 
 // Math
 
-// min();
+min();
 // sum();
 // average();
 // pow();
@@ -264,7 +309,7 @@ const expressions = () => {
 // existInObject();
 // removeProp();
 // copy();
-// typeOfProps();
+typeOfProps();
 // flat();
 // entries();
 // objects();
@@ -276,7 +321,7 @@ const expressions = () => {
 // capitalize();
 // replace();
 // split();
-// trim();
+trim();
 // strings();
 
 // Expressions
@@ -284,7 +329,7 @@ const expressions = () => {
 // isMinLength();
 // isMaxLength();
 // isIn();
-// isArrayOfType();
+isArrayOfType();
 // areValidNumbers();
 // sumNumbersFromString();
 // expressions();

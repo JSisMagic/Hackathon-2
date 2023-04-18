@@ -2,14 +2,17 @@
 
 const min = (array) => {
   // TODO
+  let minNumber = Number. MAX_VALUE;
+  for (const el of array) {
+    if (el < minNumber) {
+      minNumber = el;
+    }
+  }
+  return minNumber;
 };
 
 const sum = (array) => {
-  let sum = 0;
-  for (index of array){
-      sum += index;
-  }
-  return sum;
+  // TODO;
 };
 
 // medium

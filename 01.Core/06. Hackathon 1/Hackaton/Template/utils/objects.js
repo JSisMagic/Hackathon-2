@@ -15,7 +15,12 @@ const copy = (obj) => {
 };
 
 const typeOfProps = (obj) => {
-  // TODO
+  const savedArr = [];
+  // eslint-disable-next-line guard-for-in
+  for (const key in obj) {
+    savedArr.push(typeof(obj[key]));
+  }
+  return savedArr;
 };
 
 // hard
