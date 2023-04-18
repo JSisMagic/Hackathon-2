@@ -16,9 +16,26 @@ const reverse = (array) => {
   return reversed;
 };
 
-
+/**
+ * Fills elements of array with value from start up to, but not including, end
+ *
+ * @param {array} array the array to fill
+ * @param {value} the value to fill array with
+ * @param {start} the start position
+ * @param {end} the end position
+ * @returns {array} filled array
+ */
 const fill = (array, value, start = 0, end = array.length) => {
-  // TODO
+  const filledArray = [];
+
+  for (let i = 0; i < array.length; i++) {
+    filledArray.push(array[i]);
+  }
+  for (let i = start; i < end; i++) {
+    filledArray[i] = value;
+  }
+
+  return filledArray;
 };
 
 // medium
