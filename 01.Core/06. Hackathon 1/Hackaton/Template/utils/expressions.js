@@ -16,12 +16,10 @@ const areValidNumbers = (stringNumbers) => null; // TODO
 
 const sumNumbersFromString = (string) => {
   sum = 0;
-
-const inputAr = string.split(' ')
-for (index of inputAr){
+  const inputAr = string.split(' ')
+  for (index of inputAr){
     sum += +index;
 }
-
 return sum;
 };
 
