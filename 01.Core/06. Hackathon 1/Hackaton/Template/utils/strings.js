@@ -35,7 +35,7 @@ let sepAr = [];
 for (i=0; i<sepStr.length; i++){
     sepAr[i]=sepStr[i]
 }
-console.log(sepAr);
+return sepAr;
 };
 
 const trim = (string) => {
