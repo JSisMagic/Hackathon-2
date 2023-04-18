@@ -155,7 +155,18 @@ const objects = () => {
 // Strings
 
 const slice = () => {
-  // TODO
+  const result1 = utils.slice('hello');
+const result2 = utils.slice('hello', 2);
+const result3 = utils.slice('hello', 2, 4);
+
+console.log(result1);
+// => hello
+
+console.log(result2);
+// => llo
+
+console.log(result3);
+// => ll
 };
 
 const repeat = () => {

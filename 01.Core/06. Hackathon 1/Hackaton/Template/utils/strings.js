@@ -1,7 +1,24 @@
 // easy
 
-const slice = (string, start = 0, end = string.length) => {
-  // TODO
+/**
+ * Cut a specific section of a given string and return it as a result.
+ *
+ * @param {string} string The string to cut.
+ * @param {number} [start=0] The start position.
+ * @param {number} [end=string.length] The end position.
+ * @returns {string} Returns the sliced string.
+ * 
+ * @example slice('hello', 2, 4) ==> 'll'
+ * 
+ * @author Gergana Dragoeva Quievy
+ */
+ const slice = (string, start = 0, end = string.length) => {
+  let result = '';
+  for (let i = start; i < end ; i++) {
+    result += string[i];
+  }
+
+  return result;
 };
 
 const repeat = (string, n) => {
