@@ -36,7 +36,12 @@ const flat = (obj) => {
 };
 
 const entries = (obj) => {
-  // TODO
+  const outputArray = [];
+  for (const key in obj) {
+    outputArray.push([key, obj[key]]);
+  }
+  return outputArray;
+  //DONE
 };
 
 export { existInObject, typeOfProps, copy, removeProp, flat, entries };

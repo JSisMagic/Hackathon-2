@@ -5,7 +5,12 @@ const slice = (string, start = 0, end = string.length) => {
 };
 
 const repeat = (string, n) => {
-  // TODO
+  let outputString = '';
+  for (let i = 0; i < n; i++) {
+    outputString += string;
+  }
+  return outputString;
+  //DONE
 };
 
 // medium
