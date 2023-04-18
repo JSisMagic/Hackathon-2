@@ -5,7 +5,11 @@ const min = (array) => {
 };
 
 const sum = (array) => {
-  // TODO
+  let sum = 0;
+  for (index of array){
+      sum += index;
+  }
+  return sum;
 };
 
 // medium
