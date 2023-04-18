@@ -21,15 +21,24 @@ const replace = (string, char, replacement) => {
 // hard
 
 const split = (string, separator) => {
-  const seperatedAr = [];
+  let sepStr = '';
 
-    for (index of string){ 
-        if(index == separator){
-            continue;
-        }
-        seperatedAr.push(index)
+for (index of string){
+    if (index == separator){
+        continue;
     }
-    return seperatedAr
+
+    sepStr += index;
+}
+
+let sepAr = [];
+
+for (i=0; i<sepStr.length; i++){
+    sepAr[i]=sepStr[i]
+}
+
+console.log(sepAr);
+
 };
 
 const trim = (string) => {
