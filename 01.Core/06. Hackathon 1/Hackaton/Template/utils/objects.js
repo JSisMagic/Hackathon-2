@@ -11,7 +11,8 @@ const removeProp = (obj, prop) => {
 // medium
 
 const copy = (obj) => {
-  // TODO
+  const objCopy = {...initialObject}
+  return (objCopy)
 };
 
 const typeOfProps = (obj) => {
