@@ -26,14 +26,18 @@ const isArrayOfType = (arr, type) => null; // TODO
 
 const areValidNumbers = (stringNumbers) => null; // TODO
 
-const sumNumbersFromString = (string) => {
-  sum = 0;
-  const inputAr = string.split(' ')
-  for (index of inputAr){
-    sum += +index;
-}
-return sum;
-};
+/**
+ * From a given string of separated numbers by a single space, 
+ * sum the numbers and return the accumulated sum.
+ * @param {String} string The string of numbers separated by a single space.
+ * @returns {Number} The accumulated sum from the numbers.
+ * @example
+ * '2 4 5 4 10' => 25
+ * @author Valentin P. Petkov
+ */
+const sumNumbersFromString = (string) => string.split(' ').map(Number).reduce(function(a, b) {
+  return a + b;
+});
 
 export {
   isMinLength,

@@ -74,8 +74,43 @@ const filter = (array, predicate) => {
   //DONE
 };
 
+/**
+ * Creates an array of grouped elements, the first of which contains
+ * the first elements of the given arrays, the second of which contains
+ * the second elements of the given arrays, and so on. The array of groups
+ * is as long as the smallest passed array.
+ *
+ * @param {...Array} arrays The arrays to process
+ * @returns {Array} Returns a new array of grouped elements
+ * @example
+ * ['a', 'b'], [1, 2], [true, false] => [['a', 1, true], ['b', 2, false]]
+ * @author Valentin P. Petkov
+ */
 const zip = (...arrays) => {
-  // TODO
+  const result = [];
+  if (arrays.length === 0) {
+    return result;
+  }
+
+  // find array with min length:
+  let minLength = arrays[0];
+  if (arrays.length > 1) {
+    for (const arr of arrays) {
+      if (arr.length < minLength) {
+        minLength = arr.length;
+      }
+    }
+  }
+
+  // iterate
+  for (let i = 0; i < minLength; i++) {
+    result.push([]);
+    // get i-th elements of all arrays
+    for (const arr of arrays) {
+      result[i].push(arr[i]);
+    }
+  }
+  return result;
 };
 
 export { reverse, fill, join, indexOf, filter, zip };
