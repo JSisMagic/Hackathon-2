@@ -1,7 +1,24 @@
 // easy
 
+/**
+ * Checks if the given prop exist in a given object.
+ *
+ * @param {Object} obj The object to search in
+ * @param {String} prop The prop to search for.
+ * @returns {Boolean} Returns true if the prop exists and false if it doesn't
+ * @example
+ * { a: 5 }, 'a' => true
+ * @example
+ * { a: 5 }, 'b' => false
+ * @author Valentin P. Petkov
+ */
 const existInObject = (obj, prop) => {
-  // TODO
+  for (const property in obj) {
+    if (property === prop) {
+      return true;
+    }
+  }
+  return false;
 };
 
 const removeProp = (obj, prop) => {

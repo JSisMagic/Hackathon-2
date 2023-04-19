@@ -45,8 +45,27 @@ const capitalize = (string) => {
   return firstChar + restChars;
 };
 
+/**
+ * Replaces all matches for a single character pattern in a string with replacement string.
+ *
+ * @param {String} string The string to inspect.
+ * @param {String} char The char to replace.
+ * @param {String} replacement The match replacement.
+ * @returns {String} Returns the modified string.
+ * @example
+ * 'The cree', 'e', 'is' => 'This crisis'
+ * @author Valentin P. Petkov
+ */
 const replace = (string, char, replacement) => {
-  // TODO
+  let result = '';
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] === char) {
+      result += replacement;
+    } else {
+      result += string[i];
+    }
+  }
+  return result;
 };
 
 // hard
