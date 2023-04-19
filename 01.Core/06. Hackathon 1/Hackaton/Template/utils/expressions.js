@@ -48,6 +48,22 @@ const isIn = (value, possibleValues) => (possibleValues.includes(value));
 const isArrayOfType = (arr, type) => arr.every((el) => typeof el === type);
 
 // hard
+/**
+ * From a given string of separated numbers by a single space,
+ * sum the numbers and return the accumulated sum.
+ * @param {array} stringNumbers The array of strings.
+ * @returns {boolean} Returns true if the validation passes and false if it doesn't.
+ * @example:
+const result1 = utils.areValidNumbers(['1', '2', '3', '4']);
+const result2 = utils.areValidNumbers(['1', '2', 'apple', '4']);
+
+console.log(result1);
+// => true
+
+console.log(result2);
+// => false
+ * @author Valentin P. Petkov
+ */
 
 const areValidNumbers = (stringNumbers) => stringNumbers.every((el)=>!isNaN(el)); // TODO
 
