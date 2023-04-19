@@ -35,7 +35,10 @@ const fill = () => {
 };
 
 const join = () => {
-  // TODO
+  const joined = utils.join(['a', 'b', 'c'], '~');
+
+  console.log(joined);
+  // => 'a~b~c'
 };
 
 const indexOf = () => {
@@ -87,7 +90,11 @@ const isPrime = () => {
 };
 
 const swapWholeAndRemainder = () => {
-  // TODO
+const number = 222.56;
+const swapped = utils.swapWholeAndRemainder(number);
+
+console.log(swapped);
+// => 56.222
 };
 
 const math = () => {
@@ -124,7 +131,15 @@ const typeOfProps = () => {
 };
 
 const flat = () => {
-  // TODO
+
+const result1 = utils.flat({ a: 5, b: 6 });
+const result2 = utils.flat({ a: 5, b: { c: 6, d: 7 } });
+
+console.log(result1);
+// => { a: 5, b: 6 }
+
+console.log(result2);
+// => { a: 5, 'b.c': 6, 'b.d': 7 }
 };
 
 const entries = () => {
@@ -152,7 +167,18 @@ const objects = () => {
 // Strings
 
 const slice = () => {
-  // TODO
+  const result1 = utils.slice('hello');
+const result2 = utils.slice('hello', 2);
+const result3 = utils.slice('hello', 2, 4);
+
+console.log(result1);
+// => hello
+
+console.log(result2);
+// => llo
+
+console.log(result3);
+// => ll
 };
 
 const repeat = () => {
@@ -189,7 +215,15 @@ const strings = () => {
 // Expressions
 
 const isMinLength = () => {
-  // TODO
+  const result1 = utils.isMinLength('asd', 2);
+const result2 = utils.isMinLength('asd', 4);
+
+console.log(result1);
+// => true
+
+console.log(result2);
+// => false
+
 };
 
 const isMaxLength = () => {

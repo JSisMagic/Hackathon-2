@@ -6,12 +6,15 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "doc": "jsdoc utils/arrays.js utils/expressions.js utils/math.js utils/objects.js utils/strings.js"
+    "doc": "jsdoc utils/arrays.js utils/expressions.js utils/math.js utils/objects.js utils/strings.js",
+    "eslint-fix": "eslint . --fix"
   },
   "keywords": [],
   "author": "Telerik Academy",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.38.0",
+    "eslint-config-google": "^0.14.0",
     "jsdoc": "^3.6.3"
   }
 }

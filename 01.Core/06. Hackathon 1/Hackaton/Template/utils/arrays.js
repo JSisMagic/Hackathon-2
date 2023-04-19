@@ -21,11 +21,28 @@ const fill = (array, value, start = 0, end = array.length) => {
   // TODO
 };
 
-// medium
+/**
+ * Converts all elements in array into a string separated by separator.
+ *
+ * @param {Array} array The array to convert.
+ * @param {String} separator The element separator. Default is ','.
+ * @returns {String} Returns the joined string.
+ * @example 
+ * join(['apple', 'banana', 'orange'],'+') ==> 'apple+banana+orange'
+ * 
+ * @author Gergana Dragoeva Quievy
+ */
+ const join = (array, separator = ',') => {
+  let result = '';
+  for (let index = 0; index < array.length; index++) {
+    result += array[index];
+    if (index < array.length - 1) {
+      result += separator;
+    }
+  }
 
-const join = (array, separator = ',') => {
-  // TODO
-};
+  return result;
+}; 
 
 /**
  * find the index of an given element in array
@@ -47,7 +64,14 @@ const indexOf = (array, element) => {
 // hard
 
 const filter = (array, predicate) => {
-  // TODO
+  let outputArray = [];
+  for (let i = 0; i < array.length; i++) {
+    if (predicate(array[i], i, array)) {
+      outputArray.push(array[i]);
+    }
+  }
+  return outputArray;
+  //DONE
 };
 
 const zip = (...arrays) => {
