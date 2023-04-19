@@ -71,7 +71,10 @@ const min = () => {
 };
 
 const sum = () => {
-  // TODO
+  const sum = utils.sum([1, -2, 3]);
+
+  console.log(sum);
+// => 2
 };
 
 const pow = () => {
@@ -116,7 +119,14 @@ const removeProp = () => {
 };
 
 const copy = () => {
-  // TODO
+  const initialObject = { a: 5, b: 6 };
+  const resultObject = utils.copy(initialObject);
+
+  console.log(resultObject);
+  // => { a: 5, b: 6 }
+
+  console.log(initialObject === resultObject);
+  // => false (different references)
 };
 
 const typeOfProps = () => {
@@ -168,7 +178,10 @@ const replace = () => {
 };
 
 const split = () => {
-  // TODO
+  const segments = utils.split('a-b-c', '-');
+
+  console.log(segments);
+// => ['a', 'b', 'c']
 };
 
 const trim = () => {

@@ -25,21 +25,32 @@ const replace = (string, char, replacement) => {
 
 // hard
 
+/**
+ * Splits string by separator.
+ *
+ * @param string (string): The string to split.
+ * @param separator (string): The separator character to split by.
+ * @returns (Array): Returns the string segments.
+ * @example ('ab-cd-de', '-'), ['ab', 'cd', 'de']
+ * @author Viktor Petrov
+ */
+
 const split = (string, separator) => {
   const seperatedString = [];
   let singleMember = '';
 
-
-  for (const symbol of string) {
-    if (symbol !== separator) {
-      singleMember += symbol;
-    } else if (symbol.index === (string.length - 1)) {
+  for (let i=0; i<=string.length; i++) {
+    if (string[i] !== separator && i !== string.length) {
+      singleMember += string[i];
+    } else if (string[i] === string.length) {
+      singleMember += string[i];
       seperatedString.push(singleMember);
     } else {
       seperatedString.push(singleMember);
       singleMember = '';
     }
   }
+
   return seperatedString;
 };
 
