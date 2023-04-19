@@ -42,11 +42,22 @@ const join = () => {
 };
 
 const indexOf = () => {
-  // TODO
+  const index = utils.indexOf([7, 5, 9, 2], 2);
+
+  console.log(index);
+  // => 3
 };
 
 const filter = () => {
-  // TODO
+  const users = [
+    { user: 'barney', age: 36, active: true },
+    { user: 'fred', age: 40, active: false },
+  ];
+
+  const filtered = utils.filter(users, (o) => !o.active);
+
+  console.log(filtered);
+  // => [{ 'user': 'fred', 'age': 40, 'active': false }]
 };
 
 const zip = () => {
@@ -86,15 +97,26 @@ const pow = () => {
 };
 
 const average = () => {
-  // TODO
+  const average = utils.average([1, -2, 3]);
+
+  console.log(average);
+  // => 0.6666666666666666
 };
 
 const isPrime = () => {
+  const prime = utils.isPrime(41);
+
+  console.log(prime);
+  // => true
   // TODO
 };
 
 const swapWholeAndRemainder = () => {
-  // TODO
+  const number = 222.56;
+  const swapped = utils.swapWholeAndRemainder(number);
+
+  console.log(swapped);
+  // => 56.222
 };
 
 const math = () => {
@@ -119,6 +141,10 @@ const existInObject = () => {
 };
 
 const removeProp = () => {
+  const result = utils.removeProp({ a: 5, b: 6 }, 'a');
+
+  console.log(result);
+  // => { b: 6 }
   // TODO
 };
 
@@ -137,11 +163,21 @@ const typeOfProps = () => {
 };
 
 const flat = () => {
-  // TODO
+  const result1 = utils.flat({ a: 5, b: 6 });
+  const result2 = utils.flat({ a: 5, b: { c: 6, d: 7 } });
+
+  console.log(result1);
+  // => { a: 5, b: 6 }
+
+  console.log(result2);
+  // => { a: 5, 'b.c': 6, 'b.d': 7 }
 };
 
 const entries = () => {
-  // TODO
+  const result = utils.entries({ a: 5, b: 6, c: 7 });
+
+  console.log(result);
+  // => [['a', 5], ['b', 6], ['c', 7]]
 };
 
 const objects = () => {
@@ -165,11 +201,33 @@ const objects = () => {
 // Strings
 
 const slice = () => {
-  // TODO
+  const result1 = utils.slice('hello');
+  const result2 = utils.slice('hello', 2);
+  const result3 = utils.slice('hello', 2, 4);
+
+  console.log(result1);
+  // => hello
+
+  console.log(result2);
+  // => llo
+
+  console.log(result3);
+  // => ll
 };
 
 const repeat = () => {
-  // TODO
+  const stars = utils.repeat('*', 3);
+  const abc = utils.repeat('abc', 2);
+  const nothing = utils.repeat('abc', 0);
+
+  console.log(stars);
+  // => '***'
+
+  console.log(abc);
+  // => 'abcabc'
+
+  console.log(nothing);
+  // => ''
 };
 
 const capitalize = () => {
@@ -208,7 +266,14 @@ const strings = () => {
 // Expressions
 
 const isMinLength = () => {
-  // TODO
+  const result1 = utils.isMinLength('asd', 2);
+  const result2 = utils.isMinLength('asd', 4);
+
+  console.log(result1);
+  // => true
+
+  console.log(result2);
+  // => false
 };
 
 const isMaxLength = () => {
@@ -216,7 +281,14 @@ const isMaxLength = () => {
 };
 
 const isIn = () => {
-  // TODO
+  const result1 = utils.isIn(2, [1, 3, 5, 7]);
+  const result2 = utils.isIn(2, [1, 2, 3, 4]);
+
+  console.log(result1);
+  // => false
+
+  console.log(result2);
+  // => true // TODO
 };
 
 const isArrayOfType = () => {
