@@ -35,8 +35,22 @@ const isPrime = (number) => {
   // TODO
 };
 
-const swapWholeAndRemainder = (number) => {
-  // TODO
-};
+/**
+ * Swaps the whole part and the reminder part of a given number.
+ *
+ * @param {number} number The number to swap.
+ * @returns {number} The number with the applied swapping.
+ * @example swapWholeAndRemainder(1.2) ==> 2.1
+ * 
+ * @author Gergana Dragoeva Quievy
+ */
+ const swapWholeAndRemainder = (number) => {
+  let result = '';
+  const wholePart = Math.floor(number);
+  const remainderPart = number.toString().slice(number.toString().indexOf('.')+1);
+  result = remainderPart + '.' +  wholePart;
+
+  return +result;
+}
 
 export { min, sum, average, pow, isPrime, swapWholeAndRemainder };

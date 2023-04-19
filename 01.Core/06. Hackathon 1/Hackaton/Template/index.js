@@ -90,7 +90,11 @@ const isPrime = () => {
 };
 
 const swapWholeAndRemainder = () => {
-  // TODO
+const number = 222.56;
+const swapped = utils.swapWholeAndRemainder(number);
+
+console.log(swapped);
+// => 56.222
 };
 
 const math = () => {
