@@ -97,7 +97,7 @@ const swapWholeAndRemainder = () => {
   const swapped = utils.swapWholeAndRemainder(number);
 
   console.log(swapped);
-  // => 56.222
+// => 56.222
 };
 
 const math = () => {
@@ -134,7 +134,6 @@ const typeOfProps = () => {
 };
 
 const flat = () => {
-
   const result1 = utils.flat({ a: 5, b: 6 });
   const result2 = utils.flat({ a: 5, b: { c: 6, d: 7 } });
 
@@ -226,7 +225,6 @@ const isMinLength = () => {
 
   console.log(result2);
   // => false
-
 };
 
 const isMaxLength = () => {
