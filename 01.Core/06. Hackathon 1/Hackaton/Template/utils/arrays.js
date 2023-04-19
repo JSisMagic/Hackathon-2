@@ -84,11 +84,11 @@ const indexOf = (array, element) => {
 
 // hard
 /**
- * Function calls a provided predicate function once for each element in an array, and constructs a new array of all the values for which callbackFn returns a truthy value.
- * 
- * @param {array} array The array to iterate over. 
- * @param {predicate} predicate The function that goes through each element in the initial array.  
- * @returns {outputArray} outputArray The constructed array as output. 
+ * Function calls a provided predicate function once for each element in an array, and constructs a new array of all the values for which predicate returns a truthy value.
+ *
+ * @param {array} array The array to iterate over.
+ * @param {predicate} predicate The function that goes through each element in the initial array.
+ * @returns {outputArray} outputArray The constructed array as output.
  * @author Nikolay Nikolov
  */
 const filter = (array, predicate) => {
