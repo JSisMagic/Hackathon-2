@@ -45,8 +45,25 @@ const removeProp = (obj, prop) => {
 
 // medium
 
+/**
+ * Create a copy of an object.
+ *
+ * @param object (object): The object to copy.
+ * @returns The copied object.
+ * @example:
+ * const initialObject = { a: 5, b: 6 };
+const resultObject = utils.copy(initialObject);
+
+console.log(resultObject);
+// => { a: 5, b: 6 }
+
+console.log(initialObject === resultObject);
+// => false (different references)
+ * @author Viktor Petrov
+ */
+
 const copy = (obj) => {
-  let newObject = {};
+  const newObject = {};
 
   for (const key of Object.keys(obj)) {
     if (Array.isArray(obj[key])) {
