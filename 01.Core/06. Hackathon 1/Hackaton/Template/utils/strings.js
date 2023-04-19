@@ -5,10 +5,13 @@ const slice = (string, start = 0, end = string.length) => {
 };
 
 const repeat = (string, n) => {
-  // TODO
+  let outputString = '';
+  for (let i = 0; i < n; i++) {
+    outputString += string;
+  }
+  return outputString;
+  //DONE
 };
-
-// medium
 
 /**
  * Converts the first character of string to upper case and the remaining to lower case
@@ -32,20 +35,21 @@ const replace = (string, char, replacement) => {
 // hard
 
 const split = (string, separator) => {
+
   let sepStr = '';
-  for (index of string) {
-    if (index == separator) {
-      continue;
-    }
+  for (index of string){
+     if (index == separator){
+        continue;
+     }
     sepStr += index;
-  }
+}
 
-  const sepAr = [];
+let sepAr = [];
 
-  for (i=0; i<sepStr.length; i++) {
-    sepAr[i]=sepStr[i];
-  }
-  console.log(sepAr);
+for (i=0; i<sepStr.length; i++){
+    sepAr[i]=sepStr[i]
+}
+return sepAr;
 };
 
 const trim = (string) => {
