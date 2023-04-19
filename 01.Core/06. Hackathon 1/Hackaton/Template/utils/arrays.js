@@ -17,8 +17,26 @@ const reverse = (array) => {
 };
 
 
+/**
+ * Fills elements of array with value from start up to, but not including, end
+ *
+ * @param {array} array the array to fill
+ * @param {value} value to fill array with
+ * @param {start} start position
+ * @param {end} end position
+ * @returns {filledArray} filled array
+ */
 const fill = (array, value, start = 0, end = array.length) => {
-  // TODO
+  const filledArray = [];
+
+  for (let i = 0; i < array.length; i++) {
+    filledArray.push(array[i]);
+  }
+  for (let i = start; i < end; i++) {
+    filledArray[i] = value;
+  }
+
+  return filledArray;
 };
 
 /**
@@ -27,12 +45,12 @@ const fill = (array, value, start = 0, end = array.length) => {
  * @param {Array} array The array to convert.
  * @param {String} separator The element separator. Default is ','.
  * @returns {String} Returns the joined string.
- * @example 
+ * @example
  * join(['apple', 'banana', 'orange'],'+') ==> 'apple+banana+orange'
- * 
+ *
  * @author Gergana Dragoeva Quievy
  */
- const join = (array, separator = ',') => {
+const join = (array, separator = ',') => {
   let result = '';
   for (let index = 0; index < array.length; index++) {
     result += array[index];
@@ -42,7 +60,7 @@ const fill = (array, value, start = 0, end = array.length) => {
   }
 
   return result;
-}; 
+};
 
 /**
  * find the index of an given element in array
@@ -64,14 +82,14 @@ const indexOf = (array, element) => {
 // hard
 
 const filter = (array, predicate) => {
-  let outputArray = [];
+  const outputArray = [];
   for (let i = 0; i < array.length; i++) {
     if (predicate(array[i], i, array)) {
       outputArray.push(array[i]);
     }
   }
   return outputArray;
-  //DONE
+  // DONE
 };
 
 /**

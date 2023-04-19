@@ -9,12 +9,19 @@
  *
  * @example1 isMinLength('asd', 2) ==> true
  * @example2 isMinLength('asd', 4) ==> false
- * 
+ *
  * @author Gergana Dragoeva Quievy
  */
- const isMinLength = (str, minLength) => str.length >= minLength;
- 
-const isMaxLength = (str, maxLength) => null; // TODO
+const isMinLength = (str, minLength) => str.length >= minLength;
+
+/**
+ * Check if a string has a maximum length.
+ *
+ * @param {string} str The string to check.
+ * @param {number} maxLength The maximum length of the string.
+ * @returns {boolean} Whether the string has the maximum length.
+ */
+const isMaxLength = (str, maxLength) => str.length <= maxLength ? true : false;
 
 // medium
 
@@ -27,7 +34,7 @@ const isArrayOfType = (arr, type) => null; // TODO
 const areValidNumbers = (stringNumbers) => null; // TODO
 
 /**
- * From a given string of separated numbers by a single space, 
+ * From a given string of separated numbers by a single space,
  * sum the numbers and return the accumulated sum.
  * @param {String} string The string of numbers separated by a single space.
  * @returns {Number} The accumulated sum from the numbers.

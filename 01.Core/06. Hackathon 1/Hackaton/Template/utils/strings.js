@@ -7,14 +7,14 @@
  * @param {number} [start=0] The start position.
  * @param {number} [end=string.length] The end position.
  * @returns {string} Returns the sliced string.
- * 
+ *
  * @example slice('hello', 2, 4) ==> 'll'
- * 
+ *
  * @author Gergana Dragoeva Quievy
  */
- const slice = (string, start = 0, end = string.length) => {
+const slice = (string, start = 0, end = string.length) => {
   let result = '';
-  for (let i = start; i < end ; i++) {
+  for (let i = start; i < end; i++) {
     result += string[i];
   }
 
@@ -27,13 +27,22 @@ const repeat = (string, n) => {
     outputString += string;
   }
   return outputString;
-  //DONE
+  // DONE
 };
 
-// medium
-
+/**
+ * Converts the first character of string to upper case and the remaining to lower case
+ *
+ * @param {string} string to capitalize
+ * @returns {string} the capitalized string
+ */
 const capitalize = (string) => {
-  // TODO
+  if (string.length === 0) {
+    return string;
+  }
+  const firstChar = string.charAt(0).toUpperCase();
+  const restChars = string.slice(1).toLowerCase();
+  return firstChar + restChars;
 };
 
 /**

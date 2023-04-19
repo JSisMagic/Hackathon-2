@@ -6,8 +6,8 @@ const min = (array) => {
 
 const sum = (array) => {
   let sum = 0;
-  for (index of array){
-      sum += index;
+  for (index of array) {
+    sum += index;
   }
   return sum;
 };
@@ -22,11 +22,18 @@ const average = (array) => {
     average = sum / array.length;
   }
   return average;
-  //DONE
+  // DONE
 };
 
+/**
+ * Raises the number to the chosen power
+ *
+ * @param {number} number
+ * @param {power} power by which the number should be raised
+ * @returns {number} raised by the power
+ */
 const pow = (number, power) => {
-  // TODO
+  return number ** power;
 };
 
 // hard
@@ -41,16 +48,16 @@ const isPrime = (number) => {
  * @param {number} number The number to swap.
  * @returns {number} The number with the applied swapping.
  * @example swapWholeAndRemainder(1.2) ==> 2.1
- * 
+ *
  * @author Gergana Dragoeva Quievy
  */
- const swapWholeAndRemainder = (number) => {
+const swapWholeAndRemainder = (number) => {
   let result = '';
   const wholePart = Math.floor(number);
   const remainderPart = number.toString().slice(number.toString().indexOf('.')+1);
-  result = remainderPart + '.' +  wholePart;
+  result = remainderPart + '.' + wholePart;
 
   return +result;
-}
+};
 
 export { min, sum, average, pow, isPrime, swapWholeAndRemainder };
