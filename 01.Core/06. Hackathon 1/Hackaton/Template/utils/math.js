@@ -7,7 +7,7 @@
  * @author Hristiyan Fachikov
  */
 const min = (array) => {
-  let minNumber = Number. MAX_VALUE;
+  let minNumber = Number.MAX_VALUE;
   for (const el of array) {
     if (el < minNumber) {
       minNumber = el;
@@ -16,9 +16,21 @@ const min = (array) => {
   return minNumber;
 };
 
+/**
+ * Returns the sum of all numbers in the array.
+ *
+ * @param array (array): The string to split.
+ * @returns Returns the sum of the numbers.
+ * @example:
+const sum = utils.sum([1, -2, 3]);
+console.log(sum);
+// => 2
+ * @author Viktor Petrov
+ */
+
 const sum = (array) => {
   let sum = 0;
-  for (index of array) {
+  for (const index of array) {
     sum += index;
   }
   return sum;
