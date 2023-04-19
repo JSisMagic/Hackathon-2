@@ -76,7 +76,7 @@ const flat = (obj) => {
 };
 
 const entries = (obj) => {
-  const outputArray = [];
+  let outputArray = [];
   for (const key in obj) {
     outputArray.push([key, obj[key]]);
   }

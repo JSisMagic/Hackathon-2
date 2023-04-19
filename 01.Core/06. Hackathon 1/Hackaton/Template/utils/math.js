@@ -13,7 +13,11 @@ const sum = (array) => {
 };
 
 // medium
-
+/**
+ * 
+ * @param {*} array 
+ * @returns 
+ */
 const average = (array) => {
   let average = 0;
   let sum = 0;
