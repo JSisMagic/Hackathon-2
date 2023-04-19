@@ -48,8 +48,8 @@ const capitalize = (string) => {
   if (string.length === 0) {
     return string;
   }
-  const firstChar = string.charAt(0).toUpperCase();
-  const restChars = string.slice(1).toLowerCase();
+  const firstChar = string[0].toUpperCase();
+  const restChars = string.substring(1).toLowerCase();
   return firstChar + restChars;
 };
 
