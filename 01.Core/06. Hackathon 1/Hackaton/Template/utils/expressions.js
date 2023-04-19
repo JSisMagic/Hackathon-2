@@ -14,7 +14,7 @@
  */
 const isMinLength = (str, minLength) => str.length >= minLength;
 
-const isMaxLength = (str, maxLength) => null; // TODO
+const isMaxLength = (str, maxLength) => str.length <= maxLength ? true : false;
 
 // medium
 
