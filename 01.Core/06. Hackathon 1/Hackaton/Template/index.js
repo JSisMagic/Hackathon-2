@@ -35,7 +35,10 @@ const fill = () => {
 };
 
 const join = () => {
-  // TODO
+  const joined = utils.join(['a', 'b', 'c'], '~');
+
+  console.log(joined);
+  // => 'a~b~c'
 };
 
 const indexOf = () => {
