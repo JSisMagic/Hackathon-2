@@ -52,12 +52,12 @@ const isArrayOfType = (arr, type) => arr.every((el) => typeof el === type);
 const areValidNumbers = (stringNumbers) => null; // TODO
 
 const sumNumbersFromString = (string) => {
-  sum = 0;
-  const inputAr = string.split(' ')
-  for (index of inputAr){
+  let sum = 0;
+  const inputAr = string.split(' ');
+  for (const index of inputAr) {
     sum += +index;
-}
-return sum;
+  }
+  return sum;
 };
 
 export {

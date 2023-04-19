@@ -22,10 +22,10 @@ const slice = (string, start = 0, end = string.length) => {
 };
 /**
  * The function constructs and returns a new string which contains the specified number of copies of the string on which it was called, concatenated together.
- * 
- * @param {string} string Initial string to be copied. 
- * @param {n} n The number of times the string will be copied. 
- * @returns {outputString} The concatenated string. 
+ *
+ * @param {string} string Initial string to be copied.
+ * @param {n} n The number of times the string will be copied.
+ * @returns {outputString} The concatenated string.
  * @author Nikolay Nikolov
  */
 const repeat = (string, n) => {
@@ -106,21 +106,21 @@ const split = (string, separator) => {
  * @author Hristiyan Fachikov
  */
 const trim = (string) => {
-  // TODO
   let start = 0;
-  let end = string.length-1;
-  const savedArr = [];
-  savedArr.push(string);
-
-  while (start <= end && string[start] === ' ') {
+  let end = string.length - 1;
+  while (start <= end && string.charCodeAt(start) <= 32) {
     start++;
   }
 
-  while (end >= start && string[end] === ' ') {
+  while (end >= start && string.charCodeAt(end) <= 32) {
     end--;
   }
-  const result = string.slice(start, end + 1);
-  return result;
+
+  let trimmed = '';
+  for (let i = start; i <= end; i++) {
+    trimmed += string[i];
+  }
+  return trimmed;
 };
 
 export { slice, repeat, capitalize, replace, split, trim };

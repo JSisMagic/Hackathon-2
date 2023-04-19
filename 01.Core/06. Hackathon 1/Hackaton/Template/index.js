@@ -375,7 +375,7 @@ const expressions = () => {
 // capitalize();
 // replace();
 // split();
-// trim();
+trim();
 // strings();
 
 // Expressions

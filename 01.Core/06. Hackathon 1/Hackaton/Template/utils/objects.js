@@ -46,7 +46,7 @@ const removeProp = (obj, prop) => {
 // medium
 
 const copy = (obj) => {
-  let newObject = {};
+  const newObject = {};
 
   for (const key of Object.keys(obj)) {
     if (Array.isArray(obj[key])) {
@@ -94,6 +94,7 @@ const flat = (obj) => {
 
   for (const key in obj) {
     if (typeof obj[key] === 'object' && !Array.isArray(obj[key])) {
+      // eslint-disable-next-line guard-for-in
       for (const innerKey in obj[key]) {
         flattened[`${key}.${innerKey}`] = obj[key][innerKey];
       }
@@ -106,13 +107,14 @@ const flat = (obj) => {
 };
 /**
  * The function returns an array of a given object's own enumerable string-keyed property key-value pairs.
- * 
- * @param {obj} obj The initial object from which we get the key-value pairs. 
- * @returns {outputArray} Returns the array with the key-value pairs. 
+ *
+ * @param {obj} obj The initial object from which we get the key-value pairs.
+ * @returns {outputArray} Returns the array with the key-value pairs.
  * @author Nikolay Nikolov
  */
 const entries = (obj) => {
   const outputArray = [];
+  // eslint-disable-next-line guard-for-in
   for (const key in obj) {
     outputArray.push([key, obj[key]]);
   }
