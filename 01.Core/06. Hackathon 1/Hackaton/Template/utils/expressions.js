@@ -49,7 +49,7 @@ const isArrayOfType = (arr, type) => arr.every((el) => typeof el === type);
 
 // hard
 
-const areValidNumbers = (stringNumbers) => null; // TODO
+const areValidNumbers = (stringNumbers) => stringNumbers.every((el)=>!isNaN(el)); // TODO
 
 /**
  * From a given string of separated numbers by a single space,

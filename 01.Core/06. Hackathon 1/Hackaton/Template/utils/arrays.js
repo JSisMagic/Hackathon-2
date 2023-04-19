@@ -116,15 +116,16 @@ const filter = (array, predicate) => {
  * @author Valentin P. Petkov
  */
 const zip = (...arrays) => {
-  const result = [];
-  if (arrays.length === 0) {
+  let arrs = [...arrays];
+  let result = [];
+  if (arrs.length === 0) {
     return result;
   }
 
   // find array with min length:
-  let minLength = arrays[0];
-  if (arrays.length > 1) {
-    for (const arr of arrays) {
+  let minLength = arrs[0].length;
+  if (arrs.length > 1) {
+    for (const arr of arrs) {
       if (arr.length < minLength) {
         minLength = arr.length;
       }
@@ -135,8 +136,8 @@ const zip = (...arrays) => {
   for (let i = 0; i < minLength; i++) {
     result.push([]);
     // get i-th elements of all arrays
-    for (const arr of arrays) {
-      result[i].push(arr[i]);
+    for (let j = 0; j < arrs.length; j++){
+        result[i].push(arrs[j][i]);
     }
   }
   return result;
