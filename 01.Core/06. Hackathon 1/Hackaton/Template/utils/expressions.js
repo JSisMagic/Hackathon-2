@@ -66,7 +66,7 @@ console.log(result2);
  */
 
 const areValidNumbers = (stringNumbers) => stringNumbers.every(
-    (el)=>!isNaN(el));
+  (el) => !isNaN(el));
 
 /**
  * From a given string of separated numbers by a single space,
@@ -77,7 +77,7 @@ const areValidNumbers = (stringNumbers) => stringNumbers.every(
  * '2 4 5 4 10' => 25
  * @author Valentin P. Petkov
  */
-const sumNumbersFromString = (string) => string.split(' ').map(Number).reduce(function(a, b) {
+const sumNumbersFromString = (string) => string.split(' ').map(Number).reduce(function (a, b) {
   return a + b;
 });
 
