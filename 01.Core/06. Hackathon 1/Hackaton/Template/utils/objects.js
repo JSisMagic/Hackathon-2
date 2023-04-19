@@ -1,7 +1,24 @@
 // easy
 
+/**
+ * Checks if the given prop exist in a given object.
+ *
+ * @param {Object} obj The object to search in
+ * @param {String} prop The prop to search for.
+ * @returns {Boolean} Returns true if the prop exists and false if it doesn't
+ * @example
+ * { a: 5 }, 'a' => true
+ * @example
+ * { a: 5 }, 'b' => false
+ * @author Valentin P. Petkov
+ */
 const existInObject = (obj, prop) => {
-  // TODO
+  for (const property in obj) {
+    if (property === prop) {
+      return true;
+    }
+  }
+  return false;
 };
 
 const removeProp = (obj, prop) => {
@@ -11,7 +28,7 @@ const removeProp = (obj, prop) => {
 // medium
 
 const copy = (obj) => {
-  let newObject = {};
+  const newObject = {};
 
   for (const key of Object.keys(obj)) {
     if (Array.isArray(obj[key])) {
@@ -31,8 +48,31 @@ const typeOfProps = (obj) => {
 
 // hard
 
+/**
+ * Flat all of the inner objects (just one level deep) inside of a given object, placing their own properties on root level.
+ *
+ * @param {object} obj The object to be flattened.
+ * @return {object} The flattened object.
+ *
+ * @example1 flat({ a: 5, b: 6 }) ==> { a: 5, b: 6 }
+ * @example2 flat({ a: 5, b: { c: 6, d: 7 } }) ==> { a: 5, 'b.c': 6, 'b.d': 7 }
+ *
+ * @author Gergana Dragoeva Quievy
+ */
 const flat = (obj) => {
-  // TODO
+  const flattened = {};
+
+  for (const key in obj) {
+    if (typeof obj[key] === 'object' && !Array.isArray(obj[key])) {
+      for (const innerKey in obj[key]) {
+        flattened[`${key}.${innerKey}`] = obj[key][innerKey];
+      }
+    } else {
+      flattened[key] = obj[key];
+    }
+  }
+
+  return flattened;
 };
 
 const entries = (obj) => {
@@ -41,7 +81,7 @@ const entries = (obj) => {
     outputArray.push([key, obj[key]]);
   }
   return outputArray;
-  //DONE
+  // DONE
 };
 
 export { existInObject, typeOfProps, copy, removeProp, flat, entries };

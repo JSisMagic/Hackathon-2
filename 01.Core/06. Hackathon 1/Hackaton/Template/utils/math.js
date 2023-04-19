@@ -26,11 +26,19 @@ const average = (array) => {
     average = sum / array.length;
   }
   return average;
-  //DONE
+  // DONE
 };
 
+/**
+ * Raises the number to the chosen power
+ *
+ * @param {number} number
+ * @param {power} power by which the number should be raised
+ * @returns {number} raised by the power
+ * @author Mariela Ivanova
+ */
 const pow = (number, power) => {
-  // TODO
+  return number ** power;
 };
 
 // hard
@@ -39,8 +47,22 @@ const isPrime = (number) => {
   // TODO
 };
 
+/**
+ * Swaps the whole part and the reminder part of a given number.
+ *
+ * @param {number} number The number to swap.
+ * @returns {number} The number with the applied swapping.
+ * @example swapWholeAndRemainder(1.2) ==> 2.1
+ *
+ * @author Gergana Dragoeva Quievy
+ */
 const swapWholeAndRemainder = (number) => {
-  // TODO
+  let result = '';
+  const wholePart = Math.floor(number);
+  const remainderPart = number.toString().slice(number.toString().indexOf('.')+1);
+  result = remainderPart + '.' + wholePart;
+
+  return +result;
 };
 
 export { min, sum, average, pow, isPrime, swapWholeAndRemainder };
