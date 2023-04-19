@@ -320,8 +320,8 @@ objects();
 // capitalize();
 // replace();
 // split();
-trim();
-// strings();
+// trim();
+strings();
 
 // Expressions
 
