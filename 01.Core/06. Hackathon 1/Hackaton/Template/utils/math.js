@@ -42,8 +42,26 @@ const pow = (number, power) => {
 };
 
 // hard
-
+/**
+ * find if an given number is a prime
+ *
+ * @param {number} number the number to be checked if it's prime.
+ * @returns {boolean}  Returns if the numbers is prime or not (true or false).
+ * @example isPrime(12) ==> false
+ * @example isPrime(2) ==> true
+ * @author Stefan Donev
+ */
 const isPrime = (number) => {
+  let isPrime = true;
+  if (number > 1) {
+    for (let i = 2; i < number; i++) {
+      if (number % i === 0) {
+        isPrime = false;
+        break;
+      }
+    }
+  }
+  return isPrime;
   // TODO
 };
 
@@ -59,7 +77,7 @@ const isPrime = (number) => {
 const swapWholeAndRemainder = (number) => {
   let result = '';
   const wholePart = Math.floor(number);
-  const remainderPart = number.toString().slice(number.toString().indexOf('.')+1);
+  const remainderPart = number.toString().slice(number.toString().indexOf('.') + 1);
   result = remainderPart + '.' + wholePart;
 
   return +result;

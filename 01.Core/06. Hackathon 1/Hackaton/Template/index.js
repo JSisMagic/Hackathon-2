@@ -100,6 +100,10 @@ const average = () => {
 };
 
 const isPrime = () => {
+  const prime = utils.isPrime(41);
+
+  console.log(prime);
+  // => true
   // TODO
 };
 
@@ -108,7 +112,7 @@ const swapWholeAndRemainder = () => {
   const swapped = utils.swapWholeAndRemainder(number);
 
   console.log(swapped);
-// => 56.222
+  // => 56.222
 };
 
 const math = () => {
@@ -133,6 +137,10 @@ const existInObject = () => {
 };
 
 const removeProp = () => {
+  const result = utils.removeProp({ a: 5, b: 6 }, 'a');
+
+  console.log(result);
+  // => { b: 6 }
   // TODO
 };
 
@@ -257,7 +265,14 @@ const isMaxLength = () => {
 };
 
 const isIn = () => {
-  // TODO
+  const result1 = utils.isIn(2, [1, 3, 5, 7]);
+  const result2 = utils.isIn(2, [1, 2, 3, 4]);
+
+  console.log(result1);
+  // => false
+
+  console.log(result2);
+  // => true // TODO
 };
 
 const isArrayOfType = () => {

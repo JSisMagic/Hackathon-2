@@ -21,7 +21,25 @@ const existInObject = (obj, prop) => {
   return false;
 };
 
+/**
+ * Removes a give prop from a given object;
+ *
+ * @param {obj} obj the object to delete form
+ * @param {prop} prop the property to delete
+ * @returns  An object with the specific prop deleted.
+ * @example removeProp({ a: 5, b: 6 }, 'a') ==> { b: 6 }
+ * @author Stefan Donev
+ */
+
 const removeProp = (obj, prop) => {
+  const keys = Object.keys(obj);
+  const newObj = {};
+  for (const key of keys) {
+    if (key !== prop) {
+      newObj[key] = obj[key];
+    }
+  }
+  return newObj;
   // TODO
 };
 

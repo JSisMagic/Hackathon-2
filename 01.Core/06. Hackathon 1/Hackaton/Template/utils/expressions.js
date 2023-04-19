@@ -25,8 +25,17 @@ const isMinLength = (str, minLength) => str.length >= minLength;
 const isMaxLength = (str, maxLength) => str.length <= maxLength ? true : false;
 
 // medium
-
-const isIn = (value, possibleValues) => null; // TODO
+/**
+ * Search for a given value inside an array.
+ *
+ * @param {value} value the value to search for
+ * @param {possibleValues} possibleValues the array to search into.
+ * @returns {boolean} returns true if the validation passes and false if it doesn't
+ * @example isIn(5, [1, 2, 5]) ==> true
+ * @example2 isIn(3, [1, 2, 5 ]) ==> false
+ * @author Stefan Donev
+ */
+const isIn = (value, possibleValues) => (possibleValues.includes(value));
 
 const isArrayOfType = (arr, type) => null; // TODO
 
@@ -43,7 +52,7 @@ const areValidNumbers = (stringNumbers) => null; // TODO
  * '2 4 5 4 10' => 25
  * @author Valentin P. Petkov
  */
-const sumNumbersFromString = (string) => string.split(' ').map(Number).reduce(function(a, b) {
+const sumNumbersFromString = (string) => string.split(' ').map(Number).reduce(function (a, b) {
   return a + b;
 });
 
