@@ -71,17 +71,10 @@ const arrays = () => {
 
 const min = () => {
   // TODO
-  // const firstTestCase = [2, 4, 5, 6, 0, 7, 1, 3];
-  // const firstOutput = utils.min(firstTestCase);
-  // console.log(firstOutput);
-  //
-  const secondTestCase = [2, 4, 5, 6, 0, -7, 1, 3];
-  const secondOutput = utils.min(secondTestCase);
-  console.log(secondOutput);
-  //
-  // const thirdTestCase = [20, 40, 50, 60, 80, 17, 41, 35];
-  // const thirdOutput = utils.min(thirdTestCase);
-  // console.log(thirdOutput);
+  const minElement = utils.min([1, -2, 3]);
+  const minElementTwo = utils.min([200, 600, 199]);
+  console.log(minElement);
+  console.log(minElementTwo);
 };
 
 const sum = () => {
@@ -135,24 +128,12 @@ const copy = () => {
 
 const typeOfProps = () => {
   // TODO
-  const obj = {
-    cardHolder: 'John',
-    card: '1234****1234',
-    balance: 400,
-    age: 30,
-    hasCar: false,
-    personalInfo: {},
-    lastName: 'Doe',
-  };
-  // const obj = {
-  //   name: 'Peter',
-  //   age: 30,
-  //   hasCar: false,
-  //   personalInfo: {},
-  //   lastName: 'Doe',
-  // };
-  const result = utils.typeOfProps(obj);
+  const result = utils.typeOfProps({ a: 5, b: 'hello', c: true });
   console.log(result);
+  // => ['number', 'string', 'boolean'
+  const resultTwo = utils.typeOfProps({ a: true, b: 5, c: false });
+  console.log(resultTwo);
+  // => ['boolean', 'number', 'boolean']
 };
 
 const flat = () => {
@@ -206,9 +187,11 @@ const split = () => {
 const trim = () => {
   // TODO
   const testCase = '   home  home';
-  // const testCase = '   Telerik Academy       ';
+  const testCaseOne = '   Telerik Academy       ';
   const result = utils.trim(testCase);
+  const resultTwo = utils.trim(testCaseOne);
   console.log(result);
+  console.log(resultTwo);
 };
 
 const strings = () => {
@@ -238,18 +221,14 @@ const isIn = () => {
 
 const isArrayOfType = () => {
   // TODO
-  const arr = [true, false, true, true];
-  const type = 'boolean';
-  //
-  // const arr = [1, 2, 'Hello', 7, false];
-  // const type = 'boolean';
-  //
-  // const arr = [1, 2, 3, 4, 5];
-  // const type = 'number';
-  //
-  // const arr = ['Hello There', 'Hello'];
-  // const type = 'string';
-  console.log(utils.isArrayOfType(arr, type));
+  const result1 = utils.isArrayOfType([1, 2, 3, 4], 'number');
+  const result2 = utils.isArrayOfType([1, 2, 'hello', 4], 'number');
+
+  console.log(result1);
+  // => true
+
+  console.log(result2);
+// => false
 };
 
 const areValidNumbers = () => {
@@ -299,7 +278,7 @@ const expressions = () => {
 
 // Math
 
-min();
+// min();
 // sum();
 // average();
 // pow();
@@ -312,7 +291,7 @@ min();
 // existInObject();
 // removeProp();
 // copy();
-typeOfProps();
+// typeOfProps();
 // flat();
 // entries();
 // objects();
@@ -324,7 +303,7 @@ typeOfProps();
 // capitalize();
 // replace();
 // split();
-trim();
+// trim();
 // strings();
 
 // Expressions
@@ -332,7 +311,7 @@ trim();
 // isMinLength();
 // isMaxLength();
 // isIn();
-isArrayOfType();
+// isArrayOfType();
 // areValidNumbers();
 // sumNumbersFromString();
 // expressions();

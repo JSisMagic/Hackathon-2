@@ -11,20 +11,27 @@ const removeProp = (obj, prop) => {
 // medium
 
 const copy = (obj) => {
-  let newObject = {};
-
+  const newObject = {};
   for (const key of Object.keys(obj)) {
-      if (Array.isArray(obj[key])) {
-          newObject[key] = Array.from(obj[key]);
-      } else if (typeof obj[key] === 'object' && obj[key] !== null) {
-        newObject[key] = { ...obj[key] };
-      } else {
-        newObject[key] = obj[key];
-      }
+    if (Array.isArray(obj[key])) {
+      newObject[key] = Array.from(obj[key]);
+    } else if (typeof obj[key] === 'object' && obj[key] !== null) {
+      newObject[key] = { ...obj[key] };
+    } else {
+      newObject[key] = obj[key];
     }
+  }
   return newObject;
 };
 
+/**
+ * Converts all elements in array into a string separated by separator.
+ *
+ * @param {Object} obj With the property
+ * @returns {Array} Returns array with type of all property
+ *
+ * @author Hristiyan Fachikov
+ */
 const typeOfProps = (obj) => {
   const savedArr = [];
   // eslint-disable-next-line guard-for-in
@@ -33,7 +40,6 @@ const typeOfProps = (obj) => {
   }
   return savedArr;
 };
-
 // hard
 
 const flat = (obj) => {
@@ -42,11 +48,12 @@ const flat = (obj) => {
 
 const entries = (obj) => {
   const outputArray = [];
+  // eslint-disable-next-line guard-for-in
   for (const key in obj) {
     outputArray.push([key, obj[key]]);
   }
   return outputArray;
-  //DONE
+  // DONE
 };
 
 export { existInObject, typeOfProps, copy, removeProp, flat, entries };

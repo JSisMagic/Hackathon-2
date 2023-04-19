@@ -10,7 +10,7 @@ const repeat = (string, n) => {
     outputString += string;
   }
   return outputString;
-  //DONE
+  // DONE
 };
 
 // medium
@@ -43,6 +43,15 @@ const split = (string, separator) => {
   return seperatedString;
 };
 
+/**
+ * The function receives a string from which it removes spaces
+ *
+ * @param {String} string String with spaces.
+ * @returns {String} With removed spaces.
+ * @example
+ *
+ * @author Hristiyan Fachikov
+ */
 const trim = (string) => {
   // TODO
   let start = 0;

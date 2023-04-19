@@ -1,7 +1,12 @@
 // easy
 
+/**
+ * Gets an array and return the smallest number.
+ * @param {Array} array every element of it.
+ * @returns {Number} whether arr includes only element from this type.
+ * @author Hristiyan Fachikov
+ */
 const min = (array) => {
-  // TODO
   let minNumber = Number. MAX_VALUE;
   for (const el of array) {
     if (el < minNumber) {
@@ -25,7 +30,7 @@ const average = (array) => {
     average = sum / array.length;
   }
   return average;
-  //DONE
+  // DONE
 };
 
 const pow = (number, power) => {
