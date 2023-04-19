@@ -65,7 +65,8 @@ console.log(result2);
  * @author Valentin P. Petkov
  */
 
-const areValidNumbers = (stringNumbers) => stringNumbers.every((el)=>!isNaN(el)); // TODO
+const areValidNumbers = (stringNumbers) => stringNumbers.every(
+    (el)=>!isNaN(el));
 
 /**
  * From a given string of separated numbers by a single space,

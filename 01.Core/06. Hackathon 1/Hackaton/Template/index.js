@@ -42,15 +42,31 @@ const join = () => {
 };
 
 const indexOf = () => {
-  // TODO
+  const indexOf = () => {
+    const index = utils.indexOf([7, 5, 9, 2], 2);
+
+    console.log(index);
+    // => 3
+  };
 };
 
 const filter = () => {
-  // TODO
+  const users = [
+    { user: 'barney', age: 36, active: true },
+    { user: 'fred', age: 40, active: false },
+  ];
+
+  const filtered = utils.filter(users, (o) => !o.active);
+
+  console.log(filtered);
+  // => [{ 'user': 'fred', 'age': 40, 'active': false }]
 };
 
 const zip = () => {
-  // TODO
+  const zipped = utils.zip(['a', 'b'], [1, 2], [true, false]);
+
+  console.log(zipped);
+// => [['a', 1, true], ['b', 2, false]]
 };
 
 const arrays = () => {
@@ -70,11 +86,17 @@ const arrays = () => {
 // Math
 
 const min = () => {
-  // TODO
+  const minElement = utils.min([1, -2, 3]);
+
+  console.log(minElement);
+// => -2
 };
 
 const sum = () => {
-  // TODO
+  const sum = utils.sum([1, -2, 3]);
+
+  console.log(sum);
+// => 2
 };
 
 const pow = () => {
@@ -85,11 +107,17 @@ const pow = () => {
 };
 
 const average = () => {
-  // TODO
+  const average = utils.average([1, -2, 3]);
+
+  console.log(average);
+// => 0.6666666666666666
 };
 
 const isPrime = () => {
-  // TODO
+  const prime = utils.isPrime(41);
+
+  console.log(prime);
+// => true
 };
 
 const swapWholeAndRemainder = () => {
@@ -118,19 +146,39 @@ const math = () => {
 // Objects
 
 const existInObject = () => {
-  // TODO
+  const result1 = utils.existInObject({ a: 5 }, 'a');
+  const result2 = utils.existInObject({ a: 5 }, 'b');
+
+  console.log(result1);
+  // true
+
+  console.log(result2);
+  // => false
 };
 
 const removeProp = () => {
-  // TODO
+  const result = utils.removeProp({ a: 5, b: 6 }, 'a');
+
+  console.log(result);
+// => { b: 6 }
 };
 
 const copy = () => {
-  // TODO
+  const initialObject = { a: 5, b: 6 };
+  const resultObject = utils.copy(initialObject);
+
+  console.log(resultObject);
+  // => { a: 5, b: 6 }
+
+  console.log(initialObject === resultObject);
+// => false (different references)
 };
 
 const typeOfProps = () => {
-  // TODO
+  const result = utils.typeOfProps({ a: 5, b: 'hello', c: true });
+
+  console.log(result);
+// => ['number', 'string', 'boolean']
 };
 
 const flat = () => {
@@ -145,7 +193,10 @@ const flat = () => {
 };
 
 const entries = () => {
-  // TODO
+  const result = utils.entries({ a: 5, b: 6, c: 7 });
+
+  console.log(result);
+// => [['a', 5], ['b', 6], ['c', 7]]
 };
 
 const objects = () => {
@@ -184,7 +235,18 @@ const slice = () => {
 };
 
 const repeat = () => {
-  // TODO
+  const stars = utils.repeat('*', 3);
+  const abc = utils.repeat('abc', 2);
+  const nothing = utils.repeat('abc', 0);
+
+  console.log(stars);
+  // => '***'
+
+  console.log(abc);
+  // => 'abcabc'
+
+  console.log(nothing);
+// => ''
 };
 
 const capitalize = () => {
@@ -195,15 +257,24 @@ const capitalize = () => {
 };
 
 const replace = () => {
-  // TODO
+  const replacement = utils.replace('The cree', 'e', 'is');
+
+  console.log(replacement);
+// => 'This crisis'
 };
 
 const split = () => {
-  // TODO
+  const segments = utils.split('a-b-c', '-');
+
+  console.log(segments);
+// => ['a', 'b', 'c']
 };
 
 const trim = () => {
-  // TODO
+  const result = utils.trim('   hello   ');
+
+  console.log(result);
+// => hello (no whitespace)
 };
 
 const strings = () => {
@@ -241,19 +312,43 @@ const isMaxLength = () => {
 };
 
 const isIn = () => {
-  // TODO
+  const result1 = utils.isIn(2, [1, 3, 5, 7]);
+  const result2 = utils.isIn(2, [1, 2, 3, 4]);
+
+  console.log(result1);
+  // => false
+
+  console.log(result2);
+// => true
 };
 
 const isArrayOfType = () => {
-  // TODO
+  const result1 = utils.isArrayOfType([1, 2, 3, 4], 'number');
+  const result2 = utils.isArrayOfType([1, 2, 'hello', 4], 'number');
+
+  console.log(result1);
+  // => true
+
+  console.log(result2);
+// => false
 };
 
 const areValidNumbers = () => {
-  // TODO
+  const result1 = utils.areValidNumbers(['1', '2', '3', '4']);
+  const result2 = utils.areValidNumbers(['1', '2', 'apple', '4']);
+
+  console.log(result1);
+  // => true
+
+  console.log(result2);
+// => false
 };
 
 const sumNumbersFromString = () => {
-  // TODO
+  const result = utils.sumNumbersFromString('2 4 5 4 10');
+
+  console.log(result);
+// 25
 };
 
 const expressions = () => {
