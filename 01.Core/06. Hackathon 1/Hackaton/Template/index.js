@@ -359,7 +359,7 @@ const expressions = () => {
 // indexOf();
 // filter();
 // zip();
-// arrays();
+arrays();
 
 // Math
 
@@ -369,7 +369,7 @@ const expressions = () => {
 // pow();
 // isPrime();
 // swapWholeAndRemainder();
-// math();
+math();
 
 // Objects
 
@@ -379,7 +379,7 @@ const expressions = () => {
 // typeOfProps();
 // flat();
 // entries();
-// objects();
+objects();
 
 // Strings
 
@@ -389,7 +389,7 @@ const expressions = () => {
 // replace();
 // split();
 // trim();
-// strings();
+strings();
 
 // Expressions
 
@@ -399,4 +399,4 @@ const expressions = () => {
 // isArrayOfType();
 // areValidNumbers();
 // sumNumbersFromString();
-// expressions();
+expressions();
