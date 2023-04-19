@@ -78,7 +78,10 @@ const sum = () => {
 };
 
 const pow = () => {
-  // TODO
+  const result = utils.pow(2, 3);
+
+  console.log(result);
+// => 8
 };
 
 const average = () => {
@@ -185,7 +188,10 @@ const repeat = () => {
 };
 
 const capitalize = () => {
-  // TODO
+  const capitalized = utils.capitalize('FRED');
+
+  console.log(capitalized);
+// => 'Fred'
 };
 
 const replace = () => {
@@ -225,7 +231,13 @@ const isMinLength = () => {
 };
 
 const isMaxLength = () => {
-  // TODO
+  const result1 = utils.isMaxLength('asd', 2);
+  const result2 = utils.isMaxLength('asd', 4);
+
+  console.log(result1);
+  // => false
+
+  console.log(result2);
 };
 
 const isIn = () => {

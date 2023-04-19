@@ -6,7 +6,7 @@ const min = (array) => {
 
 const sum = (array) => {
   let sum = 0;
-  for (index of array) {
+  for (const index of array) {
     sum += index;
   }
   return sum;
@@ -28,9 +28,9 @@ const average = (array) => {
 /**
  * Raises the number to the chosen power
  *
- * @param {number} the base number
- * @param {power} the power by which the number should be raised
- * @returns the number raised by the power
+ * @param {number}  number
+ * @param {power} power by which the number should be raised
+ * @returns {number} raised by the power
  */
 const pow = (number, power) => {
   return number ** power;
