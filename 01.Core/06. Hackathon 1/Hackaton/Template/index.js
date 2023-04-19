@@ -43,7 +43,15 @@ const indexOf = () => {
 };
 
 const filter = () => {
-  // TODO
+  const users = [
+    { user: 'barney', age: 36, active: true },
+    { user: 'fred', age: 40, active: false },
+  ];
+
+  const filtered = utils.filter(users, (o) => !o.active);
+
+  console.log(filtered);
+  // => [{ 'user': 'fred', 'age': 40, 'active': false }]
 };
 
 const zip = () => {
@@ -79,7 +87,10 @@ const pow = () => {
 };
 
 const average = () => {
-  // TODO
+  const average = utils.average([1, -2, 3]);
+
+  console.log(average);
+  // => 0.6666666666666666
 };
 
 const isPrime = () => {
@@ -128,7 +139,10 @@ const flat = () => {
 };
 
 const entries = () => {
-  // TODO
+  const result = utils.entries({ a: 5, b: 6, c: 7 });
+
+  console.log(result);
+  // => [['a', 5], ['b', 6], ['c', 7]]
 };
 
 const objects = () => {
@@ -156,7 +170,18 @@ const slice = () => {
 };
 
 const repeat = () => {
-  // TODO
+  const stars = utils.repeat('*', 3);
+  const abc = utils.repeat('abc', 2);
+  const nothing = utils.repeat('abc', 0);
+
+  console.log(stars);
+  // => '***'
+
+  console.log(abc);
+  // => 'abcabc'
+
+  console.log(nothing);
+  // => ''
 };
 
 const capitalize = () => {

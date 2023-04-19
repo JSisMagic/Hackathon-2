@@ -14,14 +14,14 @@ const copy = (obj) => {
   let newObject = {};
 
   for (const key of Object.keys(obj)) {
-      if (Array.isArray(obj[key])) {
-          newObject[key] = Array.from(obj[key]);
-      } else if (typeof obj[key] === 'object' && obj[key] !== null) {
-        newObject[key] = { ...obj[key] };
-      } else {
-        newObject[key] = obj[key];
-      }
+    if (Array.isArray(obj[key])) {
+      newObject[key] = Array.from(obj[key]);
+    } else if (typeof obj[key] === 'object' && obj[key] !== null) {
+      newObject[key] = { ...obj[key] };
+    } else {
+      newObject[key] = obj[key];
     }
+  }
   return newObject;
 };
 
@@ -36,7 +36,7 @@ const flat = (obj) => {
 };
 
 const entries = (obj) => {
-  const outputArray = [];
+  let outputArray = [];
   for (const key in obj) {
     outputArray.push([key, obj[key]]);
   }

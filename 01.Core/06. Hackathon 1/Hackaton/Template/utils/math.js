@@ -6,14 +6,18 @@ const min = (array) => {
 
 const sum = (array) => {
   let sum = 0;
-  for (index of array){
-      sum += index;
+  for (index of array) {
+    sum += index;
   }
   return sum;
 };
 
 // medium
-
+/**
+ * 
+ * @param {*} array 
+ * @returns 
+ */
 const average = (array) => {
   let average = 0;
   let sum = 0;
