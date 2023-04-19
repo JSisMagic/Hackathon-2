@@ -31,6 +31,7 @@ const average = (array) => {
  * @param {number} number
  * @param {power} power by which the number should be raised
  * @returns {number} raised by the power
+ * @author Mariela Ivanova
  */
 const pow = (number, power) => {
   return number ** power;

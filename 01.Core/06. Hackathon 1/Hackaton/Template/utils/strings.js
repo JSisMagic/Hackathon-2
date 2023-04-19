@@ -35,6 +35,7 @@ const repeat = (string, n) => {
  *
  * @param {string} string to capitalize
  * @returns {string} the capitalized string
+ * @author Mariela Ivanova
  */
 const capitalize = (string) => {
   if (string.length === 0) {

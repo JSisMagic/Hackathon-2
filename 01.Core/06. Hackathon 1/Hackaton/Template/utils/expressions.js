@@ -20,6 +20,7 @@ const isMinLength = (str, minLength) => str.length >= minLength;
  * @param {string} str The string to check.
  * @param {number} maxLength The maximum length of the string.
  * @returns {boolean} Whether the string has the maximum length.
+ * @author Mariela Ivanova
  */
 const isMaxLength = (str, maxLength) => str.length <= maxLength ? true : false;
 

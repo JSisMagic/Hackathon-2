@@ -25,6 +25,7 @@ const reverse = (array) => {
  * @param {start} start position
  * @param {end} end position
  * @returns {filledArray} filled array
+ * @author Mariela Ivanova
  */
 const fill = (array, value, start = 0, end = array.length) => {
   const filledArray = [];
