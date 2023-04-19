@@ -96,8 +96,31 @@ const split = (string, separator) => {
   return seperatedString;
 };
 
+/**
+ * The function receives a string from which it removes spaces
+ *
+ * @param {String} string String with spaces.
+ * @returns {String} With removed spaces.
+ * @example
+ *
+ * @author Hristiyan Fachikov
+ */
 const trim = (string) => {
   // TODO
+  let start = 0;
+  let end = string.length-1;
+  const savedArr = [];
+  savedArr.push(string);
+
+  while (start <= end && string[start] === ' ') {
+    start++;
+  }
+
+  while (end >= start && string[end] === ' ') {
+    end--;
+  }
+  const result = string.slice(start, end + 1);
+  return result;
 };
 
 export { slice, repeat, capitalize, replace, split, trim };

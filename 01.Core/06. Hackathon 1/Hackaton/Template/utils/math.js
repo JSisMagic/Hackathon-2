@@ -1,13 +1,25 @@
 // easy
 
+/**
+ * Gets an array and return the smallest number.
+ * @param {Array} array every element of it.
+ * @returns {Number} whether arr includes only element from this type.
+ * @author Hristiyan Fachikov
+ */
 const min = (array) => {
-  // TODO
+  let minNumber = Number. MAX_VALUE;
+  for (const el of array) {
+    if (el < minNumber) {
+      minNumber = el;
+    }
+  }
+  return minNumber;
 };
 
 const sum = (array) => {
   let sum = 0;
-  for (index of array) {
-    sum += index;
+  for (index of array){
+      sum += index;
   }
   return sum;
 };
@@ -45,8 +57,26 @@ const pow = (number, power) => {
 };
 
 // hard
-
+/**
+ * find if an given number is a prime
+ *
+ * @param {number} number the number to be checked if it's prime.
+ * @returns {boolean}  Returns if the numbers is prime or not (true or false).
+ * @example isPrime(12) ==> false
+ * @example isPrime(2) ==> true
+ * @author Stefan Donev
+ */
 const isPrime = (number) => {
+  let isPrime = true;
+  if (number > 1) {
+    for (let i = 2; i < number; i++) {
+      if (number % i === 0) {
+        isPrime = false;
+        break;
+      }
+    }
+  }
+  return isPrime;
   // TODO
 };
 
