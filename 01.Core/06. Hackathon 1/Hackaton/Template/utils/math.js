@@ -16,9 +16,9 @@ const sum = (array) => {
 /**
  * Function takes the total sum of elements present, then dividing it by the total number of values present in an array.
  * 
- * @param {array} array The initial array where the numbers are given as input. 
- * @param {sum} sum The variable where we store the summed numbers. 
- * @returns {average} The average from the sum. 
+ * @param {array} array The initial array where the numbers are given as input.
+ * @param {sum} sum The variable where we store the summed numbers.
+ * @returns {average} The average from the sum.
  * @author Nikolay Nikolov
  */
 const average = (array) => {

@@ -52,7 +52,7 @@ const areValidNumbers = (stringNumbers) => null; // TODO
  * '2 4 5 4 10' => 25
  * @author Valentin P. Petkov
  */
-const sumNumbersFromString = (string) => string.split(' ').map(Number).reduce(function (a, b) {
+const sumNumbersFromString = (string) => string.split(' ').map(Number).reduce(function(a, b) {
   return a + b;
 });
 
