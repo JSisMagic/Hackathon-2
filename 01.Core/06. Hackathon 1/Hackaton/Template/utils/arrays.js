@@ -69,6 +69,8 @@ const join = (array, separator = ',') => {
  * @param {array}array The array to search in..
  * @param {element}element The element to search for.
  * @returns {number}The found index or -1.
+ * @example [1,2,3], 3 ==> 2
+ * @author Stefan Donev
  */
 const indexOf = (array, element) => {
   // TODO

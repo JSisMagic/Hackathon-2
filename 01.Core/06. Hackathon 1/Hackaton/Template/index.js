@@ -42,7 +42,10 @@ const join = () => {
 };
 
 const indexOf = () => {
-  // TODO
+  const index = utils.indexOf([7, 5, 9, 2], 2);
+
+  console.log(index);
+  // => 3
 };
 
 const filter = () => {
@@ -149,7 +152,7 @@ const flat = () => {
   // => { a: 5, b: 6 }
 
   console.log(result2);
-// => { a: 5, 'b.c': 6, 'b.d': 7 }
+  // => { a: 5, 'b.c': 6, 'b.d': 7 }
 };
 
 const entries = () => {
@@ -191,7 +194,7 @@ const slice = () => {
   // => llo
 
   console.log(result3);
-// => ll
+  // => ll
 };
 
 const repeat = () => {
