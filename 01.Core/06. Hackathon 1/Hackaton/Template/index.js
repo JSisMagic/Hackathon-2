@@ -207,7 +207,15 @@ const strings = () => {
 // Expressions
 
 const isMinLength = () => {
-  // TODO
+  const result1 = utils.isMinLength('asd', 2);
+const result2 = utils.isMinLength('asd', 4);
+
+console.log(result1);
+// => true
+
+console.log(result2);
+// => false
+
 };
 
 const isMaxLength = () => {
