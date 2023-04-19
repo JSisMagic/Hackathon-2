@@ -32,7 +32,7 @@ const fill = (array, value, start = 0, end = array.length) => {
  * 
  * @author Gergana Dragoeva Quievy
  */
- const join = (array, separator = ',') => {
+const join = (array, separator = ',') => {
   let result = '';
   for (let index = 0; index < array.length; index++) {
     result += array[index];
@@ -42,7 +42,7 @@ const fill = (array, value, start = 0, end = array.length) => {
   }
 
   return result;
-}; 
+};
 
 /**
  * find the index of an given element in array
@@ -50,6 +50,8 @@ const fill = (array, value, start = 0, end = array.length) => {
  * @param {array}array The array to search in..
  * @param {element}element The element to search for.
  * @returns {number}The found index or -1.
+ * @example [1,2,3], 3 ==> 2
+ * @author Stefan Donev
  */
 const indexOf = (array, element) => {
   // TODO
@@ -71,7 +73,6 @@ const filter = (array, predicate) => {
     }
   }
   return outputArray;
-  //DONE
 };
 
 const zip = (...arrays) => {
