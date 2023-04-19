@@ -89,6 +89,7 @@ const indexOf = (array, element) => {
  * @param {array} array The array to iterate over. 
  * @param {predicate} predicate The function that goes through each element in the initial array.  
  * @returns {outputArray} outputArray The constructed array as output. 
+ * @author Nikolay Nikolov
  */
 const filter = (array, predicate) => {
   const outputArray = [];

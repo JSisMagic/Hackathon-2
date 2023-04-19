@@ -26,6 +26,7 @@ const slice = (string, start = 0, end = string.length) => {
  * @param {string} string Initial string to be copied. 
  * @param {n} n The number of times the string will be copied. 
  * @returns {outputString} The concatenated string. 
+ * @author Nikolay Nikolov
  */
 const repeat = (string, n) => {
   let outputString = '';

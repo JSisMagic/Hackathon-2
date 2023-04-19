@@ -19,6 +19,7 @@ const sum = (array) => {
  * @param {array} array The initial array where the numbers are given as input. 
  * @param {sum} sum The variable where we store the summed numbers. 
  * @returns {average} The average from the sum. 
+ * @author Nikolay Nikolov
  */
 const average = (array) => {
   let average = 0;
