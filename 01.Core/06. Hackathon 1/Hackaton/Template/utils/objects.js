@@ -112,6 +112,7 @@ const flat = (obj) => {
 
   for (const key in obj) {
     if (typeof obj[key] === 'object' && !Array.isArray(obj[key])) {
+      // eslint-disable-next-line guard-for-in
       for (const innerKey in obj[key]) {
         flattened[`${key}.${innerKey}`] = obj[key][innerKey];
       }
@@ -131,6 +132,7 @@ const flat = (obj) => {
  */
 const entries = (obj) => {
   const outputArray = [];
+  // eslint-disable-next-line guard-for-in
   for (const key in obj) {
     outputArray.push([key, obj[key]]);
   }

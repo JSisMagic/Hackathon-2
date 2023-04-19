@@ -7,7 +7,7 @@
  * @author Hristiyan Fachikov
  */
 const min = (array) => {
-  let minNumber = Number. MAX_VALUE;
+  let minNumber = Number.MAX_VALUE;
   for (const el of array) {
     if (el < minNumber) {
       minNumber = el;

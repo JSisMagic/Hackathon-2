@@ -48,8 +48,8 @@ const capitalize = (string) => {
   if (string.length === 0) {
     return string;
   }
-  const firstChar = string.charAt(0).toUpperCase();
-  const restChars = string.slice(1).toLowerCase();
+  const firstChar = string[0].toUpperCase();
+  const restChars = string.substring(1).toLowerCase();
   return firstChar + restChars;
 };
 
@@ -117,21 +117,21 @@ const split = (string, separator) => {
  * @author Hristiyan Fachikov
  */
 const trim = (string) => {
-  // TODO
   let start = 0;
-  let end = string.length-1;
-  const savedArr = [];
-  savedArr.push(string);
-
-  while (start <= end && string[start] === ' ') {
+  let end = string.length - 1;
+  while (start <= end && string.charCodeAt(start) <= 32) {
     start++;
   }
 
-  while (end >= start && string[end] === ' ') {
+  while (end >= start && string.charCodeAt(end) <= 32) {
     end--;
   }
-  const result = string.slice(start, end + 1);
-  return result;
+
+  let trimmed = '';
+  for (let i = start; i <= end; i++) {
+    trimmed += string[i];
+  }
+  return trimmed;
 };
 
 export { slice, repeat, capitalize, replace, split, trim };
