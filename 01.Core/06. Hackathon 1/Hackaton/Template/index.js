@@ -82,6 +82,10 @@ const arrays = () => {
 
 const min = () => {
   // TODO
+  const minElement = utils.min([1, -2, 3]);
+  const minElementTwo = utils.min([200, 600, 199]);
+  console.log(minElement);
+  console.log(minElementTwo);
 };
 
 const sum = () => {
@@ -150,6 +154,12 @@ const copy = () => {
 
 const typeOfProps = () => {
   // TODO
+  const result = utils.typeOfProps({ a: 5, b: 'hello', c: true });
+  console.log(result);
+  // => ['number', 'string', 'boolean'
+  const resultTwo = utils.typeOfProps({ a: true, b: 5, c: false });
+  console.log(resultTwo);
+  // => ['boolean', 'number', 'boolean']
 };
 
 const flat = () => {
@@ -234,11 +244,17 @@ const split = () => {
 
 const trim = () => {
   // TODO
+  const testCase = '   home  home';
+  const testCaseOne = '   Telerik Academy       ';
+  const result = utils.trim(testCase);
+  const resultTwo = utils.trim(testCaseOne);
+  console.log(result);
+  console.log(resultTwo);
 };
 
 const strings = () => {
   const string = utils.repeat('  home', 2); //   home  home
-  const trimmed = utils.trim(string); // home  home
+  const trimmed = utils.trim(strings); // home  home
   const sliced = utils.slice(trimmed, 1, 8); // ome  ho
   const replaced = utils.replace(sliced, 'o', 'ri'); // rime  hri
   const capitalized = utils.capitalize(replaced); // Rime  hri
@@ -277,6 +293,14 @@ const isIn = () => {
 
 const isArrayOfType = () => {
   // TODO
+  const result1 = utils.isArrayOfType([1, 2, 3, 4], 'number');
+  const result2 = utils.isArrayOfType([1, 2, 'hello', 4], 'number');
+
+  console.log(result1);
+  // => true
+
+  console.log(result2);
+// => false
 };
 
 const areValidNumbers = () => {

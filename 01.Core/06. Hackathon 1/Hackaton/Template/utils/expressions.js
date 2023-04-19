@@ -37,7 +37,15 @@ const isMaxLength = (str, maxLength) => str.length <= maxLength ? true : false;
  */
 const isIn = (value, possibleValues) => (possibleValues.includes(value));
 
-const isArrayOfType = (arr, type) => null; // TODO
+/**
+ * Gets an array and a type and takes each element of the array and compares it.
+ *
+ * @param {Array} arr Тake every element of the array and check it
+ * @param {typeof} type use it to check type of element of arr.
+ * @returns {boolean} whether arr includes only type elements from this type.
+ * @author Hristiyan Fachikov
+ */
+const isArrayOfType = (arr, type) => arr.every((el) => typeof el === type);
 
 // hard
 
@@ -52,7 +60,7 @@ const areValidNumbers = (stringNumbers) => null; // TODO
  * '2 4 5 4 10' => 25
  * @author Valentin P. Petkov
  */
-const sumNumbersFromString = (string) => string.split(' ').map(Number).reduce(function(a, b) {
+const sumNumbersFromString = (string) => string.split(' ').map(Number).reduce(function (a, b) {
   return a + b;
 });
 

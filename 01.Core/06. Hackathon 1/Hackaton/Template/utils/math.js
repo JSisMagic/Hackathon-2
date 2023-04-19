@@ -1,7 +1,19 @@
 // easy
 
+/**
+ * Gets an array and return the smallest number.
+ * @param {Array} array every element of it.
+ * @returns {Number} whether arr includes only element from this type.
+ * @author Hristiyan Fachikov
+ */
 const min = (array) => {
-  // TODO
+  let minNumber = Number.MAX_VALUE;
+  for (const el of array) {
+    if (el < minNumber) {
+      minNumber = el;
+    }
+  }
+  return minNumber;
 };
 
 const sum = (array) => {
@@ -16,9 +28,9 @@ const sum = (array) => {
 /**
  * Function takes the total sum of elements present, then dividing it by the total number of values present in an array.
  * 
- * @param {array} array The initial array where the numbers are given as input.
- * @param {sum} sum The variable where we store the summed numbers.
- * @returns {average} The average from the sum.
+ * @param {array} array The initial array where the numbers are given as input. 
+ * @param {sum} sum The variable where we store the summed numbers. 
+ * @returns {average} The average from the sum. 
  * @author Nikolay Nikolov
  */
 const average = (array) => {
