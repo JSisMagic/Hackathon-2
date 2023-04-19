@@ -92,7 +92,13 @@ const flat = (obj) => {
 
   return flattened;
 };
-
+/**
+ * The function returns an array of a given object's own enumerable string-keyed property key-value pairs.
+ * 
+ * @param {obj} obj The initial object from which we get the key-value pairs. 
+ * @returns {outputArray} Returns the array with the key-value pairs. 
+ * @author Nikolay Nikolov
+ */
 const entries = (obj) => {
   let outputArray = [];
   for (const key in obj) {

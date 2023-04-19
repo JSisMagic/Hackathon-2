@@ -20,7 +20,14 @@ const slice = (string, start = 0, end = string.length) => {
 
   return result;
 };
-
+/**
+ * The function constructs and returns a new string which contains the specified number of copies of the string on which it was called, concatenated together.
+ * 
+ * @param {string} string Initial string to be copied. 
+ * @param {n} n The number of times the string will be copied. 
+ * @returns {outputString} The concatenated string. 
+ * @author Nikolay Nikolov
+ */
 const repeat = (string, n) => {
   let outputString = '';
   for (let i = 0; i < n; i++) {
