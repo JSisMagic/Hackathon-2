@@ -14,9 +14,11 @@ const sum = (array) => {
 
 // medium
 /**
+ * Function takes the total sum of elements present, then dividing it by the total number of values present in an array.
  * 
- * @param {*} array 
- * @returns 
+ * @param {array} array The initial array where the numbers are given as input. 
+ * @param {sum} sum The variable where we store the summed numbers. 
+ * @returns {average} The average from the sum. 
  */
 const average = (array) => {
   let average = 0;
@@ -59,7 +61,7 @@ const isPrime = (number) => {
 const swapWholeAndRemainder = (number) => {
   let result = '';
   const wholePart = Math.floor(number);
-  const remainderPart = number.toString().slice(number.toString().indexOf('.')+1);
+  const remainderPart = number.toString().slice(number.toString().indexOf('.') + 1);
   result = remainderPart + '.' + wholePart;
 
   return +result;
