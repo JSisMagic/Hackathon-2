@@ -16,6 +16,7 @@ const reverse = (array) => {
   return reversed;
 };
 
+
 /**
  * Fills elements of array with value from start up to, but not including, end
  *
@@ -24,6 +25,7 @@ const reverse = (array) => {
  * @param {start} start position
  * @param {end} end position
  * @returns {filledArray} filled array
+ * @author Mariela Ivanova
  */
 const fill = (array, value, start = 0, end = array.length) => {
   const filledArray = [];
@@ -67,6 +69,9 @@ const join = (array, separator = ',') => {
  * @param {array}array The array to search in..
  * @param {element}element The element to search for.
  * @returns {number}The found index or -1.
+ * @example indexOf([1,2,3], 3) ==> 2
+ * @exaple2 indexOf([1,2,3], 4) ==> -1
+ * @author Stefan Donev
  */
 const indexOf = (array, element) => {
   // TODO
@@ -79,7 +84,14 @@ const indexOf = (array, element) => {
 };
 
 // hard
-
+/**
+ * Function calls a provided predicate function once for each element in an array, and constructs a new array of all the values for which predicate returns a truthy value.
+ *
+ * @param {array} array The array to iterate over.
+ * @param {predicate} predicate The function that goes through each element in the initial array.
+ * @returns {outputArray} outputArray The constructed array as output.
+ * @author Nikolay Nikolov
+ */
 const filter = (array, predicate) => {
   const outputArray = [];
   for (let i = 0; i < array.length; i++) {

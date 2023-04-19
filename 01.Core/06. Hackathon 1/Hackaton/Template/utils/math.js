@@ -1,8 +1,32 @@
 // easy
 
+/**
+ * Gets an array and return the smallest number.
+ * @param {Array} array every element of it.
+ * @returns {Number} whether arr includes only element from this type.
+ * @author Hristiyan Fachikov
+ */
 const min = (array) => {
-  // TODO
+  let minNumber = Number.MAX_VALUE;
+  for (const el of array) {
+    if (el < minNumber) {
+      minNumber = el;
+    }
+  }
+  return minNumber;
 };
+
+/**
+ * Returns the sum of all numbers in the array.
+ *
+ * @param array (array): The string to split.
+ * @returns Returns the sum of the numbers.
+ * @example:
+const sum = utils.sum([1, -2, 3]);
+console.log(sum);
+// => 2
+ * @author Viktor Petrov
+ */
 
 const sum = (array) => {
   let sum = 0;
@@ -13,7 +37,14 @@ const sum = (array) => {
 };
 
 // medium
-
+/**
+ * Function takes the total sum of elements present, then dividing it by the total number of values present in an array.
+ *
+ * @param {array} array The initial array where the numbers are given as input.
+ * @param {sum} sum The variable where we store the summed numbers.
+ * @returns {average} The average from the sum.
+ * @author Nikolay Nikolov
+ */
 const average = (array) => {
   let average = 0;
   let sum = 0;
@@ -28,17 +59,36 @@ const average = (array) => {
 /**
  * Raises the number to the chosen power
  *
- * @param {number}  number
+ * @param {number} number
  * @param {power} power by which the number should be raised
  * @returns {number} raised by the power
+ * @author Mariela Ivanova
  */
 const pow = (number, power) => {
   return number ** power;
 };
 
 // hard
-
+/**
+ * find if an given number is a prime
+ *
+ * @param {number} number the number to be checked if it's prime.
+ * @returns {boolean}  Returns if the numbers is prime or not (true or false).
+ * @example isPrime(12) ==> false
+ * @example isPrime(2) ==> true
+ * @author Stefan Donev
+ */
 const isPrime = (number) => {
+  let isPrime = true;
+  if (number > 1) {
+    for (let i = 2; i < number; i++) {
+      if (number % i === 0) {
+        isPrime = false;
+        break;
+      }
+    }
+  }
+  return isPrime;
   // TODO
 };
 
@@ -54,7 +104,7 @@ const isPrime = (number) => {
 const swapWholeAndRemainder = (number) => {
   let result = '';
   const wholePart = Math.floor(number);
-  const remainderPart = number.toString().slice(number.toString().indexOf('.')+1);
+  const remainderPart = number.toString().slice(number.toString().indexOf('.') + 1);
   result = remainderPart + '.' + wholePart;
 
   return +result;

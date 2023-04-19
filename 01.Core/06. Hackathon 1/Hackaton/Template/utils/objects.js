@@ -21,11 +21,46 @@ const existInObject = (obj, prop) => {
   return false;
 };
 
+/**
+ * Removes a give prop from a given object;
+ *
+ * @param {obj} obj the object to delete form
+ * @param {prop} prop the property to delete
+ * @returns  An object with the specific prop deleted.
+ * @example removeProp({ a: 5, b: 6 }, 'a') ==> { b: 6 }
+ * @author Stefan Donev
+ */
+
 const removeProp = (obj, prop) => {
+  const keys = Object.keys(obj);
+  const newObj = {};
+  for (const key of keys) {
+    if (key !== prop) {
+      newObj[key] = obj[key];
+    }
+  }
+  return newObj;
   // TODO
 };
 
 // medium
+
+/**
+ * Create a copy of an object.
+ *
+ * @param object (object): The object to copy.
+ * @returns The copied object.
+ * @example:
+ * const initialObject = { a: 5, b: 6 };
+const resultObject = utils.copy(initialObject);
+
+console.log(resultObject);
+// => { a: 5, b: 6 }
+
+console.log(initialObject === resultObject);
+// => false (different references)
+ * @author Viktor Petrov
+ */
 
 const copy = (obj) => {
   const newObject = {};
@@ -42,10 +77,22 @@ const copy = (obj) => {
   return newObject;
 };
 
+/**
+ * Converts all elements in array into a string separated by separator.
+ *
+ * @param {Object} obj With the property
+ * @returns {Array} Returns array with type of all property
+ *
+ * @author Hristiyan Fachikov
+ */
 const typeOfProps = (obj) => {
-  // TODO
+  const savedArr = [];
+  // eslint-disable-next-line guard-for-in
+  for (const key in obj) {
+    savedArr.push(typeof(obj[key]));
+  }
+  return savedArr;
 };
-
 // hard
 
 /**
@@ -74,7 +121,13 @@ const flat = (obj) => {
 
   return flattened;
 };
-
+/**
+ * The function returns an array of a given object's own enumerable string-keyed property key-value pairs.
+ *
+ * @param {obj} obj The initial object from which we get the key-value pairs.
+ * @returns {outputArray} Returns the array with the key-value pairs.
+ * @author Nikolay Nikolov
+ */
 const entries = (obj) => {
   const outputArray = [];
   for (const key in obj) {

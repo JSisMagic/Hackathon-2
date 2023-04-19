@@ -78,14 +78,3 @@ typings/
 
 #DynamoDB Local files 
 .dynamodb/ 
-.DS_Store
-.DS_Store
-01.Core/.DS_Store
-01.Core/06. Hackathon 1/.DS_Store
-01.Core/06. Hackathon 1/Hackaton/.DS_Store
-01.Core/06. Hackathon 1/Hackaton/.DS_Store
-.DS_Store
-.DS_Store
-.gitignore
-01.Core/06. Hackathon 1/.DS_Store
-01.Core/06. Hackathon 1/Hackaton/.DS_Store

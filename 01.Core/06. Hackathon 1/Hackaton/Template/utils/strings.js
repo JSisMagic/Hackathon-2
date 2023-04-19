@@ -20,7 +20,14 @@ const slice = (string, start = 0, end = string.length) => {
 
   return result;
 };
-
+/**
+ * The function constructs and returns a new string which contains the specified number of copies of the string on which it was called, concatenated together.
+ *
+ * @param {string} string Initial string to be copied.
+ * @param {n} n The number of times the string will be copied.
+ * @returns {outputString} The concatenated string.
+ * @author Nikolay Nikolov
+ */
 const repeat = (string, n) => {
   let outputString = '';
   for (let i = 0; i < n; i++) {
@@ -35,6 +42,7 @@ const repeat = (string, n) => {
  *
  * @param {string} string to capitalize
  * @returns {string} the capitalized string
+ * @author Mariela Ivanova
  */
 const capitalize = (string) => {
   if (string.length === 0) {
@@ -70,26 +78,60 @@ const replace = (string, char, replacement) => {
 
 // hard
 
+/**
+ * Splits string by separator.
+ *
+ * @param string (string): The string to split.
+ * @param separator (string): The separator character to split by.
+ * @returns (Array): Returns the string segments.
+ * @example ('ab-cd-de', '-'), ['ab', 'cd', 'de']
+ * @author Viktor Petrov
+ */
+
 const split = (string, separator) => {
   const seperatedString = [];
   let singleMember = '';
 
-
-  for (const symbol of string) {
-    if (symbol !== separator) {
-      singleMember += symbol;
-    } else if (symbol.index === (string.length - 1)) {
+  for (let i=0; i<=string.length; i++) {
+    if (string[i] !== separator && i !== string.length) {
+      singleMember += string[i];
+    } else if (string[i] === string.length) {
+      singleMember += string[i];
       seperatedString.push(singleMember);
     } else {
       seperatedString.push(singleMember);
       singleMember = '';
     }
   }
+
   return seperatedString;
 };
 
+/**
+ * The function receives a string from which it removes spaces
+ *
+ * @param {String} string String with spaces.
+ * @returns {String} With removed spaces.
+ * @example
+ *
+ * @author Hristiyan Fachikov
+ */
 const trim = (string) => {
   // TODO
+  let start = 0;
+  let end = string.length-1;
+  const savedArr = [];
+  savedArr.push(string);
+
+  while (start <= end && string[start] === ' ') {
+    start++;
+  }
+
+  while (end >= start && string[end] === ' ') {
+    end--;
+  }
+  const result = string.slice(start, end + 1);
+  return result;
 };
 
 export { slice, repeat, capitalize, replace, split, trim };
