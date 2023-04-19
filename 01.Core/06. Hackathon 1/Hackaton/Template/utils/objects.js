@@ -31,8 +31,31 @@ const typeOfProps = (obj) => {
 
 // hard
 
-const flat = (obj) => {
-  // TODO
+/**
+ * Flat all of the inner objects (just one level deep) inside of a given object, placing their own properties on root level.
+ *
+ * @param {object} obj The object to be flattened.
+ * @return {object} The flattened object.
+ * 
+ * @example1 flat({ a: 5, b: 6 }) ==> { a: 5, b: 6 }
+ * @example2 flat({ a: 5, b: { c: 6, d: 7 } }) ==> { a: 5, 'b.c': 6, 'b.d': 7 }
+ *
+ * @author Gergana Dragoeva Quievy
+ */
+ const flat = (obj) => {
+  const flattened = {};
+
+  for (const key in obj) {
+    if (typeof obj[key] === 'object' && !Array.isArray(obj[key])) {
+      for (const innerKey in obj[key]) {
+        flattened[`${key}.${innerKey}`] = obj[key][innerKey];
+      }
+    } else {
+      flattened[key] = obj[key];
+    }
+  }
+
+  return flattened;
 };
 
 const entries = (obj) => {

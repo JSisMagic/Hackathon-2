@@ -131,7 +131,15 @@ const typeOfProps = () => {
 };
 
 const flat = () => {
-  // TODO
+
+const result1 = utils.flat({ a: 5, b: 6 });
+const result2 = utils.flat({ a: 5, b: { c: 6, d: 7 } });
+
+console.log(result1);
+// => { a: 5, b: 6 }
+
+console.log(result2);
+// => { a: 5, 'b.c': 6, 'b.d': 7 }
 };
 
 const entries = () => {
