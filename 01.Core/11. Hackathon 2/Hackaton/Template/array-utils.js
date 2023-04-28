@@ -328,9 +328,24 @@ const pipe = (...fns) => {
   };
 };
 
+/**
+ *
+ * @author Viktor Petrov <viktor.martinov.p@gmail.com>
+ * A higher-order function that takes in one or more functions as arguments and returns a new function that applies each function to the input in reverse order.
+ *@param {...function} fns - One or more functions to compose.
+ *@return {function} A new function that applies each function to the input in reverse order.
+*/
+
 const compose = (...fns) => {
   return (input) => {
-    // TODO
+    return (input) => {
+      const functions = [...fns]; // Create a new array with the provided functions
+      functions.reverse(); // Reverse the order of the functions
+      functions.forEach((fn) => { // Apply each function to the input in reverse order
+        input = fn(input);
+      });
+      return input; // Return the result of applying all functions to the input
+    };
   };
 };
 
