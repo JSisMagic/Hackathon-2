@@ -32,11 +32,6 @@ const addLast = (element) => {
  * @author Mariela Ivanova
  */
 const removeLast = (arr) => {
-  /**
-   * @function removeLastFunc
-   * @param {newArr} newArr an array to add element into
-   * @return {newArr} a copy of the array with the removed element
-   */
   const newArr = [...arr];
   newArr.pop();
   return newArr;
@@ -71,11 +66,6 @@ const concat = (arr) => {
  * @author Mariela Ivanova
  */
 const reverse = (arr) => {
-  /**
-   * @function reverseFunc
-   * @param {arr}arr The array to reverse
-   * @return {arr} The reversed array
-   */
   if (arr.length <= 1) {
     return arr;
   }
@@ -92,7 +82,7 @@ const reverse = (arr) => {
  */
 const join = (separator) => {
   /**
-   * @function addFirstFunc
+   * @function joinFunc
    * @param {arr} arr an array elements to join
    * @return {string} Returns a closure that will join the elements of the array with the passed separator
    */
@@ -167,6 +157,11 @@ const every = (predicate) => {
  * @author Mariela Ivanova
  */
 const includes = (element) => {
+  /**
+   * @function arr
+   * @param {arr} arr an array to search into
+   * @return {boolean} returns true or false
+   */
   return (arr) => {
     return arr.some((item) => item === element);
   };
