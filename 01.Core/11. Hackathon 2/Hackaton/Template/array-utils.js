@@ -159,7 +159,7 @@ const forEach = (fn) => {
  * @param {arr} arr The array to reverse
  * @return {any} The reversed array
  * @author Mariela Ivanova  mariela.ivanova.a49@learn.telerikacademy.com
- * 
+ *
  */
 const reverse = (arr) => {
   if (arr.length <= 1) {
@@ -472,6 +472,7 @@ const arrayFrom = ({ length }) => {
    * @param {object} length The length of the array that is going go be created.
    * @return {array} Array with undefined values.
    */
+  // eslint-disable-next-line prefer-spread
   const testArray = Array.apply(undefined, Array(length));
   return testArray;
 };
