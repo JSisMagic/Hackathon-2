@@ -156,13 +156,36 @@ const arrayFromTest = () => {
 };
 
 // arrayFromTest()
-// Test function for removeLast
-const removeLastTest = () => {
-  const arr = ['LEGO City', 'LEGO Technic', 'LEGO Star Wars', 'LEGO Friends'];
-  const newArr = removeLast(arr);
 
-  console.log(arr); // ['LEGO City', 'LEGO Technic', 'LEGO Star Wars', 'LEGO Friends']
-  console.log(newArr); // ['LEGO City', 'LEGO Technic', 'LEGO Star Wars']
+/**
+ * Test function for removeLast
+ *
+ * @author Gergana Dragoeva Quievy  <gergana.dragoeva.a49@learn.telerikacademy.com>
+ */
+const removeLastTest = () => {
+  const startValue = [
+    { name: 'Ivan', age: 15 },
+    { name: 'Pesho', age: 32 },
+    { name: 'Pesho', age: 23 },
+    { name: 'Maria', age: 19 },
+  ];
+
+  const newArr = removeLast(startValue);
+
+  console.log(startValue);
+  // [
+  //   { name: 'Ivan', age: 15 },
+  //   { name: 'Pesho', age: 32 },
+  //   { name: 'Pesho', age: 23 },
+  //   { name: 'Maria', age: 19 },
+  // ]
+
+  console.log(newArr);
+  // [
+  //   { name: 'Ivan', age: 15 },
+  //   { name: 'Pesho', age: 32 },
+  //   { name: 'Pesho', age: 23 },
+  // ]
 };
 
 // Execute the test
@@ -178,48 +201,97 @@ const addFirstTest = () => {
   console.log(copy); // 5, 1, 2, 3
 };
 
-// addFirstTest();
-
+/**
+ * Test function for addLast
+ *
+ * @author Gergana Dragoeva Quievy  <gergana.dragoeva.a49@learn.telerikacademy.com>
+ */
 const addLastTest = () => {
-  const arr = [1, 2, 3];
-  const result = addLast(8)(arr);
-  console.log(arr); // 1,2,3
-  console.log(result); // 1,2,3,8
+  const arr = [
+    { name: 'Ivan', age: 15 },
+    { name: 'Pesho', age: 32 },
+    { name: 'Pesho', age: 23 },
+  ];
+
+  const newPerson = { name: 'Maria', age: 19 };
+
+  const result = addLast(newPerson)(arr);
+
+  console.log(arr);
+  // [
+  //   { name: 'Ivan', age: 15 },
+  //   { name: 'Pesho', age: 32 },
+  //   { name: 'Pesho', age: 23 },
+  // ]
+  console.log(result);
+  // [
+  //   { name: 'Ivan', age: 15 },
+  //   { name: 'Pesho', age: 32 },
+  //   { name: 'Pesho', age: 23 },
+  //   { name: 'Maria', age: 19 },
+  // ]
 };
 
 // addLastTest();
 
-// Test function for forEach
+
+/**
+ * Test function for forEach
+ *
+ * @author Gergana Dragoeva Quievy  <gergana.dragoeva.a49@learn.telerikacademy.com>
+ */
 const forEachTest = () => {
-  const arr = ['banana', 'pineapple', 'dragonfruit', 'orange'];
+  const startValue = [
+    { name: 'Ivan', age: 15 },
+    { name: 'Pesho', age: 32 },
+    { name: 'Pesho', age: 23 },
+    { name: 'Maria', age: 19 },
+  ];
+
   let output = '';
 
   // The function fn that will be executed for each element in the array
-  const fn = (fruit) => {
-    output += `${fruit} `;
+  const fn = (person) => {
+    output += `${person.name}(${person.age}) `;
   };
 
-  forEach(fn)(arr);
+  forEach(fn)(startValue);
 
-  console.log(output); // "banana pineapple dragonfruit orange "
+  console.log(output); // "Ivan(15) Pesho(32) Pesho(23) Maria(19) "
 };
 
 // Execute the test
 // forEachTest();
 
-
+/**
+ * Test function for findIndex
+ *
+ * @author Gergana Dragoeva Quievy  <gergana.dragoeva.a49@learn.telerikacademy.com>
+ */
 const findIndexTest = () => {
-  const arr = ['banana', 'pineapple', 'dragonfruit', 'orange'];
+  const startValue = [
+    { name: 'Ivan', age: 15 },
+    { name: 'Pesho', age: 32 },
+    { name: 'Pesho', age: 23 },
+    { name: 'Maria', age: 19 },
+  ];
 
-  const predicate = (fruit) => fruit === 'dragonfruit';
+  const predicate = (person) => person.name === 'Pesho' && person.age === 23;
 
-  const index = findIndex(predicate)(arr);
+  const index = findIndex(predicate)(startValue);
 
-  console.log(arr); // ['banana', 'pineapple', 'dragonfruit', 'orange']
+  console.log(startValue);
+  // [
+  //   { name: 'Ivan', age: 15 },
+  //   { name: 'Pesho', age: 32 },
+  //   { name: 'Pesho', age: 23 },
+  //   { name: 'Maria', age: 19 },
+  // ]
   console.log(index); // 2
 };
 
 // findIndexTest();
+
 
 /*
 *Function Test
