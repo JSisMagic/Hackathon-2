@@ -1,22 +1,32 @@
 import {
   addFirst,
   removeFirst,
+  addLast,
   removeLast,
   keys,
   entries,
+  slice,
+  concat,
   reverse,
+  join,
+  find,
+  fill,
+  forEach,
+  map,
+  filter,
+  reduce,
+  reduceRight,
+  some,
+  every,
+  includes,
+  indexOf,
+  findIndex,
   arrayFrom,
   pipe,
   compose,
   flat,
-  fill,
+  flatMap,
   groupBy,
-  reduce,
-  map,
-  slice,
-  join,
-  find,
-  filter,
 } from './array-utils.js';
 
 /*
@@ -34,6 +44,47 @@ const addFirstTest = () => {
 };
 
 // addFirstTest();
+
+const addLastTest = () => {
+  const arr = [1, 2, 3];
+  const result = addLast(8)(arr);
+  console.log(arr); // 1,2,3
+  console.log(result); // 1,2,3,8
+};
+
+// addLastTest();
+
+// Test function for forEach
+const forEachTest = () => {
+  const arr = ['banana', 'pineapple', 'dragonfruit', 'orange'];
+  let output = '';
+
+  // The function fn that will be executed for each element in the array
+  const fn = (fruit) => {
+    output += `${fruit} `;
+  };
+
+  forEach(fn)(arr);
+
+  console.log(output); // "banana pineapple dragonfruit orange "
+};
+
+// Execute the test
+// forEachTest();
+
+
+const findIndexTest = () => {
+  const arr = ['banana', 'pineapple', 'dragonfruit', 'orange'];
+
+  const predicate = (fruit) => fruit === 'dragonfruit';
+
+  const index = findIndex(predicate)(arr);
+
+  console.log(arr); // ['banana', 'pineapple', 'dragonfruit', 'orange']
+  console.log(index); // 2
+};
+
+// findIndexTest();
 
 
 /*

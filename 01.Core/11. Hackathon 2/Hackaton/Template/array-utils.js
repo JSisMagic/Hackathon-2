@@ -17,10 +17,20 @@ const addFirst = (element) => {
 
 const removeFirst = (arr) => arr.slice(1); // it does not take additional parameters to be splitted
 
+/**
+ * Add an element at the end of the array
+ *
+ * @param {any} element the element to add
+ * @return {addLastFunc} inner function
+ * @author Gergana Dragoeva Quievy
+ */
 const addLast = (element) => {
-  return (arr) => {
-    // TODO
-  };
+  /**
+   * @function addLastFunc
+   * @param {array} array an array to add element into
+   * @return {array} a copy of the array with the element added
+   */
+  return (array) => [...array, element];
 };
 
 
@@ -58,8 +68,27 @@ const keys = (arr) => {
   }, []);
 };
 
-const entries = (arr) => {
-  // TODO
+/**
+ * Takes an array and returns an array of arrays that include each index and element to the original arr;
+ * @author Hristiyan Fachikov
+ * @return {array} return array of arrays includes each index and element to the original arr.
+ */
+const entries = () => {
+  return (arr) => {
+    /**
+   * @function entriesFunc
+   * @param {arr} array with elements.
+   * @param {acc} an empty accumulator that will collect the data
+   * @param {el} any An element through which we will take an element from the array
+   * @return {array} return array of arrays includes each index and element to the original arr.
+   */
+    let counter = 0;
+    return arr.reduce((acc, el) => {
+      acc.push([`${counter}, `, el]);
+      counter++;
+      return acc;
+    }, []);
+  };
 };
 
 /**
@@ -91,6 +120,22 @@ const concat = (arr) => {
   return (innerArr) => {
     // TODO
   };
+};
+
+/**
+ * Execute a provided function once for each array element
+ *
+ * @param {function} fn The function to execute for each element
+ * @return {forEachFunc} inner function
+ * @author Gergana Dragoeva Quievy
+ */
+const forEach = (fn) => {
+  /**
+   * @function forEachFunc
+   * @param {array} array The array to iterate over
+   * @return {undefined}
+   */
+  return (array) => array.map(fn);
 };
 
 // medium
@@ -132,12 +177,27 @@ const join = (separator) => {
 };
 
 
+/**
+ * Filters the elements equal to a predicate and checks if there are any,
+ *  if so it takes the first element, if not it returns null
+ * @author Hristiyan Fachikov
+ * @param {any} predicate element
+ * @return {any} any element or null
+ */
 const find = (predicate) => {
+  /**
+   * @function findFunc
+   * @param {arr} arr and check whether predicate is include in arr.
+   * @param {el} any An element through which we will take an element from the array
+   * @return {any} element. If predicate is include in arr return it, or not return null;
+   */
   return (arr) => {
-    // TODO
+    const filterElements = arr.filter((el) => el === predicate);
+    return filterElements.length > 0 ? filterElements[0] : null;
   };
 };
 
+<<<<<<< HEAD
 /**
  * Iterates over elements of collection and reducing all of them in a single value.
  *
@@ -148,6 +208,8 @@ const find = (predicate) => {
  * @param {any} end The end position.
  * @return {array} Returns a closure that will fill the passed array with the value.
  */
+=======
+>>>>>>> 0e3c158 (Implementation & test forEach, findIndex, addLast)
 
 const fill = (value, start, end) => {
   /**
@@ -159,7 +221,7 @@ const fill = (value, start, end) => {
 
   return (arr) => {
     return arr.map((number, index) => {
-      if (index>=start && index < end) {
+      if (index >= start && index < end) {
         number = value;
       }
       return number;
@@ -167,11 +229,6 @@ const fill = (value, start, end) => {
   };
 };
 
-const forEach = (fn) => {
-  return (arr) => {
-    // TODO
-  };
-};
 
 /**
  * Returns a shallow copy of a portion of an array into a new array object.
@@ -242,9 +299,23 @@ const reduceRight = (fn, initialValue) => {
   };
 };
 
+/**
+ * Filters the elements equal to a predicate and checks if there are any,
+ *  if so it return true, if not it returns false;
+ * @author Hristiyan Fachikov
+ * @param {any} predicate element
+ * @return {boolean} from inner function
+ */
 const some = (predicate) => {
+  /**
+   * @function findFunc
+   * @param {arr} arr and check whether predicate is include in arr.
+   * @param {el} any An element through which we will take an element from the array
+   * @return {boolean}. If predicate is include in arr return true, or return false;
+   */
   return (arr) => {
-    // TODO
+    const findElement = arr.filter((el) => el === predicate);
+    return findElement.length > 0 ? true : false;
   };
 };
 
@@ -271,16 +342,40 @@ const includes = (element) => {
   };
 };
 
+/**
+ * Finds and returns the first index of the searched
+ *  element in the array. If the element does not exist in the array, return -1.
+ * @author Stefan Donev
+ * @param {any} searchedElement The element to search for.
+ * @returns {Function} inner function
+ */
 const indexOf = (searchedElement) => {
+  /**
+ * inner function.
+ * @param {arr} arr array that we are searching in
+ * @returns {number} return the index of the element if its found or -1 if it is not
+ */
   return (arr) => {
-    // TODO
+    return arr.reduce((acc, curr, index) =>
+      (curr === searchedElement) && (acc === -1) ? index : acc, -1);
   };
 };
 
+/**
+ * Finds the index of the first element in the array that satisfies the provided testing function
+ *
+ * @param {function} predicate The testing function
+ * @return {findIndexFunc} inner function
+ * @author Gergana Dragoeva Quievy
+ */
 const findIndex = (predicate) => {
-  return (arr) => {
-    // TODO
-  };
+  /**
+   * @function findIndexFunc
+   * @param {array} array The array to search in
+   * @return {number} The index of the first element that satisfies the predicate, or -1 if none is found
+   */
+  return (array) => array.reduce((acc, curr, index) =>
+  acc !== -1 ? acc : (predicate(curr) ? index : acc), -1);
 };
 
 // hard
@@ -295,13 +390,13 @@ const findIndex = (predicate) => {
  */
 
 const arrayFrom = ({ length }) => {
-/**
- * calls the specified function with a given this value, and arguments provided as an array (
- * @function Array.apply
- * @param {any} undefined The value to create an array with.
- * @param {object} length The length of the array that is going go be created.
- * @return {array} Array with undefined values.
- */
+  /**
+   * calls the specified function with a given this value, and arguments provided as an array (
+   * @function Array.apply
+   * @param {any} undefined The value to create an array with.
+   * @param {object} length The length of the array that is going go be created.
+   * @return {array} Array with undefined values.
+   */
   const testArray = Array.apply(undefined, Array(length));
   return testArray;
 };
@@ -349,8 +444,31 @@ const compose = (...fns) => {
   };
 };
 
+/**
+ * Array with nested arrays, which should to flat to first level.
+ * @author Hristiyan Fachikov
+ * @param {arr} arr to be flat.
+ * @return {arr} arr with flat elements.
+ */
 const flat = (arr) => {
-  // TODO
+  /**
+   * @function flatFunc
+   * @param {acc} an empty accumulator that will collect the data
+   * @param {el} any An element through which we will take an element from the array
+   * @return {arr}. flat array.
+   */
+  return () => {
+    const reduceOverEl = arr.reduce((acc, el) => {
+      if (Array.isArray(el)) {
+        acc.push(...el);
+      } else {
+        acc.push(el);
+      }
+      return acc;
+    }, []);
+    return reduceOverEl;
+  };
+  // [1, 2, [3, 4]]
 };
 
 /**
