@@ -290,9 +290,29 @@ const reduce = (fn, initialValue) => {
   };
 };
 
+/**
+ * Iterates over elements of collection backwards and reducing all of them in a single value.
+ *
+ * @author Stefan Donev
+ * @param {function} fn A function that takes in four arguments:
+ * @param {initialValue} initialValue The initial value of the accumulator.
+ * @return {function} a inner function.
+ */
 const reduceRight = (fn, initialValue) => {
   return (arr) => {
-    // TODO
+    /**
+     * Inner function.
+     *
+     *@param {any} currentValue The current element being processed in the array.
+     *@param {index} The index of the current element being processed in the array.
+     *@return {result} the output number after substraction.
+     */
+    let result = initialValue;
+    arr.slice().reverse().forEach((currentValue, index, reversedArray) => {
+      // eslint-disable-next-line max-len
+      result = fn(result, currentValue, reversedArray.length - 1 - index, reversedArray);
+    });
+    return result;
   };
 };
 
@@ -372,7 +392,7 @@ const findIndex = (predicate) => {
    * @return {number} The index of the first element that satisfies the predicate, or -1 if none is found
    */
   return (array) => array.reduce((acc, curr, index) =>
-  acc !== -1 ? acc : (predicate(curr) ? index : acc), -1);
+    acc !== -1 ? acc : (predicate(curr) ? index : acc), -1);
 };
 
 // hard
