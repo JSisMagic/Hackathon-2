@@ -34,6 +34,57 @@ import {
 *  Write tests for each function you have implemented
 */
 
+const composeTest = () => {
+  const test1 = compose((el)=>{
+    return el+2;
+  }, (el)=>{
+    return el*3;
+  })(3); // 11
+  const test2 = compose((str)=>{
+    return str.substring(1, 4);
+  }, (str)=>{
+    return str.substring(1, 4);
+  })('Pesho'); // def
+
+  console.log(test1);
+  console.log(test2);
+};
+
+// composeTest();
+
+const reduceTest = () => {
+  const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  const testFunction = (acc, el) => {
+    acc.push(el*2);
+    return acc;
+  };
+
+  const test = reduce(testFunction, [])(arr);
+
+  console.log(arr); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  console.log(test); // [ 2, 4, 6, 8, 10, 12, 14, 16, 18]
+};
+
+// reduceTest();
+
+const fillTest = () => {
+  const array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const copy = fill(2, 2, 5)(array);
+
+  console.log(array); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  console.log(copy); // [ 1, 2, 2, 2, 2, 6, 7, 8, 9]
+};
+
+// fillTest()
+
+const arrayFromTest = () => {
+  const copy = (arrayFrom({ length: 6 }));
+  console.log(copy); // undefined, undefined, undefined, undefined, undefined, undefined ]
+};
+
+// arrayFromTest()
+
 const addFirstTest = () => {
   const arr = [1, 2, 3];
 

@@ -197,7 +197,6 @@ const find = (predicate) => {
   };
 };
 
-<<<<<<< HEAD
 /**
  * Iterates over elements of collection and reducing all of them in a single value.
  *
@@ -208,8 +207,6 @@ const find = (predicate) => {
  * @param {any} end The end position.
  * @return {array} Returns a closure that will fill the passed array with the value.
  */
-=======
->>>>>>> 0e3c158 (Implementation & test forEach, findIndex, addLast)
 
 const fill = (value, start, end) => {
   /**
