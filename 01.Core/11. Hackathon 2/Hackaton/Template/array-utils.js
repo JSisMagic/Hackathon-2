@@ -131,7 +131,6 @@ const concat = (arr) => {
    * @return {Array}
    */
   return (innerArr) => {
-    // TODO
     return [...arr, ...innerArr];
   };
 };
