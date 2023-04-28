@@ -17,10 +17,20 @@ const addFirst = (element) => {
 
 const removeFirst = (arr) => arr.slice(1); // it does not take additional parameters to be splitted
 
+/**
+ * Add an element at the end of the array
+ *
+ * @param {any} element the element to add
+ * @return {addLastFunc} inner function
+ * @author Gergana Dragoeva Quievy
+ */
 const addLast = (element) => {
-  return (arr) => {
-    // TODO
-  };
+  /**
+   * @function addLastFunc
+   * @param {array} array an array to add element into
+   * @return {array} a copy of the array with the element added
+   */
+  return (array) => [...array, element];
 };
 
 
@@ -112,6 +122,22 @@ const concat = (arr) => {
   };
 };
 
+/**
+ * Execute a provided function once for each array element
+ *
+ * @param {function} fn The function to execute for each element
+ * @return {forEachFunc} inner function
+ * @author Gergana Dragoeva Quievy
+ */
+const forEach = (fn) => {
+  /**
+   * @function forEachFunc
+   * @param {array} array The array to iterate over
+   * @return {undefined}
+   */
+  return (array) => array.map(fn);
+};
+
 // medium
 /**
  * Create a reversed copy of the array so that the first element becomes the last, the second element becomes the second to last, and so on
@@ -171,6 +197,7 @@ const find = (predicate) => {
   };
 };
 
+<<<<<<< HEAD
 /**
  * Iterates over elements of collection and reducing all of them in a single value.
  *
@@ -181,6 +208,8 @@ const find = (predicate) => {
  * @param {any} end The end position.
  * @return {array} Returns a closure that will fill the passed array with the value.
  */
+=======
+>>>>>>> 0e3c158 (Implementation & test forEach, findIndex, addLast)
 
 const fill = (value, start, end) => {
   /**
@@ -200,11 +229,6 @@ const fill = (value, start, end) => {
   };
 };
 
-const forEach = (fn) => {
-  return (arr) => {
-    // TODO
-  };
-};
 
 /**
  * Returns a shallow copy of a portion of an array into a new array object.
@@ -337,10 +361,21 @@ const indexOf = (searchedElement) => {
   };
 };
 
+/**
+ * Finds the index of the first element in the array that satisfies the provided testing function
+ *
+ * @param {function} predicate The testing function
+ * @return {findIndexFunc} inner function
+ * @author Gergana Dragoeva Quievy
+ */
 const findIndex = (predicate) => {
-  return (arr) => {
-    // TODO
-  };
+  /**
+   * @function findIndexFunc
+   * @param {array} array The array to search in
+   * @return {number} The index of the first element that satisfies the predicate, or -1 if none is found
+   */
+  return (array) => array.reduce((acc, curr, index) =>
+  acc !== -1 ? acc : (predicate(curr) ? index : acc), -1);
 };
 
 // hard
