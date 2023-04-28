@@ -33,13 +33,12 @@ const addLast = (element) => {
   return (array) => [...array, element];
 };
 
-
 /**
  * Removes the last element of the array
  *
  * @param {arr} arr the array to remove from
  * @return {newArr} a copy of the array with the removed element
- * @author Mariela Ivanova
+ * @author Mariela Ivanova   mariela.ivanova.a49@learn.telerikacademy.com
  */
 const removeLast = (arr) => {
   const newArr = [...arr];
@@ -116,9 +115,24 @@ const slice = (start, end) => {
   };
 };
 
+/**
+ * Concatenates the elements from one array with the elements of another creating a result array with all the elements.
+ *
+ * @author Valentin Petkov <valentin.petkov.a49@learn.telerikacademy.com>
+ *
+ * @param {Array} arr: The array to concatenate with.
+ * @return {Function} innerConcat: Returns a closure that will concatenate the passed inner array
+ * with the already received outer.
+ */
 const concat = (arr) => {
+  /**
+   * @function innerConcat
+   * @param {Array} innerArr: array to concatenate with the outer array
+   * @return {Array}
+   */
   return (innerArr) => {
     // TODO
+    return [...arr, ...innerArr];
   };
 };
 
@@ -144,7 +158,8 @@ const forEach = (fn) => {
  *
  * @param {arr} arr The array to reverse
  * @return {any} The reversed array
- * @author Mariela Ivanova
+ * @author Mariela Ivanova  mariela.ivanova.a49@learn.telerikacademy.com
+ *
  */
 const reverse = (arr) => {
   if (arr.length <= 1) {
@@ -159,7 +174,7 @@ const reverse = (arr) => {
  *
  * @param {separator} separator The element separator
  * @return {any} Returns a closure that will join the elements of the array with the passed separator
- * @author Mariela Ivanova
+ * @author Mariela Ivanova  mariela.ivanova.a49@learn.telerikacademy.com
  */
 const join = (separator) => {
   /**
@@ -250,11 +265,34 @@ const map = (mapperFn) => {
 };
 
 
+/**
+ * Iterates over elements of collection, returning an array of all elements the passed function returns truthy for.
+ *
+ * @author Valentin Petkov <valentin.petkov.a49@learn.telerikacademy.com>
+ *
+ * @param {Function} predicate: (el: any, index: number) => boolean
+ * A function that accepts an element and (optionally) an index, and returns a boolean value.
+ * @return {Function} filterFunc: Returns a closure that will iterate over the passed array
+ * and will call the received predicate function with each of the elements. Collect all of the elements
+ * that the predicate return true for and return it as a new array.
+ */
 const filter = (predicate) => {
+  /**
+   * @function filterFunc
+   * @param {Array} arr: array to iterate over
+   * @return {Boolean}: result of predicate function
+   */
   return (arr) => {
     // TODO
+    return arr.reduce((acc, value) => {
+      if (predicate(value)) {
+        acc.push(value);
+      }
+      return acc;
+    }, []);
   };
 };
+
 
 /**
  * Iterates over elements of collection and reducing all of them in a single value.
@@ -290,9 +328,29 @@ const reduce = (fn, initialValue) => {
   };
 };
 
+/**
+ * Iterates over elements of collection backwards and reducing all of them in a single value.
+ *
+ * @author Stefan Donev
+ * @param {function} fn A function that takes in four arguments:
+ * @param {initialValue} initialValue The initial value of the accumulator.
+ * @return {function} a inner function.
+ */
 const reduceRight = (fn, initialValue) => {
   return (arr) => {
-    // TODO
+    /**
+     * Inner function.
+     *
+     *@param {any} currentValue The current element being processed in the array.
+     *@param {index} The index of the current element being processed in the array.
+     *@return {result} the output number after substraction.
+     */
+    let result = initialValue;
+    arr.slice().reverse().forEach((currentValue, index, reversedArray) => {
+      // eslint-disable-next-line max-len
+      result = fn(result, currentValue, reversedArray.length - 1 - index, reversedArray);
+    });
+    return result;
   };
 };
 
@@ -316,17 +374,37 @@ const some = (predicate) => {
   };
 };
 
+/**
+ * Iterates over elements of a collection and returns
+ * true if all the elements pass the predicate function's condition.
+ * Otherwise return false.
+ *
+ * @author Valentin Petkov <valentin.petkov.a49@learn.telerikacademy.com>
+ *
+ * @param {Function} predicate: (el: any, index: number) => boolean
+ * A function that accepts an element and (optionally) an index, and returns a boolean value.
+ * @return {Function} everyFunc: Returns a closure that will iterate over the passed array in
+ * and will call the received predicate function with each of the elements.
+ * If all of the calls return true, return true. Otherwise return false.
+ */
 const every = (predicate) => {
+  /**
+   * @function everyFunc
+   * @param {Array} arr: array to iterate over
+   * @return {Boolean}: result of predicate function
+   */
   return (arr) => {
     // TODO
+    return arr.filter(predicate).length === arr.length;
   };
 };
+
 /**
  * Iterates over elements of a collection and returns true if the searched element is one of them. Otherwise return false
  *
  * @param {element} element The element to search for
  * @return {boolean}  Returns a closure that will iterate over the passed array in and will check if the searched element is there. If its there return true, otherwise return false
- * @author Mariela Ivanova
+ * @author Mariela Ivanova  mariela.ivanova.a49@learn.telerikacademy.com
  */
 const includes = (element) => {
   /**
@@ -372,7 +450,7 @@ const findIndex = (predicate) => {
    * @return {number} The index of the first element that satisfies the predicate, or -1 if none is found
    */
   return (array) => array.reduce((acc, curr, index) =>
-  acc !== -1 ? acc : (predicate(curr) ? index : acc), -1);
+    acc !== -1 ? acc : (predicate(curr) ? index : acc), -1);
 };
 
 // hard
@@ -394,6 +472,7 @@ const arrayFrom = ({ length }) => {
    * @param {object} length The length of the array that is going go be created.
    * @return {array} Array with undefined values.
    */
+  // eslint-disable-next-line prefer-spread
   const testArray = Array.apply(undefined, Array(length));
   return testArray;
 };
@@ -489,9 +568,32 @@ const flatMap = (mapperFn) => {
   };
 };
 
+/**
+ * Creates an object that will group the array values by a passed grouping function.
+ * The object keys will be all of the unique groupings and the values will be an array of the group entries.
+ *
+ * @author Valentin Petkov <valentin.petkov.a49@learn.telerikacademy.com>
+ *
+ * @param {Function} groupingFn (el: any) => any: The grouping function. It will accept an element and return the group identifier.
+ * @return {Function} groupByFunc (arr: any) => object:  Returns a closure that will iterate over the passed array
+ * and will call the grouping function with each of the elements. The grouping function will return
+ * the unique group identifier for each of them and this will be the key for the result object.
+ * The values will be arrays of the group members.
+ */
 const groupBy = (groupingFn) => {
+  /**
+   * @function groupByFunc
+   * @param {Array} arr: array to group using the grouping function
+   * @return {Object}
+   */
   return (arr) => {
     // TODO
+    return arr.reduce((group, el) => {
+      const { category } = el;
+      group[category] = group[category] ?? [];
+      group[category].push(el);
+      return group;
+    }, {});
   };
 };
 
