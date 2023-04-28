@@ -36,6 +36,77 @@ const addFirstTest = () => {
 
 // addFirstTest();
 
+/*
+*Function Test
+*/
+/**
+ * @author Hristiyan Fachikov
+ */
+const findFuncTest = () => {
+  /**
+ * @param {arr} arr created as a sample test
+ * @param {result} variable with which we call the function, set arguments and save the result
+ */
+  const arr = ['Hello', 5, true, 'There', 5, 'There', 5];
+  const result = find(5)(arr);
+  // console.log(arr); // 1, 2, 3
+  console.log(result); // 5, 1, 2, 3
+};
+findFuncTest();
+
+/*
+*Function Test
+*/
+/**
+ * @author Hristiyan Fachikov
+ */
+const entriesFuncTest = () => {
+  /**
+ * @param {arr} arr created as a sample test
+ * @param {result} variable with which we call the function, set arguments and save the result
+ */
+  const arr = ['Hello', 5, true, 'There'];
+  const result = entries()(arr);
+  // console.log(arr); // 1, 2, 3
+  console.log(result); // 5, 1, 2, 3
+};
+entriesFuncTest();
+
+/*
+*Function Test
+*/
+/**
+ * @author Hristiyan Fachikov
+ */
+const someFuncTest = () => {
+  /**
+ * @param {arr} arr created as a sample test
+ * @param {result} variable with which we call the function, set arguments and save the result
+ */
+  const arr = ['Hello', 5, true, 'There'];
+  const result = some('Hello')(arr);
+  // console.log(arr); // 1, 2, 3
+  console.log(result); // 5, 1, 2, 3
+};
+someFuncTest();
+
+/*
+*Function Test
+*/
+/**
+ * @author Hristiyan Fachikov
+ */
+const flatFuncTest = () => {
+  /**
+ * @param {arr} arr created as a sample test
+ * @param {result} variable with which we call the function, set arguments and save the result
+ */
+  const arr = [1, 2, [3, 4]];
+  const result = flat(arr)();
+  // console.log(arr); // 1, 2, 3
+  console.log(result); // 5, 1, 2, 3
+};
+flatFuncTest();
 
 /*
 *  Composite functions tests
