@@ -30,6 +30,24 @@ import {
 } from './array-utils.js';
 
 /*
+*Function Test
+*/
+/**
+ * @author Mariela Ivanova
+ */
+const includesFuncTest = () => {
+  const element = 2;
+  const array = [1, 2, 3, 4];
+  const elementExists = includes(element)(array);
+ console.log(element); // 2
+ console.log(array); // [1, 2, 3, 4]
+ console.log(elementExists); //true
+  
+}
+
+// includesFuncTest();
+
+/*
 *  Single function tests
 *  Write tests for each function you have implemented
 */
@@ -70,7 +88,6 @@ const testReduceRight = () => {
 
 // testReduceRight();
 
-<<<<<<< HEAD
 const sliceTest = () => {
   const arr = [1, 2, 3, 4, 5];
   const slicedArr = slice(1, 4)(arr);
@@ -157,7 +174,6 @@ const arrayFromTest = () => {
 };
 
 // arrayFromTest()
-=======
 // Test function for removeLast
 const removeLastTest = () => {
   const arr = ['LEGO City', 'LEGO Technic', 'LEGO Star Wars', 'LEGO Friends'];
@@ -170,7 +186,6 @@ const removeLastTest = () => {
 // Execute the test
 // removeLastTest();
 
->>>>>>> 10540cf (Adding test for removeLast & emails for doc)
 
 const addFirstTest = () => {
   const arr = [1, 2, 3];
@@ -240,7 +255,7 @@ const findFuncTest = () => {
   // console.log(arr); // 1, 2, 3
   console.log(result); // 5, 1, 2, 3
 };
-findFuncTest();
+// findFuncTest();
 
 /*
 *Function Test
@@ -258,7 +273,7 @@ const entriesFuncTest = () => {
   // console.log(arr); // 1, 2, 3
   console.log(result); // 5, 1, 2, 3
 };
-entriesFuncTest();
+// entriesFuncTest();
 
 /*
 *Function Test
@@ -276,7 +291,7 @@ const someFuncTest = () => {
   // console.log(arr); // 1, 2, 3
   console.log(result); // 5, 1, 2, 3
 };
-someFuncTest();
+// someFuncTest();
 
 /*
 *Function Test
@@ -294,7 +309,41 @@ const flatFuncTest = () => {
   // console.log(arr); // 1, 2, 3
   console.log(result); // 5, 1, 2, 3
 };
-flatFuncTest();
+// flatFuncTest();
+
+/*
+*Function Test
+*/
+/**
+ * @author Mariela Ivanova
+ */
+const reverseFuncTest = () => {
+  /**
+ * @param {arr} arr created as a sample test
+ * @param {result} variable with which we call the function, set arguments and save the result
+ */
+  const arr = [5, 1, 8];
+  const result = reverse(arr); //[8, 1, 5]
+  console.log(result);
+};
+// reverseFuncTest();
+
+/*
+*Function Test
+*/
+/**
+ * @author Mariela Ivanova
+ */
+const joinFuncTest = () => {
+  /**
+ * @param {arr} arr created as a sample test
+ * @param {result} variable with which we call the function, set arguments and save the result
+ */
+  const arr = ['1,2,3,4,5,6,7,8,9,Hello,There'];
+  const result = join(',')(arr);
+  console.log(result);
+};
+// joinFuncTest();
 
 /*
 *  Composite functions tests
