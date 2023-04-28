@@ -220,9 +220,22 @@ const includes = (element) => {
   };
 };
 
+/**
+ * Finds and returns the first index of the searched
+ *  element in the array. If the element does not exist in the array, return -1.
+ * @author Stefan Donev
+ * @param {any} searchedElement The element to search for.
+ * @returns {Function} inner function
+ */
 const indexOf = (searchedElement) => {
+  /**
+ * inner function.
+ * @param {arr} arr array that we are searching in
+ * @returns {number} return the index of the element if its found or -1 if it is not
+ */
   return (arr) => {
-    // TODO
+    return arr.reduce((acc, curr, index) =>
+      (curr === searchedElement) && (acc === -1) ? index : acc, -1);
   };
 };
 
