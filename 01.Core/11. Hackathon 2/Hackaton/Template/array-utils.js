@@ -321,7 +321,7 @@ const reduce = (fn, initialValue) => {
 
     arr.forEach((element) => {
       const currentElement = element;
-      result = fn(initialValue, currentElement);
+      result = fn(result, currentElement);
     });
     return result;
   };
