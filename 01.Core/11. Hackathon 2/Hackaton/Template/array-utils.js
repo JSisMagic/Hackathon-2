@@ -33,13 +33,12 @@ const addLast = (element) => {
   return (array) => [...array, element];
 };
 
-
 /**
  * Removes the last element of the array
  *
  * @param {arr} arr the array to remove from
  * @return {newArr} a copy of the array with the removed element
- * @author Mariela Ivanova
+ * @author Mariela Ivanova   mariela.ivanova.a49@learn.telerikacademy.com
  */
 const removeLast = (arr) => {
   const newArr = [...arr];
@@ -159,7 +158,8 @@ const forEach = (fn) => {
  *
  * @param {arr} arr The array to reverse
  * @return {any} The reversed array
- * @author Mariela Ivanova
+ * @author Mariela Ivanova  mariela.ivanova.a49@learn.telerikacademy.com
+ * 
  */
 const reverse = (arr) => {
   if (arr.length <= 1) {
@@ -174,7 +174,7 @@ const reverse = (arr) => {
  *
  * @param {separator} separator The element separator
  * @return {any} Returns a closure that will join the elements of the array with the passed separator
- * @author Mariela Ivanova
+ * @author Mariela Ivanova  mariela.ivanova.a49@learn.telerikacademy.com
  */
 const join = (separator) => {
   /**
@@ -384,7 +384,7 @@ const every = (predicate) => {
  *
  * @param {element} element The element to search for
  * @return {boolean}  Returns a closure that will iterate over the passed array in and will check if the searched element is there. If its there return true, otherwise return false
- * @author Mariela Ivanova
+ * @author Mariela Ivanova  mariela.ivanova.a49@learn.telerikacademy.com
  */
 const includes = (element) => {
   /**

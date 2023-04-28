@@ -34,6 +34,7 @@ import {
 *  Write tests for each function you have implemented
 */
 
+<<<<<<< HEAD
 const sliceTest = () => {
   const arr = [1, 2, 3, 4, 5];
   const slicedArr = slice(1, 4)(arr);
@@ -120,6 +121,20 @@ const arrayFromTest = () => {
 };
 
 // arrayFromTest()
+=======
+// Test function for removeLast
+const removeLastTest = () => {
+  const arr = ['LEGO City', 'LEGO Technic', 'LEGO Star Wars', 'LEGO Friends'];
+  const newArr = removeLast(arr);
+
+  console.log(arr); // ['LEGO City', 'LEGO Technic', 'LEGO Star Wars', 'LEGO Friends']
+  console.log(newArr); // ['LEGO City', 'LEGO Technic', 'LEGO Star Wars']
+};
+
+// Execute the test
+// removeLastTest();
+
+>>>>>>> 10540cf (Adding test for removeLast & emails for doc)
 
 const addFirstTest = () => {
   const arr = [1, 2, 3];
