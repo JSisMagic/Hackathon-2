@@ -237,7 +237,7 @@ const findFuncTest = () => {
   // console.log(arr); // 1, 2, 3
   console.log(result); // 5, 1, 2, 3
 };
-findFuncTest();
+// findFuncTest();
 
 /*
 *Function Test
@@ -255,7 +255,7 @@ const entriesFuncTest = () => {
   // console.log(arr); // 1, 2, 3
   console.log(result); // 5, 1, 2, 3
 };
-entriesFuncTest();
+// entriesFuncTest();
 
 /*
 *Function Test
@@ -273,7 +273,7 @@ const someFuncTest = () => {
   // console.log(arr); // 1, 2, 3
   console.log(result); // 5, 1, 2, 3
 };
-someFuncTest();
+// someFuncTest();
 
 /*
 *Function Test
@@ -291,7 +291,86 @@ const flatFuncTest = () => {
   // console.log(arr); // 1, 2, 3
   console.log(result); // 5, 1, 2, 3
 };
-flatFuncTest();
+// flatFuncTest();
+
+/**
+ * @author Valentin Petkov
+ */
+const concatTest = () => {
+  const outerArr = [1, 2, 3];
+  const innerArr = [7, 8, 9];
+
+  const concatResult = outerArr.concat(innerArr);
+  console.log(concatResult); // [1, 2, 3, 7, 8, 9]
+};
+// concatTest();
+
+/**
+ * @author Valentin Petkov
+ */
+const filterTest = () => {
+  const initArr = [1, 2, 1, 1, 2, 3, 2, 2, 4];
+  const predicate = (el) => el === 2;
+  const filteredArr = initArr.filter(predicate);
+  console.log(filteredArr); // [2, 2, 2, 2]
+};
+// filterTest();
+
+/**
+ * @author Valentin Petkov
+ */
+const everyTest = () => {
+  const arr1 = [1, 6, 4, 2, 5];
+  const predicate1 = (el) => el >= 0;
+  const result1 = arr1.every(predicate1);
+  const predicate2 = (el) => el === 2;
+  const result2 = arr1.every(predicate2);
+  console.log(result1); // true
+  console.log(result2); // false
+};
+// everyTest();
+
+/**
+ * @author Valentin Petkov
+ */
+const groupByTest = () => {
+  const people = [
+    { age: 20, name: 'Pesho' },
+    { age: 24, name: 'Gosho' },
+    { age: 23, name: 'Dessy' },
+    { age: 24, name: 'Gerry' },
+  ];
+  const grFunc = (person, age) => person[age];
+  const result = groupBy(grFunc)(people);
+  console.log(result);
+  /*
+{
+  '20': [
+    {
+      age: 20,
+      name: 'Pesho'
+    }
+  ],
+  '23': [
+    {
+      age: 23,
+      name: 'Dessy'
+    }
+  ],
+  '24': [
+    {
+      age: 24,
+      name: 'Gosho'
+    },
+    {
+      age: 24,
+      name: 'Gerry'
+    }
+  ]
+}
+*/
+};
+// groupByTest();
 
 
 /*

@@ -284,15 +284,14 @@ const filter = (predicate) => {
    */
   return (arr) => {
     // TODO
-    return arr.reduce((acc, value) => {
-      if (predicate(value)) {
-        acc.push(value);
+    const result = [];
+    return arr.forEach((el) => {
+      if (predicate(el) === true) {
+        result.push(el);
       }
-      return acc;
-    }, []);
+    });
   };
 };
-
 
 /**
  * Iterates over elements of collection and reducing all of them in a single value.
@@ -588,11 +587,13 @@ const groupBy = (groupingFn) => {
    */
   return (arr) => {
     // TODO
-    return arr.reduce((group, el) => {
-      const { category } = el;
-      group[category] = group[category] ?? [];
-      group[category].push(el);
-      return group;
+    return arr.reduce((acc, curr) => {
+      const key = groupingFn(curr);
+      if (!acc[key]) {
+        acc[key] = [];
+      }
+      acc[key].push(curr);
+      return acc;
     }, {});
   };
 };
