@@ -48,7 +48,7 @@ const removeLast = (arr) => {
 
 /**
  * Get the array's valid indexes.
- * @author Stefan Donev
+ * @author Stefan Donev <stefan.donev.a49@learn.telerikacademy.com>
  * @param {Array} arr the array to get the indexes from.
  * @return {Function} inner function.
  */
@@ -331,7 +331,7 @@ const reduce = (fn, initialValue) => {
 /**
  * Iterates over elements of collection backwards and reducing all of them in a single value.
  *
- * @author Stefan Donev
+ * @author Stefan Donev <stefan.donev.a49@learn.telerikacademy.com>
  * @param {function} fn A function that takes in four arguments:
  * @param {initialValue} initialValue The initial value of the accumulator.
  * @return {function} a inner function.
@@ -420,7 +420,7 @@ const includes = (element) => {
 /**
  * Finds and returns the first index of the searched
  *  element in the array. If the element does not exist in the array, return -1.
- * @author Stefan Donev
+ * @author Stefan Donev <stefan.donev.a49@learn.telerikacademy.com>
  * @param {any} searchedElement The element to search for.
  * @returns {Function} inner function
  */
