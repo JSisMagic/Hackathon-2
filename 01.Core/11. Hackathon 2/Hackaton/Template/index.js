@@ -33,16 +33,88 @@ import {
 *  Single function tests
 *  Write tests for each function you have implemented
 */
+/**
+ *
+ * @author Stefan Donev
+ */
+const testKeys = () => {
+  const arr = [5, 5, 5, 5, 5];
+  const copy = keys(arr);
+  console.log(arr); // [5, 5, 5, 5, 5];
+  console.log(copy); // [ 0, 1, 2, 3, 4 ]
+};
+
+// testKeys();
+
+/**
+ *
+ * @author Stefan Donev
+ */
+const testIndexOf = () => {
+  const arr = [1, 2, 3, 4, 5];
+  const result = indexOf(5)(arr);
+  console.log(result); // 4
+};
+// testIndexOf();
+
+/**
+ * @author Stefan Donev
+ */
+const testReduceRight = () => {
+  const arr = [1, 2, 3, 4];
+
+  const diffFromRight = reduceRight((accumulator, currentValue) =>
+    accumulator - currentValue, 0)(arr);
+  console.log(diffFromRight); // Output: -10
+};
+
+// testReduceRight();
+
+const sliceTest = () => {
+  const arr = [1, 2, 3, 4, 5];
+  const slicedArr = slice(1, 4)(arr);
+  console.log(slicedArr);
+};
+
+// sliceTest();
+
+const pipeTest = () => {
+  const addTen = (num) => num + 10;
+  const multiplyByFive = (num) => num * 5;
+  const divideByTwo = (num) => num / 2;
+  const result = pipe(addTen, multiplyByFive, divideByTwo)(5);
+  console.log(result); // 37.5
+};
+
+// pipeTest();
+
+const mapTest = () => {
+  const mapperFn = (num) => num + 10;
+  const arr = [1, 2, 3, 4, 5];
+  const mappedArr = map(mapperFn)(arr);
+  console.log(mappedArr);
+};
+
+// mapTest();
+
+const flatMapTest = () => {
+  const mapperFn = (num) => (num === 2 ? [2, 2] : 1);
+  const arr = [1, 2, 2, 1];
+  const mappedArr = flatMap(mapperFn)(arr);
+  console.log(mappedArr);
+};
+
+// flatMapTest();
 
 const composeTest = () => {
-  const test1 = compose((el)=>{
-    return el+2;
-  }, (el)=>{
-    return el*3;
+  const test1 = compose((el) => {
+    return el + 2;
+  }, (el) => {
+    return el * 3;
   })(3); // 11
-  const test2 = compose((str)=>{
+  const test2 = compose((str) => {
     return str.substring(1, 4);
-  }, (str)=>{
+  }, (str) => {
     return str.substring(1, 4);
   })('Pesho'); // def
 
@@ -56,7 +128,7 @@ const reduceTest = () => {
   const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   const testFunction = (acc, el) => {
-    acc.push(el*2);
+    acc.push(el * 2);
     return acc;
   };
 
@@ -84,6 +156,18 @@ const arrayFromTest = () => {
 };
 
 // arrayFromTest()
+// Test function for removeLast
+const removeLastTest = () => {
+  const arr = ['LEGO City', 'LEGO Technic', 'LEGO Star Wars', 'LEGO Friends'];
+  const newArr = removeLast(arr);
+
+  console.log(arr); // ['LEGO City', 'LEGO Technic', 'LEGO Star Wars', 'LEGO Friends']
+  console.log(newArr); // ['LEGO City', 'LEGO Technic', 'LEGO Star Wars']
+};
+
+// Execute the test
+// removeLastTest();
+
 
 const addFirstTest = () => {
   const arr = [1, 2, 3];
@@ -288,6 +372,7 @@ const groupByTest = () => {
 };
 // groupByTest();
 
+
 /*
 *  Composite functions tests
 */
@@ -330,10 +415,10 @@ const testTwo = () => {
       // [1, false, 'odd', 2, true, 'even', 3, false, 'odd', 4, true, 'even']
       (arr) => arr.map((el, index) => [el, index % 2 === 1, index % 2 === 0 ? 'odd' : 'even']),
       /* [[1, false, 'odd'],
-          [2, true, 'even'],
-          [3, false, 'odd'],
-          [4, true, 'even']
-        ]*/
+        [2, true, 'even'],
+        [3, false, 'odd'],
+        [4, true, 'even']
+      ]*/
       (arr) => arr.map((_, index) => index + 1),
       fill(true, 0, 7), // [true, true, true, true]
       (arr) => [...arr, 8], // [[0, 'Ivan'], [1, 'Pesho'], [2, 'Pesho'], 8]
@@ -342,19 +427,19 @@ const testTwo = () => {
       (arr) => arr.map((obj) => obj.name), // ['Ivan', 'Pesho', 'Pesho', 'Maria']
       flat,
       /* [{ name: 'Ivan', age: 15 },
-          { name: 'Pesho', age: 32 },
-          { name: 'Pesho', age: 23 },
-          { name: 'Maria', age: 19 }
-        ]*/
+        { name: 'Pesho', age: 32 },
+        { name: 'Pesho', age: 23 },
+        { name: 'Maria', age: 19 }
+      ]*/
       Object.values,
       /* [[{ name: 'Ivan', age: 15 }],
-          [{ name: 'Pesho', age: 32 }, { name: 'Pesho', age: 23 }],
-          [{ name: 'Maria', age: 19 }]
-        ]*/
+        [{ name: 'Pesho', age: 32 }, { name: 'Pesho', age: 23 }],
+        [{ name: 'Maria', age: 19 }]
+      ]*/
       (arr) => groupBy((obj) => obj.name)(arr),
       /* {Ivan: [{ name: 'Ivan', age: 15 }],
-          Pesho: [{ name: 'Pesho', age: 32 }, { name: 'Pesho', age: 23 }],
-          Maria: [{ name: 'Maria', age: 19 }]} */
+        Pesho: [{ name: 'Pesho', age: 32 }, { name: 'Pesho', age: 23 }],
+        Maria: [{ name: 'Maria', age: 19 }]} */
   );
 
   console.log(composed(startValue));
@@ -371,8 +456,8 @@ const testThree = () => {
   const piped = pipe(
       filter((x) => x.name === 'Pesho'),
       /* [{ name: 'Pesho', grades: [3, 2, 6] },
-          { name: 'Pesho', grades: [2, 5, 2] }
-        ];*/
+        { name: 'Pesho', grades: [2, 5, 2] }
+      ];*/
       map((x) => x.grades), // [[3, 2, 6], [2, 5, 2]]
       flat, // [3, 2, 6, 2, 5, 2]
       filter((x) => x < 4), // [3, 2, 2, 2]
