@@ -131,9 +131,32 @@ const find = (predicate) => {
   };
 };
 
+/**
+ * Iterates over elements of collection and reducing all of them in a single value.
+ *
+ * @author Viktor Petrov <viktor.martinov.p@gmail.com>
+ * @function Fill
+ * @param {any} value The value to fill array with.
+ * @param {any} start The start position.
+ * @param {any} end The end position.
+ * @return {array} Returns a closure that will fill the passed array with the value.
+ */
+
 const fill = (value, start, end) => {
+  /**
+ * @function Map
+ * @param {number} number The current value of the array.
+ * @param {number} index The index of the current value.
+ * @return {array} The new value to put in the current index of the array.
+ */
+
   return (arr) => {
-    // TODO
+    return arr.map((number, index) => {
+      if (index>=start && index < end) {
+        number = value;
+      }
+      return number;
+    });
   };
 };
 
@@ -172,9 +195,37 @@ const filter = (predicate) => {
   };
 };
 
+/**
+ * Iterates over elements of collection and reducing all of them in a single value.
+ *
+ * @author Viktor Petrov <viktor.martinov.p@gmail.com>
+ * @function Reduce
+ * @param {function} fn a call back function to be applied
+ * @param {initialValue} initialValue the starting value of the reduce
+ * @return {any} a reduction from all of the items of an array to a single value
+ */
+
 const reduce = (fn, initialValue) => {
+  /**
+   * @function Return
+   * @param {array} array to iterate ove
+   * @return {any} a reduction from all of the items of an array to a single value
+   */
+
   return (arr) => {
-    // TODO
+    let result = initialValue;
+
+    /**
+       * @function forEach
+       * @param {any} element the current element of the iteration
+       * @return {any} the accumulated value from the reduction
+       */
+
+    arr.forEach((element) => {
+      const currentElement = element;
+      result = fn(initialValue, currentElement);
+    });
+    return result;
   };
 };
 
@@ -222,8 +273,25 @@ const findIndex = (predicate) => {
 
 // hard
 
+/**
+ * Creates an array from object by using its length property.
+ *
+ * @author Viktor Petrov <viktor.martinov.p@gmail.com>
+ * @function arrayFrom(obj)
+ * @param {object} length An object that has the length property.
+ * @return {array} Returns the created array with length equal to the passed object's length property, filled with undefined values.
+ */
+
 const arrayFrom = ({ length }) => {
-  // TODO
+/**
+ * calls the specified function with a given this value, and arguments provided as an array (
+ * @function Array.apply
+ * @param {any} undefined The value to create an array with.
+ * @param {object} length The length of the array that is going go be created.
+ * @return {array} Array with undefined values.
+ */
+  const testArray = Array.apply(undefined, Array(length));
+  return testArray;
 };
 
 /**
