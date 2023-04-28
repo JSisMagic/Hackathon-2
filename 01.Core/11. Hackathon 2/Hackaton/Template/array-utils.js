@@ -17,10 +17,20 @@ const addFirst = (element) => {
 
 const removeFirst = (arr) => arr.slice(1); // it does not take additional parameters to be splitted
 
+/**
+ * Add an element at the end of the array
+ *
+ * @param {any} element the element to add
+ * @return {addLastFunc} inner function
+ * @author Gergana Dragoeva Quievy   gergana.dragoeva.a49@learn.telerikacademy.com
+ */
 const addLast = (element) => {
-  return (arr) => {
-    // TODO
-  };
+  /**
+   * @function addLastFunc
+   * @param {array} array an array to add element into
+   * @return {array} a copy of the array with the element added
+   */
+  return (array) => [...array, element];
 };
 
 
@@ -32,22 +42,53 @@ const addLast = (element) => {
  * @author Mariela Ivanova
  */
 const removeLast = (arr) => {
-  /**
-   * @function removeLastFunc
-   * @param {newArr} newArr an array to add element into
-   * @return {newArr} a copy of the array with the removed element
-   */
   const newArr = [...arr];
   newArr.pop();
   return newArr;
 };
 
+/**
+ * Get the array's valid indexes.
+ * @author Stefan Donev
+ * @param {Array} arr the array to get the indexes from.
+ * @return {Function} inner function.
+ */
 const keys = (arr) => {
   // TODO
+  let counter = 0;
+
+  /**
+   * inner function
+   * @return Returns a new array with the valid indexes.
+   */
+  return arr.reduce((acc) => {
+    acc.push(counter);
+    counter++;
+    return acc;
+  }, []);
 };
 
-const entries = (arr) => {
-  // TODO
+/**
+ * Takes an array and returns an array of arrays that include each index and element to the original arr;
+ * @author Hristiyan Fachikov
+ * @return {array} return array of arrays includes each index and element to the original arr.
+ */
+const entries = () => {
+  return (arr) => {
+    /**
+   * @function entriesFunc
+   * @param {arr} array with elements.
+   * @param {acc} an empty accumulator that will collect the data
+   * @param {el} any An element through which we will take an element from the array
+   * @return {array} return array of arrays includes each index and element to the original arr.
+   */
+    let counter = 0;
+    return arr.reduce((acc, el) => {
+      acc.push([`${counter}, `, el]);
+      counter++;
+      return acc;
+    }, []);
+  };
 };
 
 /**
@@ -75,10 +116,41 @@ const slice = (start, end) => {
   };
 };
 
+/**
+ * Concatenates the elements from one array with the elements of another creating a result array with all the elements.
+ *
+ * @author Valentin Petkov <valentin.petkov.a49@learn.telerikacademy.com>
+ *
+ * @param {Array} arr: The array to concatenate with.
+ * @return {Function} innerConcat: Returns a closure that will concatenate the passed inner array
+ * with the already received outer.
+ */
 const concat = (arr) => {
+  /**
+   * @function innerConcat
+   * @param {Array} innerArr: array to concatenate with the outer array
+   * @return {Array}
+   */
   return (innerArr) => {
     // TODO
+    return [...arr, ...innerArr];
   };
+};
+
+/**
+ * Execute a provided function once for each array element
+ *
+ * @param {function} fn The function to execute for each element
+ * @return {forEachFunc} inner function
+ * @author Gergana Dragoeva Quievy   gergana.dragoeva.a49@learn.telerikacademy.com
+ */
+const forEach = (fn) => {
+  /**
+   * @function forEachFunc
+   * @param {array} array The array to iterate over
+   * @return {undefined}
+   */
+  return (array) => array.map(fn);
 };
 
 // medium
@@ -90,11 +162,6 @@ const concat = (arr) => {
  * @author Mariela Ivanova
  */
 const reverse = (arr) => {
-  /**
-   * @function reverseFunc
-   * @param {arr}arr The array to reverse
-   * @return {arr} The reversed array
-   */
   if (arr.length <= 1) {
     return arr;
   }
@@ -111,7 +178,7 @@ const reverse = (arr) => {
  */
 const join = (separator) => {
   /**
-   * @function addFirstFunc
+   * @function joinFunc
    * @param {arr} arr an array elements to join
    * @return {string} Returns a closure that will join the elements of the array with the passed separator
    */
@@ -125,23 +192,55 @@ const join = (separator) => {
 };
 
 
+/**
+ * Filters the elements equal to a predicate and checks if there are any,
+ *  if so it takes the first element, if not it returns null
+ * @author Hristiyan Fachikov
+ * @param {any} predicate element
+ * @return {any} any element or null
+ */
 const find = (predicate) => {
+  /**
+   * @function findFunc
+   * @param {arr} arr and check whether predicate is include in arr.
+   * @param {el} any An element through which we will take an element from the array
+   * @return {any} element. If predicate is include in arr return it, or not return null;
+   */
   return (arr) => {
-    // TODO
+    const filterElements = arr.filter((el) => el === predicate);
+    return filterElements.length > 0 ? filterElements[0] : null;
   };
 };
+
+/**
+ * Iterates over elements of collection and reducing all of them in a single value.
+ *
+ * @author Viktor Petrov <viktor.martinov.p@gmail.com>
+ * @function Fill
+ * @param {any} value The value to fill array with.
+ * @param {any} start The start position.
+ * @param {any} end The end position.
+ * @return {array} Returns a closure that will fill the passed array with the value.
+ */
 
 const fill = (value, start, end) => {
+  /**
+ * @function Map
+ * @param {number} number The current value of the array.
+ * @param {number} index The index of the current value.
+ * @return {array} The new value to put in the current index of the array.
+ */
+
   return (arr) => {
-    // TODO
+    return arr.map((number, index) => {
+      if (index >= start && index < end) {
+        number = value;
+      }
+      return number;
+    });
   };
 };
 
-const forEach = (fn) => {
-  return (arr) => {
-    // TODO
-  };
-};
 
 /**
  * Returns a shallow copy of a portion of an array into a new array object.
@@ -166,15 +265,66 @@ const map = (mapperFn) => {
 };
 
 
+/**
+ * Iterates over elements of collection, returning an array of all elements the passed function returns truthy for.
+ *
+ * @author Valentin Petkov <valentin.petkov.a49@learn.telerikacademy.com>
+ *
+ * @param {Function} predicate: (el: any, index: number) => boolean
+ * A function that accepts an element and (optionally) an index, and returns a boolean value.
+ * @return {Function} filterFunc: Returns a closure that will iterate over the passed array
+ * and will call the received predicate function with each of the elements. Collect all of the elements
+ * that the predicate return true for and return it as a new array.
+ */
 const filter = (predicate) => {
+  /**
+   * @function filterFunc
+   * @param {Array} arr: array to iterate over
+   * @return {Boolean}: result of predicate function
+   */
   return (arr) => {
     // TODO
+    return arr.reduce((acc, value) => {
+      if (predicate(value)) {
+        acc.push(value);
+      }
+      return acc;
+    }, []);
   };
 };
 
+
+/**
+ * Iterates over elements of collection and reducing all of them in a single value.
+ *
+ * @author Viktor Petrov <viktor.martinov.p@gmail.com>
+ * @function Reduce
+ * @param {function} fn a call back function to be applied
+ * @param {initialValue} initialValue the starting value of the reduce
+ * @return {any} a reduction from all of the items of an array to a single value
+ */
+
 const reduce = (fn, initialValue) => {
+  /**
+   * @function Return
+   * @param {array} array to iterate ove
+   * @return {any} a reduction from all of the items of an array to a single value
+   */
+
   return (arr) => {
-    // TODO
+    let result = initialValue;
+
+    /**
+       * @function forEach
+       * @param {any} element the current element of the iteration
+       * @return {any} the accumulated value from the reduction
+       */
+
+    arr.forEach((element) => {
+      const currentElement = element;
+      result = fn(initialValue, currentElement);
+    });
+    return result;
   };
 };
 
@@ -184,17 +334,51 @@ const reduceRight = (fn, initialValue) => {
   };
 };
 
+/**
+ * Filters the elements equal to a predicate and checks if there are any,
+ *  if so it return true, if not it returns false;
+ * @author Hristiyan Fachikov
+ * @param {any} predicate element
+ * @return {boolean} from inner function
+ */
 const some = (predicate) => {
+  /**
+   * @function findFunc
+   * @param {arr} arr and check whether predicate is include in arr.
+   * @param {el} any An element through which we will take an element from the array
+   * @return {boolean}. If predicate is include in arr return true, or return false;
+   */
   return (arr) => {
-    // TODO
+    const findElement = arr.filter((el) => el === predicate);
+    return findElement.length > 0 ? true : false;
   };
 };
 
+/**
+ * Iterates over elements of a collection and returns
+ * true if all the elements pass the predicate function's condition.
+ * Otherwise return false.
+ *
+ * @author Valentin Petkov <valentin.petkov.a49@learn.telerikacademy.com>
+ *
+ * @param {Function} predicate: (el: any, index: number) => boolean
+ * A function that accepts an element and (optionally) an index, and returns a boolean value.
+ * @return {Function} everyFunc: Returns a closure that will iterate over the passed array in
+ * and will call the received predicate function with each of the elements.
+ * If all of the calls return true, return true. Otherwise return false.
+ */
 const every = (predicate) => {
+  /**
+   * @function everyFunc
+   * @param {Array} arr: array to iterate over
+   * @return {Boolean}: result of predicate function
+   */
   return (arr) => {
     // TODO
+    return arr.filter(predicate).length === arr.length;
   };
 };
+
 /**
  * Iterates over elements of a collection and returns true if the searched element is one of them. Otherwise return false
  *
@@ -203,27 +387,73 @@ const every = (predicate) => {
  * @author Mariela Ivanova
  */
 const includes = (element) => {
+  /**
+   * @function arr
+   * @param {arr} arr an array to search into
+   * @return {boolean} returns true or false
+   */
   return (arr) => {
     return arr.some((item) => item === element);
   };
 };
 
+/**
+ * Finds and returns the first index of the searched
+ *  element in the array. If the element does not exist in the array, return -1.
+ * @author Stefan Donev
+ * @param {any} searchedElement The element to search for.
+ * @returns {Function} inner function
+ */
 const indexOf = (searchedElement) => {
+  /**
+ * inner function.
+ * @param {arr} arr array that we are searching in
+ * @returns {number} return the index of the element if its found or -1 if it is not
+ */
   return (arr) => {
-    // TODO
+    return arr.reduce((acc, curr, index) =>
+      (curr === searchedElement) && (acc === -1) ? index : acc, -1);
   };
 };
 
+/**
+ * Finds the index of the first element in the array that satisfies the provided testing function
+ *
+ * @param {function} predicate The testing function
+ * @return {findIndexFunc} inner function
+ * @author Gergana Dragoeva Quievy   gergana.dragoeva.a49@learn.telerikacademy.com
+ */
 const findIndex = (predicate) => {
-  return (arr) => {
-    // TODO
-  };
+  /**
+   * @function findIndexFunc
+   * @param {array} array The array to search in
+   * @return {number} The index of the first element that satisfies the predicate, or -1 if none is found
+   */
+  return (array) => array.reduce((acc, curr, index) =>
+  acc !== -1 ? acc : (predicate(curr) ? index : acc), -1);
 };
 
 // hard
 
+/**
+ * Creates an array from object by using its length property.
+ *
+ * @author Viktor Petrov <viktor.martinov.p@gmail.com>
+ * @function arrayFrom(obj)
+ * @param {object} length An object that has the length property.
+ * @return {array} Returns the created array with length equal to the passed object's length property, filled with undefined values.
+ */
+
 const arrayFrom = ({ length }) => {
-  // TODO
+  /**
+   * calls the specified function with a given this value, and arguments provided as an array (
+   * @function Array.apply
+   * @param {any} undefined The value to create an array with.
+   * @param {object} length The length of the array that is going go be created.
+   * @return {array} Array with undefined values.
+   */
+  const testArray = Array.apply(undefined, Array(length));
+  return testArray;
 };
 
 /**
@@ -248,14 +478,52 @@ const pipe = (...fns) => {
   };
 };
 
+/**
+ *
+ * @author Viktor Petrov <viktor.martinov.p@gmail.com>
+ * A higher-order function that takes in one or more functions as arguments and returns a new function that applies each function to the input in reverse order.
+ *@param {...function} fns - One or more functions to compose.
+ *@return {function} A new function that applies each function to the input in reverse order.
+*/
+
 const compose = (...fns) => {
   return (input) => {
-    // TODO
+    return (input) => {
+      const functions = [...fns]; // Create a new array with the provided functions
+      functions.reverse(); // Reverse the order of the functions
+      functions.forEach((fn) => { // Apply each function to the input in reverse order
+        input = fn(input);
+      });
+      return input; // Return the result of applying all functions to the input
+    };
   };
 };
 
+/**
+ * Array with nested arrays, which should to flat to first level.
+ * @author Hristiyan Fachikov
+ * @param {arr} arr to be flat.
+ * @return {arr} arr with flat elements.
+ */
 const flat = (arr) => {
-  // TODO
+  /**
+   * @function flatFunc
+   * @param {acc} an empty accumulator that will collect the data
+   * @param {el} any An element through which we will take an element from the array
+   * @return {arr}. flat array.
+   */
+  return () => {
+    const reduceOverEl = arr.reduce((acc, el) => {
+      if (Array.isArray(el)) {
+        acc.push(...el);
+      } else {
+        acc.push(el);
+      }
+      return acc;
+    }, []);
+    return reduceOverEl;
+  };
+  // [1, 2, [3, 4]]
 };
 
 /**
@@ -279,9 +547,32 @@ const flatMap = (mapperFn) => {
   };
 };
 
+/**
+ * Creates an object that will group the array values by a passed grouping function.
+ * The object keys will be all of the unique groupings and the values will be an array of the group entries.
+ *
+ * @author Valentin Petkov <valentin.petkov.a49@learn.telerikacademy.com>
+ *
+ * @param {Function} groupingFn (el: any) => any: The grouping function. It will accept an element and return the group identifier.
+ * @return {Function} groupByFunc (arr: any) => object:  Returns a closure that will iterate over the passed array
+ * and will call the grouping function with each of the elements. The grouping function will return
+ * the unique group identifier for each of them and this will be the key for the result object.
+ * The values will be arrays of the group members.
+ */
 const groupBy = (groupingFn) => {
+  /**
+   * @function groupByFunc
+   * @param {Array} arr: array to group using the grouping function
+   * @return {Object}
+   */
   return (arr) => {
     // TODO
+    return arr.reduce((group, el) => {
+      const { category } = el;
+      group[category] = group[category] ?? [];
+      group[category].push(el);
+      return group;
+    }, {});
   };
 };
 

@@ -1,28 +1,89 @@
 import {
   addFirst,
   removeFirst,
+  addLast,
   removeLast,
   keys,
   entries,
+  slice,
+  concat,
   reverse,
+  join,
+  find,
+  fill,
+  forEach,
+  map,
+  filter,
+  reduce,
+  reduceRight,
+  some,
+  every,
+  includes,
+  indexOf,
+  findIndex,
   arrayFrom,
   pipe,
   compose,
   flat,
-  fill,
+  flatMap,
   groupBy,
-  reduce,
-  map,
-  slice,
-  join,
-  find,
-  filter,
 } from './array-utils.js';
 
 /*
 *  Single function tests
 *  Write tests for each function you have implemented
 */
+
+const composeTest = () => {
+  const test1 = compose((el)=>{
+    return el+2;
+  }, (el)=>{
+    return el*3;
+  })(3); // 11
+  const test2 = compose((str)=>{
+    return str.substring(1, 4);
+  }, (str)=>{
+    return str.substring(1, 4);
+  })('Pesho'); // def
+
+  console.log(test1);
+  console.log(test2);
+};
+
+// composeTest();
+
+const reduceTest = () => {
+  const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  const testFunction = (acc, el) => {
+    acc.push(el*2);
+    return acc;
+  };
+
+  const test = reduce(testFunction, [])(arr);
+
+  console.log(arr); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  console.log(test); // [ 2, 4, 6, 8, 10, 12, 14, 16, 18]
+};
+
+// reduceTest();
+
+const fillTest = () => {
+  const array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const copy = fill(2, 2, 5)(array);
+
+  console.log(array); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  console.log(copy); // [ 1, 2, 2, 2, 2, 6, 7, 8, 9]
+};
+
+// fillTest()
+
+const arrayFromTest = () => {
+  const copy = (arrayFrom({ length: 6 }));
+  console.log(copy); // undefined, undefined, undefined, undefined, undefined, undefined ]
+};
+
+// arrayFromTest()
 
 const addFirstTest = () => {
   const arr = [1, 2, 3];
@@ -35,6 +96,118 @@ const addFirstTest = () => {
 
 // addFirstTest();
 
+const addLastTest = () => {
+  const arr = [1, 2, 3];
+  const result = addLast(8)(arr);
+  console.log(arr); // 1,2,3
+  console.log(result); // 1,2,3,8
+};
+
+// addLastTest();
+
+// Test function for forEach
+const forEachTest = () => {
+  const arr = ['banana', 'pineapple', 'dragonfruit', 'orange'];
+  let output = '';
+
+  // The function fn that will be executed for each element in the array
+  const fn = (fruit) => {
+    output += `${fruit} `;
+  };
+
+  forEach(fn)(arr);
+
+  console.log(output); // "banana pineapple dragonfruit orange "
+};
+
+// Execute the test
+// forEachTest();
+
+
+const findIndexTest = () => {
+  const arr = ['banana', 'pineapple', 'dragonfruit', 'orange'];
+
+  const predicate = (fruit) => fruit === 'dragonfruit';
+
+  const index = findIndex(predicate)(arr);
+
+  console.log(arr); // ['banana', 'pineapple', 'dragonfruit', 'orange']
+  console.log(index); // 2
+};
+
+// findIndexTest();
+
+/*
+*Function Test
+*/
+/**
+ * @author Hristiyan Fachikov
+ */
+const findFuncTest = () => {
+  /**
+ * @param {arr} arr created as a sample test
+ * @param {result} variable with which we call the function, set arguments and save the result
+ */
+  const arr = ['Hello', 5, true, 'There', 5, 'There', 5];
+  const result = find(5)(arr);
+  // console.log(arr); // 1, 2, 3
+  console.log(result); // 5, 1, 2, 3
+};
+findFuncTest();
+
+/*
+*Function Test
+*/
+/**
+ * @author Hristiyan Fachikov
+ */
+const entriesFuncTest = () => {
+  /**
+ * @param {arr} arr created as a sample test
+ * @param {result} variable with which we call the function, set arguments and save the result
+ */
+  const arr = ['Hello', 5, true, 'There'];
+  const result = entries()(arr);
+  // console.log(arr); // 1, 2, 3
+  console.log(result); // 5, 1, 2, 3
+};
+entriesFuncTest();
+
+/*
+*Function Test
+*/
+/**
+ * @author Hristiyan Fachikov
+ */
+const someFuncTest = () => {
+  /**
+ * @param {arr} arr created as a sample test
+ * @param {result} variable with which we call the function, set arguments and save the result
+ */
+  const arr = ['Hello', 5, true, 'There'];
+  const result = some('Hello')(arr);
+  // console.log(arr); // 1, 2, 3
+  console.log(result); // 5, 1, 2, 3
+};
+someFuncTest();
+
+/*
+*Function Test
+*/
+/**
+ * @author Hristiyan Fachikov
+ */
+const flatFuncTest = () => {
+  /**
+ * @param {arr} arr created as a sample test
+ * @param {result} variable with which we call the function, set arguments and save the result
+ */
+  const arr = [1, 2, [3, 4]];
+  const result = flat(arr)();
+  // console.log(arr); // 1, 2, 3
+  console.log(result); // 5, 1, 2, 3
+};
+flatFuncTest();
 
 /*
 *  Composite functions tests
