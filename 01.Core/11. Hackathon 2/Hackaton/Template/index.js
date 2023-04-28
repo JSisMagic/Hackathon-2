@@ -53,7 +53,7 @@ const includesFuncTest = () => {
 */
 /**
  *
- * @author Stefan Donev
+ * @author Stefan Donev <stefan.donev.a49@learn.telerikacademy.com>
  */
 const testKeys = () => {
   const arr = [5, 5, 5, 5, 5];
@@ -66,7 +66,7 @@ const testKeys = () => {
 
 /**
  *
- * @author Stefan Donev
+ * @author Stefan Donev <stefan.donev.a49@learn.telerikacademy.com>
  */
 const testIndexOf = () => {
   const arr = [1, 2, 3, 4, 5];
@@ -76,7 +76,7 @@ const testIndexOf = () => {
 // testIndexOf();
 
 /**
- * @author Stefan Donev
+ * @author Stefan Donev <stefan.donev.a49@learn.telerikacademy.com>
  */
 const testReduceRight = () => {
   const arr = [1, 2, 3, 4];
@@ -311,6 +311,7 @@ const flatFuncTest = () => {
 };
 // flatFuncTest();
 
+<<<<<<< HEAD
 /*
 *Function Test
 */
@@ -344,6 +345,87 @@ const joinFuncTest = () => {
   console.log(result);
 };
 // joinFuncTest();
+=======
+/**
+ * @author Valentin Petkov
+ */
+const concatTest = () => {
+  const outerArr = [1, 2, 3];
+  const innerArr = [7, 8, 9];
+
+  const concatResult = outerArr.concat(innerArr);
+  console.log(concatResult); // [1, 2, 3, 7, 8, 9]
+};
+// concatTest();
+
+/**
+ * @author Valentin Petkov
+ */
+const filterTest = () => {
+  const initArr = [1, 2, 1, 1, 2, 3, 2, 2, 4];
+  const predicate = (el) => el === 2;
+  const filteredArr = initArr.filter(predicate);
+  console.log(filteredArr); // [2, 2, 2, 2]
+};
+// filterTest();
+
+/**
+ * @author Valentin Petkov
+ */
+const everyTest = () => {
+  const arr1 = [1, 6, 4, 2, 5];
+  const predicate1 = (el) => el >= 0;
+  const result1 = arr1.every(predicate1);
+  const predicate2 = (el) => el === 2;
+  const result2 = arr1.every(predicate2);
+  console.log(result1); // true
+  console.log(result2); // false
+};
+// everyTest();
+
+/**
+ * @author Valentin Petkov
+ */
+const groupByTest = () => {
+  const people = [
+    { age: 20, name: 'Pesho' },
+    { age: 24, name: 'Gosho' },
+    { age: 23, name: 'Dessy' },
+    { age: 24, name: 'Gerry' },
+  ];
+  const grFunc = (person, age) => person[age];
+  const result = groupBy(grFunc)(people);
+  console.log(result);
+  /*
+{
+  '20': [
+    {
+      age: 20,
+      name: 'Pesho'
+    }
+  ],
+  '23': [
+    {
+      age: 23,
+      name: 'Dessy'
+    }
+  ],
+  '24': [
+    {
+      age: 24,
+      name: 'Gosho'
+    },
+    {
+      age: 24,
+      name: 'Gerry'
+    }
+  ]
+}
+*/
+};
+// groupByTest();
+
+>>>>>>> 40f5d0e17b237459a9d0fde28a89238cd9b085f1
 
 /*
 *  Composite functions tests
@@ -387,10 +469,10 @@ const testTwo = () => {
     // [1, false, 'odd', 2, true, 'even', 3, false, 'odd', 4, true, 'even']
     (arr) => arr.map((el, index) => [el, index % 2 === 1, index % 2 === 0 ? 'odd' : 'even']),
     /* [[1, false, 'odd'],
-        [2, true, 'even'],
-        [3, false, 'odd'],
-        [4, true, 'even']
-      ]*/
+      [2, true, 'even'],
+      [3, false, 'odd'],
+      [4, true, 'even']
+    ]*/
     (arr) => arr.map((_, index) => index + 1),
     fill(true, 0, 7), // [true, true, true, true]
     (arr) => [...arr, 8], // [[0, 'Ivan'], [1, 'Pesho'], [2, 'Pesho'], 8]
@@ -399,19 +481,19 @@ const testTwo = () => {
     (arr) => arr.map((obj) => obj.name), // ['Ivan', 'Pesho', 'Pesho', 'Maria']
     flat,
     /* [{ name: 'Ivan', age: 15 },
-        { name: 'Pesho', age: 32 },
-        { name: 'Pesho', age: 23 },
-        { name: 'Maria', age: 19 }
-      ]*/
+      { name: 'Pesho', age: 32 },
+      { name: 'Pesho', age: 23 },
+      { name: 'Maria', age: 19 }
+    ]*/
     Object.values,
     /* [[{ name: 'Ivan', age: 15 }],
-        [{ name: 'Pesho', age: 32 }, { name: 'Pesho', age: 23 }],
-        [{ name: 'Maria', age: 19 }]
-      ]*/
+      [{ name: 'Pesho', age: 32 }, { name: 'Pesho', age: 23 }],
+      [{ name: 'Maria', age: 19 }]
+    ]*/
     (arr) => groupBy((obj) => obj.name)(arr),
     /* {Ivan: [{ name: 'Ivan', age: 15 }],
-        Pesho: [{ name: 'Pesho', age: 32 }, { name: 'Pesho', age: 23 }],
-        Maria: [{ name: 'Maria', age: 19 }]} */
+      Pesho: [{ name: 'Pesho', age: 32 }, { name: 'Pesho', age: 23 }],
+      Maria: [{ name: 'Maria', age: 19 }]} */
   );
 
   console.log(composed(startValue));
@@ -428,8 +510,8 @@ const testThree = () => {
   const piped = pipe(
     filter((x) => x.name === 'Pesho'),
     /* [{ name: 'Pesho', grades: [3, 2, 6] },
-        { name: 'Pesho', grades: [2, 5, 2] }
-      ];*/
+      { name: 'Pesho', grades: [2, 5, 2] }
+    ];*/
     map((x) => x.grades), // [[3, 2, 6], [2, 5, 2]]
     flat, // [3, 2, 6, 2, 5, 2]
     filter((x) => x < 4), // [3, 2, 2, 2]
