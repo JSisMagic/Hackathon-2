@@ -70,6 +70,43 @@ const testReduceRight = () => {
 
 // testReduceRight();
 
+<<<<<<< HEAD
+const sliceTest = () => {
+  const arr = [1, 2, 3, 4, 5];
+  const slicedArr = slice(1, 4)(arr);
+  console.log(slicedArr);
+};
+
+// sliceTest();
+
+const pipeTest = () => {
+  const addTen = (num) => num + 10;
+  const multiplyByFive = (num) => num * 5;
+  const divideByTwo = (num) => num / 2;
+  const result = pipe(addTen, multiplyByFive, divideByTwo)(5);
+  console.log(result); // 37.5
+};
+
+// pipeTest();
+
+const mapTest = () => {
+  const mapperFn = (num) => num + 10;
+  const arr = [1, 2, 3, 4, 5];
+  const mappedArr = map(mapperFn)(arr);
+  console.log(mappedArr);
+};
+
+// mapTest();
+
+const flatMapTest = () => {
+  const mapperFn = (num) => (num === 2 ? [2, 2] : 1);
+  const arr = [1, 2, 2, 1];
+  const mappedArr = flatMap(mapperFn)(arr);
+  console.log(mappedArr);
+};
+
+// flatMapTest();
+
 const composeTest = () => {
   const test1 = compose((el) => {
     return el + 2;
@@ -120,6 +157,20 @@ const arrayFromTest = () => {
 };
 
 // arrayFromTest()
+=======
+// Test function for removeLast
+const removeLastTest = () => {
+  const arr = ['LEGO City', 'LEGO Technic', 'LEGO Star Wars', 'LEGO Friends'];
+  const newArr = removeLast(arr);
+
+  console.log(arr); // ['LEGO City', 'LEGO Technic', 'LEGO Star Wars', 'LEGO Friends']
+  console.log(newArr); // ['LEGO City', 'LEGO Technic', 'LEGO Star Wars']
+};
+
+// Execute the test
+// removeLastTest();
+
+>>>>>>> 10540cf (Adding test for removeLast & emails for doc)
 
 const addFirstTest = () => {
   const arr = [1, 2, 3];
