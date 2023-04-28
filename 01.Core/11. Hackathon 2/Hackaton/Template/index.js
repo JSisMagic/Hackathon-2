@@ -34,15 +34,51 @@ import {
 *  Write tests for each function you have implemented
 */
 
+const sliceTest = () => {
+  const arr = [1, 2, 3, 4, 5];
+  const slicedArr = slice(1, 4)(arr);
+  console.log(slicedArr);
+};
+
+// sliceTest();
+
+const pipeTest = () => {
+  const addTen = (num) => num + 10;
+  const multiplyByFive = (num) => num * 5;
+  const divideByTwo = (num) => num / 2;
+  const result = pipe(addTen, multiplyByFive, divideByTwo)(5);
+  console.log(result); // 37.5
+};
+
+// pipeTest();
+
+const mapTest = () => {
+  const mapperFn = (num) => num + 10;
+  const arr = [1, 2, 3, 4, 5];
+  const mappedArr = map(mapperFn)(arr);
+  console.log(mappedArr);
+};
+
+// mapTest();
+
+const flatMapTest = () => {
+  const mapperFn = (num) => (num === 2 ? [2, 2] : 1);
+  const arr = [1, 2, 2, 1];
+  const mappedArr = flatMap(mapperFn)(arr);
+  console.log(mappedArr);
+};
+
+// flatMapTest();
+
 const composeTest = () => {
-  const test1 = compose((el)=>{
-    return el+2;
-  }, (el)=>{
-    return el*3;
+  const test1 = compose((el) => {
+    return el + 2;
+  }, (el) => {
+    return el * 3;
   })(3); // 11
-  const test2 = compose((str)=>{
+  const test2 = compose((str) => {
     return str.substring(1, 4);
-  }, (str)=>{
+  }, (str) => {
     return str.substring(1, 4);
   })('Pesho'); // def
 
@@ -56,7 +92,7 @@ const reduceTest = () => {
   const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   const testFunction = (acc, el) => {
-    acc.push(el*2);
+    acc.push(el * 2);
     return acc;
   };
 
