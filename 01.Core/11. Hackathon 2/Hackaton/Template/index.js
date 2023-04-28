@@ -209,6 +209,7 @@ const flatFuncTest = () => {
 };
 flatFuncTest();
 
+
 /*
 *  Composite functions tests
 */

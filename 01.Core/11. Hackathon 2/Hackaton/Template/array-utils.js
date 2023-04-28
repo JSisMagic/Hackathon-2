@@ -70,7 +70,7 @@ const keys = (arr) => {
 
 /**
  * Takes an array and returns an array of arrays that include each index and element to the original arr;
- * @author Hristiyan Fachikov
+ * @author Hristiyan Fachikov <hristiyan.fachikov.a49@learn.telerikacademy.com>
  * @return {array} return array of arrays includes each index and element to the original arr.
  */
 const entries = () => {
@@ -180,7 +180,7 @@ const join = (separator) => {
 /**
  * Filters the elements equal to a predicate and checks if there are any,
  *  if so it takes the first element, if not it returns null
- * @author Hristiyan Fachikov
+ * @author Hristiyan Fachikov <hristiyan.fachikov.a49@learn.telerikacademy.com>
  * @param {any} predicate element
  * @return {any} any element or null
  */
@@ -299,7 +299,7 @@ const reduceRight = (fn, initialValue) => {
 /**
  * Filters the elements equal to a predicate and checks if there are any,
  *  if so it return true, if not it returns false;
- * @author Hristiyan Fachikov
+ * @author Hristiyan Fachikov <hristiyan.fachikov.a49@learn.telerikacademy.com>
  * @param {any} predicate element
  * @return {boolean} from inner function
  */
@@ -443,7 +443,7 @@ const compose = (...fns) => {
 
 /**
  * Array with nested arrays, which should to flat to first level.
- * @author Hristiyan Fachikov
+ * @author Hristiyan Fachikov <hristiyan.fachikov.a49@learn.telerikacademy.com>
  * @param {arr} arr to be flat.
  * @return {arr} arr with flat elements.
  */
