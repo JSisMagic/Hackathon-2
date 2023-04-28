@@ -17,6 +17,7 @@ import {
   join,
   find,
   filter,
+  some,
 } from './array-utils.js';
 
 /*
