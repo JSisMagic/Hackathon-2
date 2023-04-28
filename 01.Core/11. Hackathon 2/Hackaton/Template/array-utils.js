@@ -76,7 +76,12 @@ const reverse = (arr) => {
    * @param {arr}arr The array to reverse
    * @return {arr} The reversed array
    */
-  return arr.reverse();
+  if (arr.length <= 1) {
+    return arr;
+  }
+  const [first, ...rest] = arr;
+  const last = rest.pop();
+  return [last, ...reverse(rest), first];
 };
 /**
  * Converts all elements in array into a string separated by separator
@@ -92,9 +97,14 @@ const join = (separator) => {
    * @return {string} Returns a closure that will join the elements of the array with the passed separator
    */
   return (arr) => {
-    return arr.join(separator);
+    if (arr.length === 0) {
+      return '';
+    }
+
+    return arr.reduce((acc, curr) => acc + separator + curr);
   };
 };
+
 
 const find = (predicate) => {
   return (arr) => {
@@ -158,7 +168,7 @@ const every = (predicate) => {
  */
 const includes = (element) => {
   return (arr) => {
-    return arr.includes(element);
+    return arr.some((item) => item === element);
   };
 };
 
