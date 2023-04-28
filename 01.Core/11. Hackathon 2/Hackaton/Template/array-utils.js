@@ -22,7 +22,7 @@ const removeFirst = (arr) => arr.slice(1); // it does not take additional parame
  *
  * @param {any} element the element to add
  * @return {addLastFunc} inner function
- * @author Gergana Dragoeva Quievy
+ * @author Gergana Dragoeva Quievy   gergana.dragoeva.a49@learn.telerikacademy.com
  */
 const addLast = (element) => {
   /**
@@ -127,7 +127,7 @@ const concat = (arr) => {
  *
  * @param {function} fn The function to execute for each element
  * @return {forEachFunc} inner function
- * @author Gergana Dragoeva Quievy
+ * @author Gergana Dragoeva Quievy   gergana.dragoeva.a49@learn.telerikacademy.com
  */
 const forEach = (fn) => {
   /**
@@ -366,7 +366,7 @@ const indexOf = (searchedElement) => {
  *
  * @param {function} predicate The testing function
  * @return {findIndexFunc} inner function
- * @author Gergana Dragoeva Quievy
+ * @author Gergana Dragoeva Quievy   gergana.dragoeva.a49@learn.telerikacademy.com
  */
 const findIndex = (predicate) => {
   /**
