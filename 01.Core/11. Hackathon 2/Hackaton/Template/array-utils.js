@@ -17,10 +17,20 @@ const addFirst = (element) => {
 
 const removeFirst = (arr) => arr.slice(1); // it does not take additional parameters to be splitted
 
+/**
+ * Add an element at the end of the array
+ *
+ * @param {any} element the element to add
+ * @return {addLastFunc} inner function
+ * @author Gergana Dragoeva Quievy   gergana.dragoeva.a49@learn.telerikacademy.com
+ */
 const addLast = (element) => {
-  return (arr) => {
-    // TODO
-  };
+  /**
+   * @function addLastFunc
+   * @param {array} array an array to add element into
+   * @return {array} a copy of the array with the element added
+   */
+  return (array) => [...array, element];
 };
 
 
@@ -112,6 +122,22 @@ const concat = (arr) => {
   };
 };
 
+/**
+ * Execute a provided function once for each array element
+ *
+ * @param {function} fn The function to execute for each element
+ * @return {forEachFunc} inner function
+ * @author Gergana Dragoeva Quievy   gergana.dragoeva.a49@learn.telerikacademy.com
+ */
+const forEach = (fn) => {
+  /**
+   * @function forEachFunc
+   * @param {array} array The array to iterate over
+   * @return {undefined}
+   */
+  return (array) => array.map(fn);
+};
+
 // medium
 /**
  * Create a reversed copy of the array so that the first element becomes the last, the second element becomes the second to last, and so on
@@ -171,6 +197,7 @@ const find = (predicate) => {
   };
 };
 
+<<<<<<< HEAD
 /**
  * Iterates over elements of collection and reducing all of them in a single value.
  *
@@ -181,6 +208,8 @@ const find = (predicate) => {
  * @param {any} end The end position.
  * @return {array} Returns a closure that will fill the passed array with the value.
  */
+=======
+>>>>>>> 0e3c158 (Implementation & test forEach, findIndex, addLast)
 
 const fill = (value, start, end) => {
   /**
@@ -192,7 +221,7 @@ const fill = (value, start, end) => {
 
   return (arr) => {
     return arr.map((number, index) => {
-      if (index>=start && index < end) {
+      if (index >= start && index < end) {
         number = value;
       }
       return number;
@@ -200,11 +229,6 @@ const fill = (value, start, end) => {
   };
 };
 
-const forEach = (fn) => {
-  return (arr) => {
-    // TODO
-  };
-};
 
 /**
  * Returns a shallow copy of a portion of an array into a new array object.
@@ -318,16 +342,40 @@ const includes = (element) => {
   };
 };
 
+/**
+ * Finds and returns the first index of the searched
+ *  element in the array. If the element does not exist in the array, return -1.
+ * @author Stefan Donev
+ * @param {any} searchedElement The element to search for.
+ * @returns {Function} inner function
+ */
 const indexOf = (searchedElement) => {
+  /**
+ * inner function.
+ * @param {arr} arr array that we are searching in
+ * @returns {number} return the index of the element if its found or -1 if it is not
+ */
   return (arr) => {
-    // TODO
+    return arr.reduce((acc, curr, index) =>
+      (curr === searchedElement) && (acc === -1) ? index : acc, -1);
   };
 };
 
+/**
+ * Finds the index of the first element in the array that satisfies the provided testing function
+ *
+ * @param {function} predicate The testing function
+ * @return {findIndexFunc} inner function
+ * @author Gergana Dragoeva Quievy   gergana.dragoeva.a49@learn.telerikacademy.com
+ */
 const findIndex = (predicate) => {
-  return (arr) => {
-    // TODO
-  };
+  /**
+   * @function findIndexFunc
+   * @param {array} array The array to search in
+   * @return {number} The index of the first element that satisfies the predicate, or -1 if none is found
+   */
+  return (array) => array.reduce((acc, curr, index) =>
+  acc !== -1 ? acc : (predicate(curr) ? index : acc), -1);
 };
 
 // hard
@@ -342,13 +390,13 @@ const findIndex = (predicate) => {
  */
 
 const arrayFrom = ({ length }) => {
-/**
- * calls the specified function with a given this value, and arguments provided as an array (
- * @function Array.apply
- * @param {any} undefined The value to create an array with.
- * @param {object} length The length of the array that is going go be created.
- * @return {array} Array with undefined values.
- */
+  /**
+   * calls the specified function with a given this value, and arguments provided as an array (
+   * @function Array.apply
+   * @param {any} undefined The value to create an array with.
+   * @param {object} length The length of the array that is going go be created.
+   * @return {array} Array with undefined values.
+   */
   const testArray = Array.apply(undefined, Array(length));
   return testArray;
 };
@@ -375,9 +423,24 @@ const pipe = (...fns) => {
   };
 };
 
+/**
+ *
+ * @author Viktor Petrov <viktor.martinov.p@gmail.com>
+ * A higher-order function that takes in one or more functions as arguments and returns a new function that applies each function to the input in reverse order.
+ *@param {...function} fns - One or more functions to compose.
+ *@return {function} A new function that applies each function to the input in reverse order.
+*/
+
 const compose = (...fns) => {
   return (input) => {
-    // TODO
+    return (input) => {
+      const functions = [...fns]; // Create a new array with the provided functions
+      functions.reverse(); // Reverse the order of the functions
+      functions.forEach((fn) => { // Apply each function to the input in reverse order
+        input = fn(input);
+      });
+      return input; // Return the result of applying all functions to the input
+    };
   };
 };
 
