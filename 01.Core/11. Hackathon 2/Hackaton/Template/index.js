@@ -33,17 +33,16 @@ import {
 *Function Test
 */
 /**
- * @author Mariela Ivanova
+ * @author Mariela Ivanova  <mariela.ivanova.a49@learn.telerikacademy.com>
  */
 const includesFuncTest = () => {
   const element = 2;
   const array = [1, 2, 3, 4];
   const elementExists = includes(element)(array);
- console.log(element); // 2
- console.log(array); // [1, 2, 3, 4]
- console.log(elementExists); //true
-  
-}
+  console.log(element); // 2
+  console.log(array); // [1, 2, 3, 4]
+  console.log(elementExists); // true
+};
 
 // includesFuncTest();
 
@@ -315,7 +314,7 @@ const findIndexTest = () => {
 *Function Test
 */
 /**
- * @author Hristiyan Fachikov
+ * @author Hristiyan Fachikov  <hristiyan.fachikov.a49@learn.telerikacademy.com>
  */
 const findFuncTest = () => {
   /**
@@ -333,7 +332,7 @@ const findFuncTest = () => {
 *Function Test
 */
 /**
- * @author Hristiyan Fachikov
+ * @author Hristiyan Fachikov  <hristiyan.fachikov.a49@learn.telerikacademy.com>
  */
 const entriesFuncTest = () => {
   /**
@@ -351,7 +350,7 @@ const entriesFuncTest = () => {
 *Function Test
 */
 /**
- * @author Hristiyan Fachikov
+ * @author Hristiyan Fachikov  <hristiyan.fachikov.a49@learn.telerikacademy.com>
  */
 const someFuncTest = () => {
   /**
@@ -369,7 +368,7 @@ const someFuncTest = () => {
 *Function Test
 */
 /**
- * @author Hristiyan Fachikov
+ * @author Hristiyan Fachikov <hristiyan.fachikov.a49@learn.telerikacademy.com>
  */
 const flatFuncTest = () => {
   /**
@@ -383,12 +382,11 @@ const flatFuncTest = () => {
 };
 // flatFuncTest();
 
-<<<<<<< HEAD
 /*
 *Function Test
 */
 /**
- * @author Mariela Ivanova
+ * @author Mariela Ivanova  <mariela.ivanova.a49@learn.telerikacademy.com>
  */
 const reverseFuncTest = () => {
   /**
@@ -396,7 +394,7 @@ const reverseFuncTest = () => {
  * @param {result} variable with which we call the function, set arguments and save the result
  */
   const arr = [5, 1, 8];
-  const result = reverse(arr); //[8, 1, 5]
+  const result = reverse(arr); // [8, 1, 5]
   console.log(result);
 };
 // reverseFuncTest();
@@ -405,7 +403,7 @@ const reverseFuncTest = () => {
 *Function Test
 */
 /**
- * @author Mariela Ivanova
+ * @author Mariela Ivanova  <mariela.ivanova.a49@learn.telerikacademy.com>
  */
 const joinFuncTest = () => {
   /**
@@ -417,9 +415,8 @@ const joinFuncTest = () => {
   console.log(result);
 };
 // joinFuncTest();
-=======
 /**
- * @author Valentin Petkov
+ * @author Valentin Petkov <valentin.petkov.a49@learn.telerikacademy.com>
  */
 const concatTest = () => {
   const outerArr = [1, 2, 3];
@@ -431,7 +428,7 @@ const concatTest = () => {
 // concatTest();
 
 /**
- * @author Valentin Petkov
+ * @author Valentin Petkov  <valentin.petkov.a49@learn.telerikacademy.com>
  */
 const filterTest = () => {
   const initArr = [1, 2, 1, 1, 2, 3, 2, 2, 4];
@@ -442,7 +439,7 @@ const filterTest = () => {
 // filterTest();
 
 /**
- * @author Valentin Petkov
+ * @author Valentin Petkov <valentin.petkov.a49@learn.telerikacademy.com>
  */
 const everyTest = () => {
   const arr1 = [1, 6, 4, 2, 5];
@@ -456,7 +453,7 @@ const everyTest = () => {
 // everyTest();
 
 /**
- * @author Valentin Petkov
+ * @author Valentin Petkov <valentin.petkov.a49@learn.telerikacademy.com>
  */
 const groupByTest = () => {
   const people = [
@@ -497,7 +494,6 @@ const groupByTest = () => {
 };
 // groupByTest();
 
->>>>>>> 40f5d0e17b237459a9d0fde28a89238cd9b085f1
 
 /*
 *  Composite functions tests
