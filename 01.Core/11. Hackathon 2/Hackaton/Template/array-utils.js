@@ -23,8 +23,23 @@ const addLast = (element) => {
   };
 };
 
+
+/**
+ * Removes the last element of the array
+ *
+ * @param {arr} arr the array to remove from
+ * @return {newArr} a copy of the array with the removed element
+ * @author Mariela Ivanova
+ */
 const removeLast = (arr) => {
-  // TODO
+  /**
+   * @function removeLastFunc
+   * @param {newArr} newArr an array to add element into
+   * @return {newArr} a copy of the array with the removed element
+   */
+  const newArr = [...arr];
+  newArr.pop();
+  return newArr;
 };
 
 const keys = (arr) => {
@@ -48,14 +63,36 @@ const concat = (arr) => {
 };
 
 // medium
-
+/**
+ * Create a reversed copy of the array so that the first element becomes the last, the second element becomes the second to last, and so on
+ *
+ * @param {arr} arr The array to reverse
+ * @return {any} The reversed array
+ * @author Mariela Ivanova
+ */
 const reverse = (arr) => {
-  // TODO
+  /**
+   * @function reverseFunc
+   * @param {arr}arr The array to reverse
+   * @return {arr} The reversed array
+   */
+  return arr.reverse();
 };
-
+/**
+ * Converts all elements in array into a string separated by separator
+ *
+ * @param {separator} separator The element separator
+ * @return {any} Returns a closure that will join the elements of the array with the passed separator
+ * @author Mariela Ivanova
+ */
 const join = (separator) => {
+  /**
+   * @function addFirstFunc
+   * @param {arr} arr an array elements to join
+   * @return {string} Returns a closure that will join the elements of the array with the passed separator
+   */
   return (arr) => {
-    // TODO
+    return arr.join(separator);
   };
 };
 
@@ -112,10 +149,16 @@ const every = (predicate) => {
     // TODO
   };
 };
-
+/**
+ * Iterates over elements of a collection and returns true if the searched element is one of them. Otherwise return false
+ *
+ * @param {element} element The element to search for
+ * @return {boolean}  Returns a closure that will iterate over the passed array in and will check if the searched element is there. If its there return true, otherwise return false
+ * @author Mariela Ivanova
+ */
 const includes = (element) => {
   return (arr) => {
-    // TODO
+    return arr.includes(element);
   };
 };
 
