@@ -192,7 +192,7 @@ const fill = (value, start, end) => {
 
   return (arr) => {
     return arr.map((number, index) => {
-      if (index>=start && index < end) {
+      if (index >= start && index < end) {
         number = value;
       }
       return number;
@@ -355,13 +355,13 @@ const findIndex = (predicate) => {
  */
 
 const arrayFrom = ({ length }) => {
-/**
- * calls the specified function with a given this value, and arguments provided as an array (
- * @function Array.apply
- * @param {any} undefined The value to create an array with.
- * @param {object} length The length of the array that is going go be created.
- * @return {array} Array with undefined values.
- */
+  /**
+   * calls the specified function with a given this value, and arguments provided as an array (
+   * @function Array.apply
+   * @param {any} undefined The value to create an array with.
+   * @param {object} length The length of the array that is going go be created.
+   * @return {array} Array with undefined values.
+   */
   const testArray = Array.apply(undefined, Array(length));
   return testArray;
 };
