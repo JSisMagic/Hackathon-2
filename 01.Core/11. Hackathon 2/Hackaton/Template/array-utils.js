@@ -283,9 +283,8 @@ const filter = (predicate) => {
    * @return {Boolean}: result of predicate function
    */
   return (arr) => {
-    // TODO
     const result = [];
-    return arr.forEach((el) => {
+    return arr.map((el) => {
       if (predicate(el) === true) {
         result.push(el);
       }
