@@ -22,7 +22,7 @@ const removeFirst = (arr) => arr.slice(1); // it does not take additional parame
  *
  * @param {any} element the element to add
  * @return {addLastFunc} inner function
- * @author Gergana Dragoeva Quievy   gergana.dragoeva.a49@learn.telerikacademy.com
+ * @author Gergana Dragoeva Quievy   <gergana.dragoeva.a49@learn.telerikacademy.com>
  */
 const addLast = (element) => {
   /**
@@ -38,7 +38,7 @@ const addLast = (element) => {
  *
  * @param {arr} arr the array to remove from
  * @return {newArr} a copy of the array with the removed element
- * @author Mariela Ivanova   mariela.ivanova.a49@learn.telerikacademy.com
+ * @author Mariela Ivanova   <mariela.ivanova.a49@learn.telerikacademy.com>
  */
 const removeLast = (arr) => {
   const newArr = [...arr];
@@ -69,7 +69,7 @@ const keys = (arr) => {
 
 /**
  * Takes an array and returns an array of arrays that include each index and element to the original arr;
- * @author Hristiyan Fachikov
+ * @author Hristiyan Fachikov <hristiyan.fachikov.a49@learn.telerikacademy.com>
  * @return {array} return array of arrays includes each index and element to the original arr.
  */
 const entries = () => {
@@ -93,7 +93,7 @@ const entries = () => {
 /**
  * Returns a shallow copy of a portion of an array into a new array object.
  *
- * @author Nikolay Nikolov <nikolay.nikolov.a49@learn.com.
+ * @author Nikolay Nikolov <nikolay.nikolov.a49@learn.telerikacademy.com>
  * @param {any} start the initial element to be pushed.
  * @param {any} end the last element to be pushed.
  * @returns {result} Parameter of inner function
@@ -141,7 +141,7 @@ const concat = (arr) => {
  *
  * @param {function} fn The function to execute for each element
  * @return {forEachFunc} inner function
- * @author Gergana Dragoeva Quievy   gergana.dragoeva.a49@learn.telerikacademy.com
+ * @author Gergana Dragoeva Quievy   <gergana.dragoeva.a49@learn.telerikacademy.com>
  */
 const forEach = (fn) => {
   /**
@@ -158,8 +158,8 @@ const forEach = (fn) => {
  *
  * @param {arr} arr The array to reverse
  * @return {any} The reversed array
- * @author Mariela Ivanova  mariela.ivanova.a49@learn.telerikacademy.com
- * 
+ * @author Mariela Ivanova  <mariela.ivanova.a49@learn.telerikacademy.com>
+ *
  */
 const reverse = (arr) => {
   if (arr.length <= 1) {
@@ -174,7 +174,7 @@ const reverse = (arr) => {
  *
  * @param {separator} separator The element separator
  * @return {any} Returns a closure that will join the elements of the array with the passed separator
- * @author Mariela Ivanova  mariela.ivanova.a49@learn.telerikacademy.com
+ * @author Mariela Ivanova  <mariela.ivanova.a49@learn.telerikacademy.com>
  */
 const join = (separator) => {
   /**
@@ -195,7 +195,7 @@ const join = (separator) => {
 /**
  * Filters the elements equal to a predicate and checks if there are any,
  *  if so it takes the first element, if not it returns null
- * @author Hristiyan Fachikov
+ * @author Hristiyan Fachikov <hristiyan.fachikov.a49@learn.telerikacademy.com>
  * @param {any} predicate element
  * @return {any} any element or null
  */
@@ -245,7 +245,7 @@ const fill = (value, start, end) => {
 /**
  * Returns a shallow copy of a portion of an array into a new array object.
  *
- * @author Nikolay Nikolov <nikolay.nikolov.a49@learn.com.
+ * @author Nikolay Nikolov <nikolay.nikolov.a49@learn.telerikacademy.com>
  * @param {function} mapperFn The function that is pushed as a parameter in the outer function.
  * @returns {mappedArr} Array of inner function
  */
@@ -357,7 +357,7 @@ const reduceRight = (fn, initialValue) => {
 /**
  * Filters the elements equal to a predicate and checks if there are any,
  *  if so it return true, if not it returns false;
- * @author Hristiyan Fachikov
+ * @author Hristiyan Fachikov <hristiyan.fachikov.a49@learn.telerikacademy.com>
  * @param {any} predicate element
  * @return {boolean} from inner function
  */
@@ -404,7 +404,7 @@ const every = (predicate) => {
  *
  * @param {element} element The element to search for
  * @return {boolean}  Returns a closure that will iterate over the passed array in and will check if the searched element is there. If its there return true, otherwise return false
- * @author Mariela Ivanova  mariela.ivanova.a49@learn.telerikacademy.com
+ * @author Mariela Ivanova  <mariela.ivanova.a49@learn.telerikacademy.com>
  */
 const includes = (element) => {
   /**
@@ -441,7 +441,7 @@ const indexOf = (searchedElement) => {
  *
  * @param {function} predicate The testing function
  * @return {findIndexFunc} inner function
- * @author Gergana Dragoeva Quievy   gergana.dragoeva.a49@learn.telerikacademy.com
+ * @author Gergana Dragoeva Quievy  <gergana.dragoeva.a49@learn.telerikacademy.com>
  */
 const findIndex = (predicate) => {
   /**
@@ -472,6 +472,7 @@ const arrayFrom = ({ length }) => {
    * @param {object} length The length of the array that is going go be created.
    * @return {array} Array with undefined values.
    */
+  // eslint-disable-next-line prefer-spread
   const testArray = Array.apply(undefined, Array(length));
   return testArray;
 };
@@ -479,7 +480,7 @@ const arrayFrom = ({ length }) => {
 /**
  * Combines functions. Pipe flowing left to right, calling each function with the output of the last one.
  *
- * @author Nikolay Nikolov <nikolay.nikolov.a49@learn.com.
+ * @author Nikolay Nikolov <nikolay.nikolov.a49@learn.telerikacademy.com>
  * @param {functions} fns The functions that are provided as input in order to chain them.
  * @returns {pipeFn} returns the output after it has gone through all the functions.
  */
@@ -521,7 +522,7 @@ const compose = (...fns) => {
 
 /**
  * Array with nested arrays, which should to flat to first level.
- * @author Hristiyan Fachikov
+ * @author Hristiyan Fachikov <hristiyan.fachikov.a49@learn.telerikacademy.com>
  * @param {arr} arr to be flat.
  * @return {arr} arr with flat elements.
  */
@@ -549,7 +550,7 @@ const flat = (arr) => {
 /**
  * Returns a new array formed by applying a given callback function to each element of the array, and then flattening the result by one level (Identical to Map).
  *
- * @author Nikolay Nikolov <nikolay.nikolov.a49@learn.com.
+ * @author Nikolay Nikolov  <nikolay.nikolov.a49@learn.telerikacademy.com>
  * @param {function} mapperFn The function that is pushed as a parameter in the outer function.
  * @returns {array} Array of inner function with flat-mapped elements.
  */
