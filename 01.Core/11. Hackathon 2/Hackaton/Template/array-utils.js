@@ -27,8 +27,25 @@ const removeLast = (arr) => {
   // TODO
 };
 
+/**
+ * Get the array's valid indexes.
+ * @author Stefan Donev
+ * @param {Array} arr the array to get the indexes from.
+ * @return {Function} inner function.
+ */
 const keys = (arr) => {
   // TODO
+  let counter = 0;
+
+  /**
+   * inner function
+   * @return Returns a new array with the valid indexes.
+   */
+  return arr.reduce((acc) => {
+    acc.push(counter);
+    counter++;
+    return acc;
+  }, []);
 };
 
 const entries = (arr) => {
