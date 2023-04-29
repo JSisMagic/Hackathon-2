@@ -340,7 +340,6 @@ const forEachTest = () => {
 
 // forEachTest();
 
-
 /**
  * Test function for findIndex
  *
@@ -370,7 +369,6 @@ const findIndexTest = () => {
   // ]
   console.log(index); // 2
 };
-
 // findIndexTest();
 
 /*
@@ -518,6 +516,10 @@ const everyTest = () => {
 /**
  * Test function for groupBy
  *
+ * This test demonstrates the usage of the groupBy function, which groups elements of an array based on a given key.
+ * In this specific test, we have an array of people objects with 'age' and 'name' properties.
+ * We use the groupBy function to group the people by their ages.
+ *
  * @author Gergana Dragoeva Quievy  <gergana.dragoeva.a49@learn.telerikacademy.com>
  */
 const groupByTest = () => {
@@ -533,35 +535,33 @@ const groupByTest = () => {
   console.log(result);
   /*
   {
-    '20': [
-      {
-        age: 20,
-        name: 'Pesho'
-      }
-    ],
-    '23': [
-      {
-        age: 23,
-        name: 'Dessy'
-      }
-    ],
-    '24': [
-      {
-        age: 24,
-        name: 'Gosho'
-      },
-      {
-        age: 24,
-        name: 'Gerry'
-      }
-    ]
+  '20': [
+  {
+  age: 20,
+  name: 'Pesho'
+  }
+  ],
+  '23': [
+  {
+  age: 23,
+  name: 'Dessy'
+  }
+  ],
+  '24': [
+  {
+  age: 24,
+  name: 'Gosho'
+  },
+  {
+  age: 24,
+  name: 'Gerry'
+  }
+  ]
   }
   */
 };
 
-// Execute the test
 // groupByTest();
-
 
 /*
 *  Composite functions tests
