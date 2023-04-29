@@ -455,11 +455,11 @@ const entriesFuncTest = () => {
  * @param {result} variable with which we call the function, set arguments and save the result
  */
   const arr = ['Ivan', 'Pesho', 'Pesho'];
-  const result = entries()(arr);
+  const result = entries(arr)();
   // console.log(arr); // 1, 2, 3
   console.log(result); // 5, 1, 2, 3
 };
-entriesFuncTest();
+// entriesFuncTest();
 
 /*
 *Function Test
@@ -677,7 +677,7 @@ const testOne = () => {
   console.log(piped(startValue));
 };
 
-// testOne();
+testOne();
 
 const testTwo = () => {
   const startValue = [
@@ -759,4 +759,4 @@ const testThree = () => {
 
   console.log(piped(startValue));
 };
-// testThree();
+testThree();

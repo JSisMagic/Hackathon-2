@@ -87,22 +87,25 @@ const keys = (arr) => {
  * @author Hristiyan Fachikov <hristiyan.fachikov.a49@learn.telerikacademy.com>
  * @return {array} return array of arrays includes each index and element to the original arr.
  */
-const entries = () => {
-  return (arr) => {
-    /**
+const entries = (arr) => {
+   /**
    * @function entriesFunc
    * @param {arr} array with elements.
    * @param {acc} an empty accumulator that will collect the data
    * @param {el} any An element through which we will take an element from the array
    * @return {array} return array of arrays includes each index and element to the original arr.
    */
-    const counter = 0;
-    return arr.reduce((acc, el, index, array) => {
-      acc.push([`${index}, ${el}`]);
-      return acc;
-    }, []);
-  };
-};
+   const counter = 0;
+   return arr.reduce((acc, el, index, array) => {
+     acc.push([`${index}, ${el}`]);
+     return acc;
+   }, []);
+   function returnEntries() {
+    return entriesFunc;
+ };
+ returnEntries();
+ }
+
 
 /**
  * Returns a shallow copy of a portion of an array into a new array object.
