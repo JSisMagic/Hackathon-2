@@ -724,7 +724,7 @@ const testTwo = () => {
   );
 
   console.log(composed(startValue));
-}; 
+};
 
 testTwo();
 

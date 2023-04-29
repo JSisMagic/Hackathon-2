@@ -1,3 +1,6 @@
+/* eslint-disable no-unreachable */
+/* eslint-disable func-style */
+/* eslint-disable no-undef */
 /* eslint-disable valid-jsdoc */
 // easy
 
@@ -88,23 +91,24 @@ const keys = (arr) => {
  * @return {array} return array of arrays includes each index and element to the original arr.
  */
 const entries = (arr) => {
-   /**
+  /**
    * @function entriesFunc
    * @param {arr} array with elements.
    * @param {acc} an empty accumulator that will collect the data
    * @param {el} any An element through which we will take an element from the array
    * @return {array} return array of arrays includes each index and element to the original arr.
    */
-   const counter = 0;
-   return arr.reduce((acc, el, index, array) => {
-     acc.push([`${index}, ${el}`]);
-     return acc;
-   }, []);
-   function returnEntries() {
+  const counter = 0;
+  return arr.reduce((acc, el, index, array) => {
+    acc.push([`${index}, ${el}`]);
+    return acc;
+  }, []);
+  // eslint-disable-next-line require-jsdoc
+  function returnEntries() {
     return entriesFunc;
- };
- returnEntries();
- }
+  }
+  returnEntries();
+};
 
 
 /**
