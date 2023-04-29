@@ -318,11 +318,12 @@ const addLastTest = () => {
 // addLastTest();
 
 /**
- * Test function for forEach
- *
+ * Test function for 'forEach' array method
+ * Using 'forEach' to iterate over an array and perform an operation for each element
  * @author Gergana Dragoeva Quievy  <gergana.dragoeva.a49@learn.telerikacademy.com>
  */
 const forEachTest = () => {
+  // Test array of superhero objects with name and age properties
   const startValue = [
     { name: 'Wonder Woman', age: 39 },
     { name: 'Batman', age: 42 },
@@ -330,13 +331,17 @@ const forEachTest = () => {
     { name: 'Captain Marvel', age: 21 },
   ];
 
-  let output = '';
-
-  // The function fn that will be executed for each element in the array
+  let output = ''; // Initialize an empty string to store the output
+  /**
+   *
+   * The function 'fn' that will be executed for each element in the array
+   * This function appends the superhero's name and age to the 'output' variable
+   * @param {Object} person - The superhero object with name and age properties
+   */
   const fn = (person) => {
     output += `${person.name}(${person.age}) `;
   };
-
+  // Apply the 'forEach' method to the test array, passing in the 'fn' function
   forEach(fn)(startValue);
 
   console.log(output); // "Wonder Woman(39) Batman(42) Spider-Man(26) Captain Marvel(21) "
@@ -464,22 +469,23 @@ const reverseFuncTest = () => {
 };
 // reverseFuncTest();
 
-/*
-*Function Test
-*/
 /**
- * @author Mariela Ivanova  <mariela.ivanova.a49@learn.telerikacademy.com>
+ * Test function for the 'join' array method
+ *
+ * @author Mariela Ivanova <mariela.ivanova.a49@learn.telerikacademy.com>
  */
 const joinFuncTest = () => {
-  /**
- * @param {arr} arr created as a sample test
- * @param {result} variable with which we call the function, set arguments and save the result
- */
-  const arr = ['1,2,3,4,5,6,7,8,9,Hello,There'];
+  // Test array
+  const arr = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'Hello', 'There'];
+  // Test 'join' method with the array and a custom separator
   const result = join(',')(arr);
-  console.log(result);
+  // Log the result
+  console.log(result); // "1,2,3,4,5,6,7,8,9,Hello,There"
 };
+
 // joinFuncTest();
+
+
 /**
  * @author Valentin Petkov <valentin.petkov.a49@learn.telerikacademy.com>
  */
@@ -493,29 +499,43 @@ const concatTest = () => {
 // concatTest();
 
 /**
- * @author Valentin Petkov  <valentin.petkov.a49@learn.telerikacademy.com>
- */
-const filterTest = () => {
-  const initArr = [1, 2, 1, 1, 2, 3, 2, 2, 4];
-  const predicate = (el) => el === 2;
-  const filteredArr = initArr.filter(predicate);
-  console.log(filteredArr); // [2, 2, 2, 2]
-};
-// filterTest();
-
-/**
+ * Test function for the 'filter' array method
  * @author Valentin Petkov <valentin.petkov.a49@learn.telerikacademy.com>
  */
+const filterTest = () => {
+  // Test array
+  const initArr = [1, 2, 1, 1, 2, 3, 2, 2, 4];
+  // Test predicate function
+  const predicate = (el) => el === 2;
+  // Test 'filter' method with predicate
+  const filteredArr = initArr.filter(predicate);
+  // Log the result
+  console.log(filteredArr); // [2, 2, 2, 2]
+};
+
+// filterTest();
+
+
+/**
+ * Test function for the 'every' array method
+ * @author Valentin Petkov  <valentin.petkov.a49@learn.telerikacademy.com>
+ */
 const everyTest = () => {
+  // Test array
   const arr1 = [1, 6, 4, 2, 5];
+  // Test predicate functions
   const predicate1 = (el) => el >= 0;
-  const result1 = arr1.every(predicate1);
   const predicate2 = (el) => el === 2;
+  // Test 'every' method with predicates
+  const result1 = arr1.every(predicate1);
   const result2 = arr1.every(predicate2);
+  // Log the results
   console.log(result1); // true
   console.log(result2); // false
 };
+
 // everyTest();
+
 
 /**
  * Test function for groupBy
@@ -570,6 +590,7 @@ const groupByTest = () => {
 /*
 *  Composite functions tests
 */
+
 
 const testOne = () => {
   const startValue = { length: 6 };
