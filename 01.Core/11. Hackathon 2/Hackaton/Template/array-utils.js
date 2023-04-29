@@ -545,7 +545,6 @@ const pipe = (...fns) => {
 */
 
 const compose = (...fns) => {
-  return (input) => {
     return (input) => {
       const functions = [...fns]; // Create a new array with the provided functions
       const reversed = functions.reverse(); // Reverse the order of the functions
@@ -555,7 +554,6 @@ const compose = (...fns) => {
       return input; // Return the result of applying all functions to the input
     };
   };
-};
 
 /**
  * Array with nested arrays, which should to flat to first level.

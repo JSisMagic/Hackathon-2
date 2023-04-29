@@ -676,7 +676,7 @@ const testOne = () => {
   console.log(piped(startValue));
 };
 
-testOne();
+// testOne();
 
 const testTwo = () => {
   const startValue = [
@@ -725,7 +725,7 @@ const testTwo = () => {
   console.log(composed(startValue));
 };
 
-// testTwo();
+testTwo();
 
 const testThree = () => {
   const startValue = [
@@ -758,4 +758,5 @@ const testThree = () => {
 
   console.log(piped(startValue));
 };
-testThree();
+
+// testThree();
