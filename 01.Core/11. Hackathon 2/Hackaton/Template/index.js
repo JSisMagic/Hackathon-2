@@ -434,12 +434,14 @@ const findFuncTest = () => {
  * @param {arr} arr created as a sample test
  * @param {result} variable with which we call the function, set arguments and save the result
  */
-  const arr = ['Hello', 5, true, 'There', 5, 'There', 5];
-  const result = find(5)(arr);
-  // console.log(arr); // 1, 2, 3
-  console.log(result); // 5, 1, 2, 3
+  const arr = [1, 2, 3, 4, 5, 10, 15];
+
+  const func = (num) => num > 10;
+  const answer = find(func)(arr); // returns 3
+
+  console.log(answer);
 };
-// findFuncTest();
+findFuncTest();
 
 /*
 * Function Test
@@ -714,7 +716,7 @@ const testTwo = () => {
   console.log(composed(startValue));
 };
 
-// testTwo();
+testTwo();
 
 const testThree = () => {
   const startValue = [

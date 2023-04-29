@@ -222,8 +222,8 @@ const find = (predicate) => {
    * @return {any} element. If predicate is include in arr return it, or not return null;
    */
   return (arr) => {
-    const filterElements = arr.filter((el) => el === predicate);
-    return filterElements.length > 0 ? filterElements[0] : null;
+    const filteredArr = arr.filter(predicate);
+    return filteredArr.length > 0 ? filteredArr[0] : null;
   };
 };
 
