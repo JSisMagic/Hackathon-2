@@ -295,10 +295,18 @@ const filter = (predicate) => {
    * @param {Array} arr: array to iterate over
    * @return {Array}: new array with elements that pass the predicate test
    */
+  // return (arr) => {
+  //   const result = [];
+  //   arr.forEach((el) => {
+  //     if (predicate(el)) {
+  //       result.push(el);
+  //     }
+  //   });
+  //   return result;
   return (arr) => {
     const result = [];
-    arr.forEach((el) => {
-      if (predicate(el)) {
+    arr.forEach((el, index) => {  // add the index parameter to the forEach callback
+      if (predicate(el, index)) { // pass the index to the predicate function
         result.push(el);
       }
     });

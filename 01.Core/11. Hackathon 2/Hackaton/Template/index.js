@@ -437,11 +437,11 @@ const findFuncTest = () => {
   const arr = [1, 2, 3, 4, 5, 10, 15];
 
   const func = (num) => num > 10;
-  const answer = find(func)(arr); // returns 3
+  const answer = find(func)(arr);
 
   console.log(answer);
 };
-findFuncTest();
+// findFuncTest();
 
 /*
 * Function Test
@@ -560,14 +560,23 @@ const concatTest = () => {
  */
 const filterTest = () => {
   // Test array
-  const initArr = [1, 2, 1, 1, 2, 3, 2, 2, 4];
-  // Test predicate function
-  const predicate = (el) => el === 2;
-  // Test 'filter' method with predicate
-  const filteredArr = initArr.filter(predicate);
-  // Log the result
-  console.log(filteredArr); // [2, 2, 2, 2]
+  // const initArr = [1, 2, 1, 1, 2, 3, 2, 2, 4];
+  // // Test predicate function
+  // const predicate = (el, index) => el === 2;
+  // // Test 'filter' method with predicate
+  // const filteredArr = initArr.filter(predicate);
+  // // Log the result
+  // console.log(filteredArr); // [2, 2, 2, 2]
+  const arr = [1, 2, 3, 4, 5];
+
+const filterIndex = filter((el, index) => {
+  return index < 3; // only keep elements with an index less than 3
+});
+
+const filteredArr = filterIndex(arr);
+return filteredArr;
 };
+
 
 // filterTest();
 
@@ -667,7 +676,7 @@ const testOne = () => {
   console.log(piped(startValue));
 };
 
-// testOne();
+testOne();
 
 const testTwo = () => {
   const startValue = [
@@ -678,30 +687,30 @@ const testTwo = () => {
   ];
   // its compose so it will run backwards
   const composed = compose(
-      find((x) => x > 10), // 47
-      (arr) => [...arr, 9], // [ 47, 9 ]
-      (str) => [str.length], // [ 47 ]
-      join('&'), // 1&false&odd&2&true&even&3&false&odd&4&true&even
-      flat,
-      // [1, false, 'odd', 2, true, 'even', 3, false, 'odd', 4, true, 'even']
-      (arr) => arr.map((el, index) => [el, index % 2 === 1, index % 2 === 0 ? 'odd' : 'even']),
-      /* [[1, false, 'odd'],
-      [2, true, 'even'],
-      [3, false, 'odd'],
-      [4, true, 'even']
-    ]*/
-      (arr) => arr.map((_, index) => index + 1),
-      fill(true, 0, 7), // [true, true, true, true]
-      (arr) => [...arr, 8], // [[0, 'Ivan'], [1, 'Pesho'], [2, 'Pesho'], 8]
-      entries, // [[0, 'Ivan'], [1, 'Pesho'], [2, 'Pesho']]
-      removeLast, // ['Ivan', 'Pesho', 'Pesho']
-      (arr) => arr.map((obj) => obj.name), // ['Ivan', 'Pesho', 'Pesho', 'Maria']
-      flat,
-      /* [{ name: 'Ivan', age: 15 },
-      { name: 'Pesho', age: 32 },
-      { name: 'Pesho', age: 23 },
-      { name: 'Maria', age: 19 }
-    ]*/
+    //   find((x) => x > 10), // 47
+    //   (arr) => [...arr, 9], // [ 47, 9 ]
+    //   (str) => [str.length], // [ 47 ]
+    //   join('&'), // 1&false&odd&2&true&even&3&false&odd&4&true&even
+    //   flat,
+    //   // [1, false, 'odd', 2, true, 'even', 3, false, 'odd', 4, true, 'even']
+    //   (arr) => arr.map((el, index) => [el, index % 2 === 1, index % 2 === 0 ? 'odd' : 'even']),
+    //   /* [[1, false, 'odd'],
+    //   [2, true, 'even'],
+    //   [3, false, 'odd'],
+    //   [4, true, 'even']
+    // ]*/
+    //   (arr) => arr.map((_, index) => index + 1),
+    //   fill(true, 0, 7), // [true, true, true, true]
+    //   (arr) => [...arr, 8], // [[0, 'Ivan'], [1, 'Pesho'], [2, 'Pesho'], 8]
+    //   entries, // [[0, 'Ivan'], [1, 'Pesho'], [2, 'Pesho']]
+    //   removeLast, // ['Ivan', 'Pesho', 'Pesho']
+    //   (arr) => arr.map((obj) => obj.name), // ['Ivan', 'Pesho', 'Pesho', 'Maria']
+    //   flat,
+    //   /* [{ name: 'Ivan', age: 15 },
+    //   { name: 'Pesho', age: 32 },
+    //   { name: 'Pesho', age: 23 },
+    //   { name: 'Maria', age: 19 }
+    // ]*/
       Object.values,
       /* [[{ name: 'Ivan', age: 15 }],
       [{ name: 'Pesho', age: 32 }, { name: 'Pesho', age: 23 }],
@@ -716,7 +725,7 @@ const testTwo = () => {
   console.log(composed(startValue));
 };
 
-testTwo();
+// testTwo();
 
 const testThree = () => {
   const startValue = [
@@ -749,5 +758,4 @@ const testThree = () => {
 
   console.log(piped(startValue));
 };
-
-// testThree();
+testThree();
