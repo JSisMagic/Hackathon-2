@@ -87,6 +87,13 @@ const testReduceRight = () => {
 
 // testReduceRight();
 
+/**
+ *
+ * Test function for slice
+ * This test demonstrates the usage of the slice function with an array of numbers.
+ * It checks if the function returns a new array with elements extracted from the start to end index.
+ * @author Nikolay Nikolov  <nikolay.nikolov.a49@learn.telerikacademy.com>
+ */
 const sliceTest = () => {
   const arr = [1, 2, 3, 4, 5];
   const slicedArr = slice(1, 4)(arr);
@@ -95,6 +102,16 @@ const sliceTest = () => {
 
 // sliceTest();
 
+/**
+ * Test function for pipe
+ *
+ * This test demonstrates the usage of the pipe function, which composes multiple functions together.
+ * It checks if the result of applying the composed functions to an input value is correct.
+ * Functions are executed from left to right, passing the result of each function to the next one.
+ *
+ * @author Nikolay Nikolov  <nikolay.nikolov.a49@learn.telerikacademy.com>
+ *
+ */
 const pipeTest = () => {
   const addTen = (num) => num + 10;
   const multiplyByFive = (num) => num * 5;
@@ -105,6 +122,16 @@ const pipeTest = () => {
 
 // pipeTest();
 
+/**
+ * Test function for map
+ *
+ * This test demonstrates the usage of the map function, which applies a given function to each element in an array.
+ * It checks if the resulting array contains the expected transformed elements.
+ * In this test, the mapperFn adds 10 to each element in the input array.
+ *
+ * @author Nikolay Nikolov <nikolay.nikolov.a49@learn.telerikacademy.com>
+ *
+ */
 const mapTest = () => {
   const mapperFn = (num) => num + 10;
   const arr = [1, 2, 3, 4, 5];
@@ -113,13 +140,6 @@ const mapTest = () => {
 };
 
 // mapTest();
-
-const flatMapTest = () => {
-  const mapperFn = (num) => (num === 2 ? [2, 2] : 1);
-  const arr = [1, 2, 2, 1];
-  const mappedArr = flatMap(mapperFn)(arr);
-  console.log(mappedArr);
-};
 
 // flatMapTest();
 
@@ -138,6 +158,7 @@ const composeTest = () => {
   console.log(test1);
   console.log(test2);
 };
+
 
 // composeTest();
 
@@ -173,7 +194,6 @@ const arrayFromTest = () => {
 };
 
 // arrayFromTest()
-
 
 /**
 
@@ -290,17 +310,13 @@ const forEachTest = () => {
   console.log(output); // "Wonder Woman(39) Batman(42) Spider-Man(26) Captain Marvel(21) "
 };
 
-// Execute the test
 // forEachTest();
 
 
 /**
  * Test function for findIndex
  *
- * Demonstrates the usage of the findIndex function.
- *
- * The function is designed to locate the index of the first element in an array
- * in the context of searching for a specific Pokémon.
+ * Locate the index of the first element in an array in the context of searching for a specific Pokémon.
  * In this case, the predicate function checks if a Pokémon has a specific name and power points value.
  *
  * @author Gergana Dragoeva Quievy  <gergana.dragoeva.a49@learn.telerikacademy.com>
@@ -328,7 +344,6 @@ const findIndexTest = () => {
 };
 
 // findIndexTest();
-
 
 /*
 *Function Test
