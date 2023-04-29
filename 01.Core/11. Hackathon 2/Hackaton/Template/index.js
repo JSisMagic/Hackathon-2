@@ -88,8 +88,8 @@ const testReduceRight = () => {
 // testReduceRight();
 
 /**
- *
  * Test function for slice
+ *
  * This test demonstrates the usage of the slice function with an array of numbers.
  * It checks if the function returns a new array with elements extracted from the start to end index.
  * @author Nikolay Nikolov  <nikolay.nikolov.a49@learn.telerikacademy.com>
@@ -169,8 +169,7 @@ const flatMapTest = () => {
   // ]
 };
 
-flatMapTest();
-
+// flatMapTest();
 
 const composeTest = () => {
   const test1 = compose((el) => {
