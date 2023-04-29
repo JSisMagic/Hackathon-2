@@ -286,32 +286,38 @@ const forEachTest = () => {
 };
 
 // Execute the test
-forEachTest();
+// forEachTest();
 
 
 /**
  * Test function for findIndex
  *
+ * Demonstrates the usage of the findIndex function.
+ *
+ * The function is designed to locate the index of the first element in an array
+ * in the context of searching for a specific Pokémon.
+ * In this case, the predicate function checks if a Pokémon has a specific name and power points value.
+ *
  * @author Gergana Dragoeva Quievy  <gergana.dragoeva.a49@learn.telerikacademy.com>
  */
 const findIndexTest = () => {
   const startValue = [
-    { name: 'Ivan', age: 15 },
-    { name: 'Pesho', age: 32 },
-    { name: 'Pesho', age: 23 },
-    { name: 'Maria', age: 19 },
+    { name: 'Pikachu', powerPoints: 55 },
+    { name: 'Charmander', powerPoints: 32 },
+    { name: 'Bulbasaur', powerPoints: 45 },
+    { name: 'Squirtle', powerPoints: 40 },
   ];
 
-  const predicate = (person) => person.name === 'Pesho' && person.age === 23;
+  const predicate = (pokemon) => pokemon.name === 'Bulbasaur' && pokemon.powerPoints === 45;
 
   const index = findIndex(predicate)(startValue);
 
   console.log(startValue);
   // [
-  //   { name: 'Ivan', age: 15 },
-  //   { name: 'Pesho', age: 32 },
-  //   { name: 'Pesho', age: 23 },
-  //   { name: 'Maria', age: 19 },
+  //   { name: 'Pikachu', powerPoints: 55 },
+  //   { name: 'Charmander', powerPoints: 32 },
+  //   { name: 'Bulbasaur', powerPoints: 45 },
+  //   { name: 'Squirtle', powerPoints: 40 },
   // ]
   console.log(index); // 2
 };

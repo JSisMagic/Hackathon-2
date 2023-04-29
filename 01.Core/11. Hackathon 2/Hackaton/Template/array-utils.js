@@ -19,10 +19,10 @@ const removeFirst = (arr) => arr.slice(1); // it does not take additional parame
 
 
 /**
-    * Add an element at the end of the array
-    * The addLast function is a higher-order function designed to make it easy to create
-    * new arrays with an additional element at the end.
-    * It takes a single argument, the element to be added, and returns a new function.
+    * Add an element at the end of the array.
+    * The addLast function is a higher-order function designed to make it easy to create new arrays
+    * with an additional element at the end. It takes a single argument, the element to be added,
+    * and returns a new function.
     * @param {any} element The element to add at the end of *the array
     * @return {addLastFunc} - > inner function
     * @author: Gergana Dragoeva Quievy gergana.dragoeva.a49@learn.telerikacademy.com
@@ -34,12 +34,10 @@ const addLast = (element) => {
      * @function addLastFunc
      * @param {array} array An array to which the element should be added
      * @return {array} A new array that is a copy of the original array with the
-     * element added at the end.
-     * The inner function addLastFunc takes an array as input and returns a new array.
-     * The new array is a copy of the original array with the
-     * provided element added to the end.
-     * This function uses the spread operator to create a shallow
-     * copy of the array, ensuring that the original array remains unmodified.
+     * element added at the end. The inner function addLastFunc takes an array as input
+     * and returns a new array. The new array is a copy of the original array with the
+     * provided element added to the end. This function uses the spread operator to create a shallow copy of the array,
+     * ensuring that the original array remains unmodified.
      */
   return (array) => [...array, element];
 };
@@ -456,22 +454,41 @@ const indexOf = (searchedElement) => {
   };
 };
 
+
 /**
  * Finds the index of the first element in the array that satisfies the provided testing function
  *
+ * This function is particularly useful when searching for the first occurrence
+ * of an element in an array that meets a specific condition.
+ * It uses a high-order function (predicate) to determine whether the condition is met.
+ *
  * @param {function} predicate The testing function
  * @return {findIndexFunc} inner function
+ *
  * @author Gergana Dragoeva Quievy  <gergana.dragoeva.a49@learn.telerikacademy.com>
  */
 const findIndex = (predicate) => {
   /**
    * @function findIndexFunc
+   *
    * @param {array} array The array to search in
    * @return {number} The index of the first element that satisfies the predicate, or -1 if none is found
+   *
+   * The inner function uses the array.reduce() method to loop through the array and check
+   * each element against the predicate. It returns the index of the first element that satisfies
+   * the predicate, or -1 if no such element is found.
    */
-  return (array) => array.reduce((acc, curr, index) =>
-    acc !== -1 ? acc : (predicate(curr) ? index : acc), -1);
+
+  return (array) => array.reduce((acc, curr, index) => {
+    if (acc !== -1) {
+      return acc;
+    } else if (predicate(curr)) {
+      return index;
+    }
+    return acc;
+  }, -1);
 };
+
 
 // hard
 
