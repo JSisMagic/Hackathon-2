@@ -96,10 +96,10 @@ const entries = () => {
    * @param {el} any An element through which we will take an element from the array
    * @return {array} return array of arrays includes each index and element to the original arr.
    */
-    let counter = 0;
+    const counter = 0;
     return arr.reduce((acc, el, index, array) => {
-        acc.push([`${index}, ${el}`]);
-        return acc;
+      acc.push([`${index}, ${el}`]);
+      return acc;
     }, []);
   };
 };
@@ -311,7 +311,7 @@ const filter = (predicate) => {
   //   return result;
   return (arr) => {
     const result = [];
-    arr.forEach((el, index) => {  // add the index parameter to the forEach callback
+    arr.forEach((el, index) => { // add the index parameter to the forEach callback
       if (predicate(el, index)) { // pass the index to the predicate function
         result.push(el);
       }
@@ -552,15 +552,15 @@ const pipe = (...fns) => {
 */
 
 const compose = (...fns) => {
-    return (input) => {
-      const functions = [...fns]; // Create a new array with the provided functions
-      const reversed = functions.reverse(); // Reverse the order of the functions
-      reversed.forEach((fn) => { // Apply each function to the input in reverse order
-        input = fn(input);
-      });
-      return input; // Return the result of applying all functions to the input
-    };
+  return (input) => {
+    const functions = [...fns]; // Create a new array with the provided functions
+    const reversed = functions.reverse(); // Reverse the order of the functions
+    reversed.forEach((fn) => { // Apply each function to the input in reverse order
+      input = fn(input);
+    });
+    return input; // Return the result of applying all functions to the input
   };
+};
 
 
 /**
