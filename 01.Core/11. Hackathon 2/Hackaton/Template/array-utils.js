@@ -18,7 +18,6 @@ const addFirst = (element) => {
 
 const removeFirst = (arr) => arr.slice(1); // it does not take additional parameters to be splitted
 
-
 /**
     * Add an element at the end of the array.
     * The addLast function is a higher-order function designed to make it easy to create new arrays
@@ -42,7 +41,6 @@ const addLast = (element) => {
      */
   return (array) => [...array, element];
 };
-
 
 /**
  * Removes the last element of the array
@@ -145,7 +143,6 @@ const concat = (arr) => {
   };
 };
 
-
 /**
  * Execute a provided function once for each array element.
  *
@@ -170,9 +167,7 @@ const forEach = (fn) => {
   return (array) => array.map(fn);
 };
 
-
 // medium
-
 
 /**
  * Create a reversed copy of the array so that the first element becomes the last, the second element becomes the second to last, and so on
@@ -211,7 +206,6 @@ const join = (separator) => {
     return arr.reduce((acc, curr) => acc + separator + curr);
   };
 };
-
 
 /**
  * Filters the elements equal to a predicate and checks if there are any,
@@ -262,7 +256,6 @@ const fill = (value, start, end) => {
   };
 };
 
-
 /**
  * Returns a shallow copy of a portion of an array into a new array object.
  *
@@ -284,7 +277,6 @@ const map = (mapperFn) => {
     return mappedArr;
   };
 };
-
 
 /**
  * Iterates over elements of collection, returning an array of all elements the passed function returns truthy for.
@@ -455,7 +447,6 @@ const indexOf = (searchedElement) => {
   };
 };
 
-
 /**
  * Finds the index of the first element in the array that satisfies the provided testing function
  *
@@ -489,7 +480,6 @@ const findIndex = (predicate) => {
     return acc;
   }, -1);
 };
-
 
 // hard
 

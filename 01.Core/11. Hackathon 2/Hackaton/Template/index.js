@@ -224,14 +224,13 @@ const arrayFromTest = () => {
 // arrayFromTest()
 
 /**
-
  * Test function for removeLast
-
  * This test demonstrates the usage of the removeLast function where an array of Lego toy objects.
  * The test checks if the last element is removed from the array without modifying the original array.
-
-  @author Gergana Dragoeva Quievy  <gergana.dragoeva.a49@learn.telerikacademy.com>
-    */
+ *
+ * @author Gergana Dragoeva Quievy  <gergana.dragoeva.a49@learn.telerikacademy.com>
+ *
+ * */
 const removeLastTest = () => {
   const startValue = [
     { name: 'Lego City', price: 45 },
@@ -258,9 +257,7 @@ const removeLastTest = () => {
   // ]
 };
 
-// Execute the test
 // removeLastTest();
-
 
 const addFirstTest = () => {
   const arr = [1, 2, 3];
@@ -270,7 +267,6 @@ const addFirstTest = () => {
   console.log(arr); // 1, 2, 3
   console.log(copy); // 5, 1, 2, 3
 };
-
 
 /**
  * Test function for addLast
@@ -311,7 +307,6 @@ const addLastTest = () => {
 };
 
 // addLastTest();
-
 
 /**
  * Test function for forEach
