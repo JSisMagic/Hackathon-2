@@ -569,7 +569,6 @@ const compose = (...fns) => {
   };
 };
 
-
 /**
  * Array with nested arrays, which should to flat to first level.
  * @author Hristiyan Fachikov <hristiyan.fachikov.a49@learn.telerikacademy.com>

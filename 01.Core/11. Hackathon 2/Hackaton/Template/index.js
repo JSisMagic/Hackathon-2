@@ -274,7 +274,6 @@ const arrayFromTest = () => {
 
 // arrayFromTest();
 
-
 /**
  * Test function for removeLast
  * Using removeLast function where an array of Lego toy objects.
@@ -602,7 +601,6 @@ const everyTest = () => {
 
 // everyTest();
 
-
 /**
  * Test function for groupBy
  *
@@ -754,7 +752,6 @@ const testThree = () => {
       keys, // [0, 1, 2, 3, 4]
       removeFirst, // [1, 2, 3, 4]
       reduce((a, b) => a * b, 1), // 24
-
   );
 
   console.log(piped(startValue));
