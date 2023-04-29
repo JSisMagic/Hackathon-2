@@ -454,12 +454,12 @@ const entriesFuncTest = () => {
  * @param {arr} arr created as a sample test
  * @param {result} variable with which we call the function, set arguments and save the result
  */
-  const arr = ['Hello', 5, true, 'There'];
+  const arr = ['Ivan', 'Pesho', 'Pesho'];
   const result = entries()(arr);
   // console.log(arr); // 1, 2, 3
   console.log(result); // 5, 1, 2, 3
 };
-// entriesFuncTest();
+entriesFuncTest();
 
 /*
 *Function Test
@@ -676,7 +676,7 @@ const testOne = () => {
   console.log(piped(startValue));
 };
 
-testOne();
+// testOne();
 
 const testTwo = () => {
   const startValue = [
@@ -687,45 +687,44 @@ const testTwo = () => {
   ];
   // its compose so it will run backwards
   const composed = compose(
-    //   find((x) => x > 10), // 47
-    //   (arr) => [...arr, 9], // [ 47, 9 ]
-    //   (str) => [str.length], // [ 47 ]
-    //   join('&'), // 1&false&odd&2&true&even&3&false&odd&4&true&even
-    //   flat,
-    //   // [1, false, 'odd', 2, true, 'even', 3, false, 'odd', 4, true, 'even']
-    //   (arr) => arr.map((el, index) => [el, index % 2 === 1, index % 2 === 0 ? 'odd' : 'even']),
-    //   /* [[1, false, 'odd'],
-    //   [2, true, 'even'],
-    //   [3, false, 'odd'],
-    //   [4, true, 'even']
-    // ]*/
-    //   (arr) => arr.map((_, index) => index + 1),
-    //   fill(true, 0, 7), // [true, true, true, true]
-    //   (arr) => [...arr, 8], // [[0, 'Ivan'], [1, 'Pesho'], [2, 'Pesho'], 8]
-    //   entries, // [[0, 'Ivan'], [1, 'Pesho'], [2, 'Pesho']]
-    //   removeLast, // ['Ivan', 'Pesho', 'Pesho']
-    //   (arr) => arr.map((obj) => obj.name), // ['Ivan', 'Pesho', 'Pesho', 'Maria']
-    //   flat,
-    //   /* [{ name: 'Ivan', age: 15 },
-    //   { name: 'Pesho', age: 32 },
-    //   { name: 'Pesho', age: 23 },
-    //   { name: 'Maria', age: 19 }
-    // ]*/
+      find((x) => x > 10), // 47
+      (arr) => [...arr, 9], // [ 47, 9 ]
+      (str) => [str.length], // [ 47 ]
+      join('&'), // 1&false&odd&2&true&even&3&false&odd&4&true&even
+      flat,
+      [1, false, 'odd', 2, true, 'even', 3, false, 'odd', 4, true, 'even']
+      ,(arr) => arr.map((el, index) => [el, index % 2 === 1, index % 2 === 0 ? 'odd' : 'even']),
+      [[1, false, 'odd'],
+      [2, true, 'even'],
+      [3, false, 'odd'],
+      [4, true, 'even']
+    ],
+      (arr) => arr.map((_, index) => index + 1),
+      fill(true, 0, 7), // [true, true, true, true]
+      (arr) => [...arr, 8], // [[0, 'Ivan'], [1, 'Pesho'], [2, 'Pesho'], 8]
+      entries, // [[0, 'Ivan'], [1, 'Pesho'], [2, 'Pesho']]
+      removeLast, // ['Ivan', 'Pesho', 'Pesho']
+      (arr) => arr.map((obj) => obj.name), // ['Ivan', 'Pesho', 'Pesho', 'Maria']
+      flat,
+       [{ name: 'Ivan', age: 15 },
+      { name: 'Pesho', age: 32 },
+      { name: 'Pesho', age: 23 },
+      { name: 'Maria', age: 19 }
+    ],
       Object.values,
-      /* [[{ name: 'Ivan', age: 15 }],
+      [[{ name: 'Ivan', age: 15 }],
       [{ name: 'Pesho', age: 32 }, { name: 'Pesho', age: 23 }],
       [{ name: 'Maria', age: 19 }]
-    ]*/
+    ],
       (arr) => groupBy((obj) => obj.name)(arr),
-      /* {Ivan: [{ name: 'Ivan', age: 15 }],
+      {Ivan: [{ name: 'Ivan', age: 15 }],
       Pesho: [{ name: 'Pesho', age: 32 }, { name: 'Pesho', age: 23 }],
-      Maria: [{ name: 'Maria', age: 19 }]} */
-  );
-
+      Maria: [{ name: 'Maria', age: 19 }]}
+  )
   console.log(composed(startValue));
 };
 
-// testTwo();
+testTwo();
 
 const testThree = () => {
   const startValue = [
@@ -758,4 +757,4 @@ const testThree = () => {
 
   console.log(piped(startValue));
 };
-testThree();
+// testThree();

@@ -90,10 +90,9 @@ const entries = () => {
    * @return {array} return array of arrays includes each index and element to the original arr.
    */
     let counter = 0;
-    return arr.reduce((acc, el) => {
-      acc.push([`${counter}, `, el]);
-      counter++;
-      return acc;
+    return arr.reduce((acc, el, index, array) => {
+        acc.push([`${index}, ${el}`]);
+        return acc;
     }, []);
   };
 };
