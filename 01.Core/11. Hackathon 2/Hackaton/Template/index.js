@@ -156,7 +156,7 @@ const mapTest = () => {
 /**
  * Test function for flatMap
  *
- * This test demonstrates the usage of the flatMap function, which applies a given function to each element
+ * Using the flatMap function, which applies a given function to each element
  * in an array and then flattens the result by one level.
  * In this test, we apply a transformation to an array of toys.
  *
@@ -185,9 +185,10 @@ const flatMapTest = () => {
 
 /**
  * Test function for 'compose' utility function
- * Demonstrates how to use 'compose' to create a new function that is the composition of two input functions.
  *
- * @author Stefan Donev <stefan.donev.a49@learn.telerikacademy.com>
+ * Using 'compose' to create a new function that is the composition of two input functions.
+ *
+ * @author Victor Petrov <viktor.petrov.a49@learn.telerikacademy.com>
  */
 const composeTest = () => {
   // Compose two functions that perform arithmetic operations on a number
@@ -196,7 +197,7 @@ const composeTest = () => {
       (el) => el * 3,
   )(3); // 11
 
-  // Compose two functions that extract substrings from a string
+  // Composing two functions that extract substrings from a string
   const test2 = compose(
       (str) => str.substring(1, 4),
       (str) => str.substring(1, 4),
@@ -211,49 +212,72 @@ const composeTest = () => {
 
 
 /**
-* @Victor Petrov <viktor.petrov.a49@learn.telerikacademy.com>
-*/
+ * Test function for 'reduce' utility function
+ * Using 'reduce' to apply a function to each element in an array and accumulate the result
+ * @author Victor Petrov <viktor.petrov.a49@learn.telerikacademy.com>
+ */
 const reduceTest = () => {
+  // The initial array
   const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
+  // The function to be applied to each element in the array
   const testFunction = (acc, el) => {
     acc.push(el * 2);
     return acc;
   };
 
+  // Using 'reduce' to apply 'testFunction' to each element in 'arr' and accumulate the result in a new array
   const test = reduce(testFunction, [])(arr);
 
+  // Log the initial array and the result array
   console.log(arr); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
   console.log(test); // [ 2, 4, 6, 8, 10, 12, 14, 16, 18]
 };
 
 // reduceTest();
 
+
 /**
-* @Victor Petrov <viktor.petrov.a49@learn.telerikacademy.com>
-*/
+ * Test function for 'fill' utility function
+ *
+ * Using 'fill' to replace a range of elements in an array with a specified value
+ * @author Victor Petrov <viktor.petrov.a49@learn.telerikacademy.com>
+ */
 const fillTest = () => {
+  // The initial array
   const array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  // Use 'fill' to replace elements from index 2 to index 5 (not inclusive) with the value 2
   const copy = fill(2, 2, 5)(array);
 
+  // Log the initial array and the resulting array
   console.log(array); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
   console.log(copy); // [ 1, 2, 2, 2, 2, 6, 7, 8, 9]
 };
 
-// fillTest()
+// fillTest();
+
+
 /**
-* @Victor Petrov <viktor.petrov.a49@learn.telerikacademy.com>
-*/
+ * Test function for 'arrayFrom' utility function
+ *
+ * Using 'arrayFrom' to create an array from an object with a specified length
+ * @author Victor Petrov <viktor.petrov.a49@learn.telerikacademy.com>
+ */
 const arrayFromTest = () => {
-  const copy = (arrayFrom({ length: 6 }));
-  console.log(copy); // undefined, undefined, undefined, undefined, undefined, undefined ]
+  // Using 'arrayFrom' to create an array from an object with a length property of 6
+  const copy = arrayFrom({ length: 6 });
+
+  // Log the resulting array, which contains 6 'undefined' values
+  console.log(copy); // [undefined, undefined, undefined, undefined, undefined, undefined]
 };
 
-// arrayFromTest()
+// arrayFromTest();
+
 
 /**
  * Test function for removeLast
- * This test demonstrates the usage of the removeLast function where an array of Lego toy objects.
+ * Using removeLast function where an array of Lego toy objects.
  * The test checks if the last element is removed from the array without modifying the original array.
  *
  * @author Gergana Dragoeva Quievy  <gergana.dragoeva.a49@learn.telerikacademy.com>
@@ -297,9 +321,8 @@ const addFirstTest = () => {
 };
 
 /**
- * Test function for addLast
+ * Test function for addLast function
  *
- * This test function demonstrates the usage of the addLast function.
  * It starts with an initial array of fruit objects with names and prices.
  * The addLast function is used to add a new fruit object to the end of the array without modifying the original array.
  *
@@ -338,6 +361,7 @@ const addLastTest = () => {
 
 /**
  * Test function for 'forEach' array method
+ *
  * Using 'forEach' to iterate over an array and perform an operation for each element
  * @author Gergana Dragoeva Quievy  <gergana.dragoeva.a49@learn.telerikacademy.com>
  */
@@ -371,7 +395,7 @@ const forEachTest = () => {
 /**
  * Test function for findIndex
  *
- * Locate the index of the first element in an array in the context of searching for a specific Pokémon.
+ * Locating the index of the first element in an array in the context of searching for a specific Pokémon.
  * In this case, the predicate function checks if a Pokémon has a specific name and power points value.
  *
  * @author Gergana Dragoeva Quievy  <gergana.dragoeva.a49@learn.telerikacademy.com>
@@ -418,7 +442,7 @@ const findFuncTest = () => {
 // findFuncTest();
 
 /*
-*Function Test
+* Function Test
 */
 /**
  * @author Hristiyan Fachikov  <hristiyan.fachikov.a49@learn.telerikacademy.com>
@@ -454,9 +478,8 @@ const someFuncTest = () => {
 // someFuncTest();
 
 /*
-*Function Test
-*/
-/**
+ * Function Test
+ *
  * @author Hristiyan Fachikov <hristiyan.fachikov.a49@learn.telerikacademy.com>
  */
 const flatFuncTest = () => {
@@ -506,16 +529,28 @@ const joinFuncTest = () => {
 
 
 /**
+ * Test function for concat
+ *
+ * Using of the concat function, which combines two arrays into one.
+ * The test uses two arrays: outerArr and innerArr, and concatenates them using the concat function.
+ * The result is then logged to the console, showing the combined array.
+ *
  * @author Valentin Petkov <valentin.petkov.a49@learn.telerikacademy.com>
  */
 const concatTest = () => {
+  // The two arrays to be concatenated
   const outerArr = [1, 2, 3];
   const innerArr = [7, 8, 9];
 
+  // Concatenate the arrays using the concat function
   const concatResult = outerArr.concat(innerArr);
+
+  // Log the resulting concatenated array
   console.log(concatResult); // [1, 2, 3, 7, 8, 9]
 };
+
 // concatTest();
+
 
 /**
  * Test function for the 'filter' array method
@@ -559,8 +594,8 @@ const everyTest = () => {
 /**
  * Test function for groupBy
  *
- * This test demonstrates the usage of the groupBy function, which groups elements of an array based on a given key.
- * In this specific test, we have an array of people objects with 'age' and 'name' properties.
+ * Using the groupBy function, which groups elements of an array based on a given key.
+ * In this test, we have an array of people objects with 'age' and 'name' properties.
  * We use the groupBy function to group the people by their ages.
  *
  * @author Gergana Dragoeva Quievy  <gergana.dragoeva.a49@learn.telerikacademy.com>
