@@ -553,11 +553,12 @@ const concatTest = () => {
 
 // concatTest();
 
-
 /**
- * Test function for the 'filter' array method
- * @author Valentin Petkov <valentin.petkov.a49@learn.telerikacademy.com>
- */
+  * Test function for the 'filter' array method
+  *
+  * @author Valentin Petkov <valentin.petkov.a49@learn.telerikacademy.com>
+  **/
+
 const filterTest = () => {
   // Test array
   // const initArr = [1, 2, 1, 1, 2, 3, 2, 2, 4];
@@ -569,12 +570,12 @@ const filterTest = () => {
   // console.log(filteredArr); // [2, 2, 2, 2]
   const arr = [1, 2, 3, 4, 5];
 
-const filterIndex = filter((el, index) => {
-  return index < 3; // only keep elements with an index less than 3
-});
+  const filterIndex = filter((el, index) => {
+    return index < 3; // only keep elements with an index less than 3
+  });
 
-const filteredArr = filterIndex(arr);
-return filteredArr;
+  const filteredArr = filterIndex(arr);
+  return filteredArr;
 };
 
 
@@ -677,6 +678,7 @@ const testOne = () => {
 };
 
 // testOne();
+// testOne();
 
 const testTwo = () => {
   const startValue = [
@@ -724,6 +726,7 @@ const testTwo = () => {
   console.log(composed(startValue));
 };
 
+testTwo();
 testTwo();
 
 const testThree = () => {

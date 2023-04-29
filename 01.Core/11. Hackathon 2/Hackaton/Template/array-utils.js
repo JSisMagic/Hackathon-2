@@ -20,12 +20,15 @@ const removeFirst = (arr) => arr.slice(1); // it does not take additional parame
 
 /**
     * Add an element at the end of the array.
+    *
     * The addLast function is a higher-order function designed to make it easy to create new arrays
     * with an additional element at the end. It takes a single argument, the element to be added,
     * and returns a new function.
+    *
     * @param {any} element The element to add at the end of *the array
     * @return {addLastFunc} - > inner function
-    * @author: Gergana Dragoeva Quievy  <gergana.dragoeva.a49@learn.telerikacademy.com>
+    *
+    * @author Gergana Dragoeva Quievy  <gergana.dragoeva.a49@learn.telerikacademy.com>
     */
 
 const addLast = (element) => {
@@ -34,9 +37,13 @@ const addLast = (element) => {
      * @function addLastFunc
      * @param {array} array An array to which the element should be added
      * @return {array} A new array that is a copy of the original array with the
-     * element added at the end. The inner function addLastFunc takes an array as input
+     * element added at the end.
+     *
+     * The inner function addLastFunc takes an array as input
      * and returns a new array. The new array is a copy of the original array with the
-     * provided element added to the end. This function uses the spread operator to create a shallow copy of the array,
+     * provided element added to the end.
+     *
+     * This function uses the spread operator to create a shallow copy of the array,
      * ensuring that the original array remains unmodified.
      */
   return (array) => [...array, element];
@@ -538,13 +545,13 @@ const pipe = (...fns) => {
 /**
  *
  * @author Viktor Petrov <viktor.martinov.p@gmail.com>
- * A higher-order function that takes in one or more functions as arguments and returns a new function that applies each function to the input in reverse order.
+ * A higher-order function that takes in one or more functions as arguments and returns a new
+ * function that applies each function to the input in reverse order.
  *@param {...function} fns - One or more functions to compose.
  *@return {function} A new function that applies each function to the input in reverse order.
 */
 
 const compose = (...fns) => {
-  return (input) => {
     return (input) => {
       const functions = [...fns]; // Create a new array with the provided functions
       const reversed = functions.reverse(); // Reverse the order of the functions
@@ -554,7 +561,7 @@ const compose = (...fns) => {
       return input; // Return the result of applying all functions to the input
     };
   };
-};
+
 
 /**
  * Array with nested arrays, which should to flat to first level.
