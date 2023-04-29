@@ -565,36 +565,27 @@ const flatMap = (mapperFn) => {
   };
 };
 
+// eslint-disable-next-line valid-jsdoc
 /**
  * Creates an object that will group the array values by a passed grouping function.
- * The object keys will be all of the unique groupings and the values will be an array of the group entries.
  *
- * @author Valentin Petkov <valentin.petkov.a49@learn.telerikacademy.com>
- *
- * @param {Function} groupingFn (el: any) => any: The grouping function. It will accept an element and return the group identifier.
- * @return {Function} groupByFunc (arr: any) => object:  Returns a closure that will iterate over the passed array
- * and will call the grouping function with each of the elements. The grouping function will return
- * the unique group identifier for each of them and this will be the key for the result object.
- * The values will be arrays of the group members.
+ * @author Gergana Dragoeva Quievy  <gergana.dragoeva.a49@learn.telerikacademy.com>
+ * @param {Function} groupingFn The grouping function that accepts an element
+ * and returns the group identifier.
+ * @returns {(arr: any[]) => object} A closure that iterates over the passed array
+ * and calls the grouping function with each element.
  */
 const groupBy = (groupingFn) => {
-  /**
-   * @function groupByFunc
-   * @param {Array} arr: array to group using the grouping function
-   * @return {Object}
-   */
   return (arr) => {
-    // TODO
-    return arr.reduce((acc, curr) => {
-      const key = groupingFn(curr);
-      if (!acc[key]) {
-        acc[key] = [];
-      }
-      acc[key].push(curr);
+    return arr.reduce((acc, el) => {
+      const group = groupingFn(el);
+      if (!acc[group]) acc[group] = [];
+      acc[group].push(el);
       return acc;
     }, {});
   };
 };
+
 
 export {
   addFirst,

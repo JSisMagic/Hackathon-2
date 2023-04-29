@@ -453,7 +453,9 @@ const everyTest = () => {
 // everyTest();
 
 /**
- * @author Valentin Petkov <valentin.petkov.a49@learn.telerikacademy.com>
+ * Test function for groupBy
+ *
+ * @author Gergana Dragoeva Quievy  <gergana.dragoeva.a49@learn.telerikacademy.com>
  */
 const groupByTest = () => {
   const people = [
@@ -462,37 +464,40 @@ const groupByTest = () => {
     { age: 23, name: 'Dessy' },
     { age: 24, name: 'Gerry' },
   ];
-  const grFunc = (person, age) => person[age];
-  const result = groupBy(grFunc)(people);
+
+  const result = groupBy((person) => person.age)(people);
+
   console.log(result);
   /*
-{
-  '20': [
-    {
-      age: 20,
-      name: 'Pesho'
-    }
-  ],
-  '23': [
-    {
-      age: 23,
-      name: 'Dessy'
-    }
-  ],
-  '24': [
-    {
-      age: 24,
-      name: 'Gosho'
-    },
-    {
-      age: 24,
-      name: 'Gerry'
-    }
-  ]
-}
-*/
+  {
+    '20': [
+      {
+        age: 20,
+        name: 'Pesho'
+      }
+    ],
+    '23': [
+      {
+        age: 23,
+        name: 'Dessy'
+      }
+    ],
+    '24': [
+      {
+        age: 24,
+        name: 'Gosho'
+      },
+      {
+        age: 24,
+        name: 'Gerry'
+      }
+    ]
+  }
+  */
 };
-// groupByTest();
+
+// Execute the test
+groupByTest();
 
 
 /*
@@ -518,7 +523,7 @@ const testOne = () => {
   console.log(piped(startValue));
 };
 
-testOne();
+// testOne();
 
 const testTwo = () => {
   const startValue = [
