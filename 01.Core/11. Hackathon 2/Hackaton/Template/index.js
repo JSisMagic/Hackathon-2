@@ -678,7 +678,6 @@ const testOne = () => {
 };
 
 // testOne();
-// testOne();
 
 const testTwo = () => {
   const startValue = [
@@ -694,13 +693,13 @@ const testTwo = () => {
       (str) => [str.length], // [ 47 ]
       join('&'), // 1&false&odd&2&true&even&3&false&odd&4&true&even
       flat,
-      [1, false, 'odd', 2, true, 'even', 3, false, 'odd', 4, true, 'even']
-      ,(arr) => arr.map((el, index) => [el, index % 2 === 1, index % 2 === 0 ? 'odd' : 'even']),
-      [[1, false, 'odd'],
+      // [1, false, 'odd', 2, true, 'even', 3, false, 'odd', 4, true, 'even']
+      (arr) => arr.map((el, index) => [el, index % 2 === 1, index % 2 === 0 ? 'odd' : 'even']),
+      /* [[1, false, 'odd'],
       [2, true, 'even'],
       [3, false, 'odd'],
       [4, true, 'even']
-    ],
+    ]*/
       (arr) => arr.map((_, index) => index + 1),
       fill(true, 0, 7), // [true, true, true, true]
       (arr) => [...arr, 8], // [[0, 'Ivan'], [1, 'Pesho'], [2, 'Pesho'], 8]
@@ -708,25 +707,25 @@ const testTwo = () => {
       removeLast, // ['Ivan', 'Pesho', 'Pesho']
       (arr) => arr.map((obj) => obj.name), // ['Ivan', 'Pesho', 'Pesho', 'Maria']
       flat,
-       [{ name: 'Ivan', age: 15 },
+      /* [{ name: 'Ivan', age: 15 },
       { name: 'Pesho', age: 32 },
       { name: 'Pesho', age: 23 },
       { name: 'Maria', age: 19 }
-    ],
+    ]*/
       Object.values,
-      [[{ name: 'Ivan', age: 15 }],
+      /* [[{ name: 'Ivan', age: 15 }],
       [{ name: 'Pesho', age: 32 }, { name: 'Pesho', age: 23 }],
       [{ name: 'Maria', age: 19 }]
-    ],
+    ]*/
       (arr) => groupBy((obj) => obj.name)(arr),
-      {Ivan: [{ name: 'Ivan', age: 15 }],
+      /* {Ivan: [{ name: 'Ivan', age: 15 }],
       Pesho: [{ name: 'Pesho', age: 32 }, { name: 'Pesho', age: 23 }],
-      Maria: [{ name: 'Maria', age: 19 }]}
-  )
-  console.log(composed(startValue));
-};
+      Maria: [{ name: 'Maria', age: 19 }]} */
+  );
 
-testTwo();
+  console.log(composed(startValue));
+}; 
+
 testTwo();
 
 const testThree = () => {
