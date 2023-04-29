@@ -577,9 +577,7 @@ const filterTest = () => {
   return filteredArr;
 };
 
-
 // filterTest();
-
 
 /**
  * Test function for the 'every' array method
