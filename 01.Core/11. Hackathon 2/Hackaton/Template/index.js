@@ -174,34 +174,39 @@ const arrayFromTest = () => {
 
 // arrayFromTest()
 
+
 /**
+
  * Test function for removeLast
- *
- * @author Gergana Dragoeva Quievy  <gergana.dragoeva.a49@learn.telerikacademy.com>
- */
+
+ * This test demonstrates the usage of the removeLast function where an array of Lego toy objects.
+ * The test checks if the last element is removed from the array without modifying the original array.
+
+  @author Gergana Dragoeva Quievy  <gergana.dragoeva.a49@learn.telerikacademy.com>
+    */
 const removeLastTest = () => {
   const startValue = [
-    { name: 'Ivan', age: 15 },
-    { name: 'Pesho', age: 32 },
-    { name: 'Pesho', age: 23 },
-    { name: 'Maria', age: 19 },
+    { name: 'Lego City', price: 45 },
+    { name: 'Lego Technic', price: 120 },
+    { name: 'Lego Star Wars', price: 80 },
+    { name: 'Lego Ninjago', price: 60 },
   ];
 
   const newArr = removeLast(startValue);
 
   console.log(startValue);
   // [
-  //   { name: 'Ivan', age: 15 },
-  //   { name: 'Pesho', age: 32 },
-  //   { name: 'Pesho', age: 23 },
-  //   { name: 'Maria', age: 19 },
+  // { name: 'Lego City', price: 45 },
+  // { name: 'Lego Technic', price: 120 },
+  // { name: 'Lego Star Wars', price: 80 },
+  // { name: 'Lego Ninjago', price: 60 },
   // ]
 
   console.log(newArr);
   // [
-  //   { name: 'Ivan', age: 15 },
-  //   { name: 'Pesho', age: 32 },
-  //   { name: 'Pesho', age: 23 },
+  // { name: 'Lego City', price: 45 },
+  // { name: 'Lego Technic', price: 120 },
+  // { name: 'Lego Star Wars', price: 80 },
   // ]
 };
 

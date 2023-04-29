@@ -25,7 +25,7 @@ const removeFirst = (arr) => arr.slice(1); // it does not take additional parame
     * and returns a new function.
     * @param {any} element The element to add at the end of *the array
     * @return {addLastFunc} - > inner function
-    * @author: Gergana Dragoeva Quievy gergana.dragoeva.a49@learn.telerikacademy.com
+    * @author: Gergana Dragoeva Quievy  <gergana.dragoeva.a49@learn.telerikacademy.com>
     */
 
 const addLast = (element) => {
