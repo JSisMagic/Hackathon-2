@@ -259,10 +259,10 @@ const addLastTest = () => {
  */
 const forEachTest = () => {
   const startValue = [
-    { name: 'Ivan', age: 15 },
-    { name: 'Pesho', age: 32 },
-    { name: 'Pesho', age: 23 },
-    { name: 'Maria', age: 19 },
+    { name: 'Wonder Woman', age: 39 },
+    { name: 'Batman', age: 42 },
+    { name: 'Spider-Man', age: 26 },
+    { name: 'Captain Marvel', age: 21 },
   ];
 
   let output = '';
@@ -274,11 +274,12 @@ const forEachTest = () => {
 
   forEach(fn)(startValue);
 
-  console.log(output); // "Ivan(15) Pesho(32) Pesho(23) Maria(19) "
+  console.log(output); // "Wonder Woman(39) Batman(42) Spider-Man(26) Captain Marvel(21) "
 };
 
 // Execute the test
-// forEachTest();
+forEachTest();
+
 
 /**
  * Test function for findIndex
@@ -497,7 +498,7 @@ const groupByTest = () => {
 };
 
 // Execute the test
-groupByTest();
+// groupByTest();
 
 
 /*

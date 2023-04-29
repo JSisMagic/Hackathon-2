@@ -135,23 +135,35 @@ const concat = (arr) => {
   };
 };
 
+
 /**
- * Execute a provided function once for each array element
+ * Execute a provided function once for each array element.
  *
- * @param {function} fn The function to execute for each element
- * @return {forEachFunc} inner function
+ * The forEach function accepts a callback function 'fn' as an argument.
+ * This function will be executed for each element in the provided array.
+ *
+ * forEach returns a closure (inner function) that accepts an array to iterate over.
+ * The inner function does not modify the original array and returns nothing (undefined).
+ *
+ * @param {function} fn The function to execute for each element.
+ *                      It takes the current element as its argument.
+ * @return {forEachFunc}  -> inner function
  * @author Gergana Dragoeva Quievy   <gergana.dragoeva.a49@learn.telerikacademy.com>
  */
 const forEach = (fn) => {
   /**
    * @function forEachFunc
-   * @param {array} array The array to iterate over
-   * @return {undefined}
+   * @param {array} array // The array to iterate over.
+   *                      The 'fn' function will be executed for each element in this array.
+   * @return {undefined} forEach does not return any value (returns undefined) and does not modify the original array.
    */
   return (array) => array.map(fn);
 };
 
+
 // medium
+
+
 /**
  * Create a reversed copy of the array so that the first element becomes the last, the second element becomes the second to last, and so on
  *
