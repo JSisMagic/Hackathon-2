@@ -218,34 +218,42 @@ const addFirstTest = () => {
   console.log(copy); // 5, 1, 2, 3
 };
 
+
 /**
  * Test function for addLast
+ *
+ * This test function demonstrates the usage of the addLast function.
+ * It starts with an initial array of fruit objects with names and prices.
+ * The addLast function is used to add a new fruit object to the end of the array without modifying the original array.
  *
  * @author Gergana Dragoeva Quievy  <gergana.dragoeva.a49@learn.telerikacademy.com>
  */
 const addLastTest = () => {
-  const arr = [
-    { name: 'Ivan', age: 15 },
-    { name: 'Pesho', age: 32 },
-    { name: 'Pesho', age: 23 },
+  const fruits = [
+    { name: 'Pineapple', price: 8 },
+    { name: 'Orange', price: 3 },
+    { name: 'Banana', price: 5 },
+    { name: 'Lemons', price: 10 },
   ];
 
-  const newPerson = { name: 'Maria', age: 19 };
+  const newFruit = { name: 'Dragon fruit', price: 52 };
 
-  const result = addLast(newPerson)(arr);
+  const result = addLast(newFruit)(fruits);
 
-  console.log(arr);
+  console.log(fruits);
   // [
-  //   { name: 'Ivan', age: 15 },
-  //   { name: 'Pesho', age: 32 },
-  //   { name: 'Pesho', age: 23 },
+  //   { name: 'Pineapple', price: 8 },
+  //   { name: 'Orange', price: 3 },
+  //   { name: 'Banana', price: 5 },
+  //   { name: 'Lemons', price: 10 },
   // ]
   console.log(result);
   // [
-  //   { name: 'Ivan', age: 15 },
-  //   { name: 'Pesho', age: 32 },
-  //   { name: 'Pesho', age: 23 },
-  //   { name: 'Maria', age: 19 },
+  //   { name: 'Pineapple', price: 8 },
+  //   { name: 'Orange', price: 3 },
+  //   { name: 'Banana', price: 5 },
+  //   { name: 'Lemons', price: 10 },
+  //   { name: 'Dragon fruit', price: 52 },
   // ]
 };
 

@@ -17,21 +17,33 @@ const addFirst = (element) => {
 
 const removeFirst = (arr) => arr.slice(1); // it does not take additional parameters to be splitted
 
+
 /**
- * Add an element at the end of the array
- *
- * @param {any} element the element to add
- * @return {addLastFunc} inner function
- * @author Gergana Dragoeva Quievy   <gergana.dragoeva.a49@learn.telerikacademy.com>
- */
+    * Add an element at the end of the array
+    * The addLast function is a higher-order function designed to make it easy to create
+    * new arrays with an additional element at the end.
+    * It takes a single argument, the element to be added, and returns a new function.
+    * @param {any} element The element to add at the end of *the array
+    * @return {addLastFunc} - > inner function
+    * @author: Gergana Dragoeva Quievy gergana.dragoeva.a49@learn.telerikacademy.com
+    */
+
 const addLast = (element) => {
   /**
-   * @function addLastFunc
-   * @param {array} array an array to add element into
-   * @return {array} a copy of the array with the element added
-   */
+
+     * @function addLastFunc
+     * @param {array} array An array to which the element should be added
+     * @return {array} A new array that is a copy of the original array with the
+     * element added at the end.
+     * The inner function addLastFunc takes an array as input and returns a new array.
+     * The new array is a copy of the original array with the
+     * provided element added to the end.
+     * This function uses the spread operator to create a shallow
+     * copy of the array, ensuring that the original array remains unmodified.
+     */
   return (array) => [...array, element];
 };
+
 
 /**
  * Removes the last element of the array
@@ -53,7 +65,6 @@ const removeLast = (arr) => {
  * @return {Function} inner function.
  */
 const keys = (arr) => {
-  // TODO
   let counter = 0;
 
   /**
