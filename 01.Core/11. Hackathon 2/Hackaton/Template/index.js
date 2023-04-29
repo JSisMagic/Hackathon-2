@@ -50,6 +50,7 @@ const includesFuncTest = () => {
 *  Single function tests
 *  Write tests for each function you have implemented
 */
+
 /**
  *
  * @author Stefan Donev <stefan.donev.a49@learn.telerikacademy.com>
@@ -190,6 +191,9 @@ const composeTest = () => {
 
 // composeTest();
 
+/**
+* @Victor Petrov <viktor.petrov.a49@learn.telerikacademy.com>
+*/
 const reduceTest = () => {
   const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -206,6 +210,9 @@ const reduceTest = () => {
 
 // reduceTest();
 
+/**
+* @Victor Petrov <viktor.petrov.a49@learn.telerikacademy.com>
+*/
 const fillTest = () => {
   const array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   const copy = fill(2, 2, 5)(array);
@@ -215,7 +222,9 @@ const fillTest = () => {
 };
 
 // fillTest()
-
+/**
+* @Victor Petrov <viktor.petrov.a49@learn.telerikacademy.com>
+*/
 const arrayFromTest = () => {
   const copy = (arrayFrom({ length: 6 }));
   console.log(copy); // undefined, undefined, undefined, undefined, undefined, undefined ]
