@@ -29,15 +29,16 @@ import {
   groupBy,
 } from './array-utils.js';
 
-/*
-*Function Test
-*/
 /**
- * @author Mariela Ivanova  <mariela.ivanova.a49@learn.telerikacademy.com>
+ * Test function for 'includes' array method
+ * Demonstrates how to use 'includes' to check if an element exists in an array
+ * @author Mariela Ivanova <mariela.ivanova.a49@learn.telerikacademy.com>
  */
 const includesFuncTest = () => {
+  // Test element to search for in the array
   const element = 2;
   const array = [1, 2, 3, 4];
+  // Use the 'includes' function to check if the 'element' exists in the 'array'
   const elementExists = includes(element)(array);
   console.log(element); // 2
   console.log(array); // [1, 2, 3, 4]
@@ -52,11 +53,14 @@ const includesFuncTest = () => {
 */
 
 /**
+ * Test function for 'keys' array method
  *
+ * Using 'keys' to extract the keys (indices) of an array
  * @author Stefan Donev <stefan.donev.a49@learn.telerikacademy.com>
  */
 const testKeys = () => {
   const arr = [5, 5, 5, 5, 5];
+  // Use the 'keys' function to extract the keys (indices) of the 'arr'
   const copy = keys(arr);
   console.log(arr); // [5, 5, 5, 5, 5];
   console.log(copy); // [ 0, 1, 2, 3, 4 ]
@@ -65,22 +69,29 @@ const testKeys = () => {
 // testKeys();
 
 /**
+ * Test function for 'indexOf' array method
  *
+ * Using 'indexOf' to find the index of an element in an array
  * @author Stefan Donev <stefan.donev.a49@learn.telerikacademy.com>
  */
 const testIndexOf = () => {
   const arr = [1, 2, 3, 4, 5];
+  // Use the 'indexOf' function to find the index of the number 5 in the 'arr'
   const result = indexOf(5)(arr);
   console.log(result); // 4
 };
 // testIndexOf();
 
 /**
+ * Test function for 'reduceRight' array method
+ * Using 'reduceRight' to accumulate a value from right to left in an array
  * @author Stefan Donev <stefan.donev.a49@learn.telerikacademy.com>
  */
 const testReduceRight = () => {
   const arr = [1, 2, 3, 4];
 
+  // Use the 'reduceRight' function to calculate the difference from right to left in the 'arr'
+  // with an initial accumulator value of 0
   const diffFromRight = reduceRight((accumulator, currentValue) =>
     accumulator - currentValue, 0)(arr);
   console.log(diffFromRight); // Output: -10
@@ -172,24 +183,32 @@ const flatMapTest = () => {
 
 // flatMapTest();
 
+/**
+ * Test function for 'compose' utility function
+ * Demonstrates how to use 'compose' to create a new function that is the composition of two input functions.
+ *
+ * @author Stefan Donev <stefan.donev.a49@learn.telerikacademy.com>
+ */
 const composeTest = () => {
-  const test1 = compose((el) => {
-    return el + 2;
-  }, (el) => {
-    return el * 3;
-  })(3); // 11
-  const test2 = compose((str) => {
-    return str.substring(1, 4);
-  }, (str) => {
-    return str.substring(1, 4);
-  })('Pesho'); // def
+  // Compose two functions that perform arithmetic operations on a number
+  const test1 = compose(
+      (el) => el + 2,
+      (el) => el * 3,
+  )(3); // 11
 
-  console.log(test1);
-  console.log(test2);
+  // Compose two functions that extract substrings from a string
+  const test2 = compose(
+      (str) => str.substring(1, 4),
+      (str) => str.substring(1, 4),
+  )('Pesho'); // def
+
+  // Log the results of the composed functions
+  console.log(test1); // Output: 11
+  console.log(test2); // Output: def
 };
 
-
 // composeTest();
+
 
 /**
 * @Victor Petrov <viktor.petrov.a49@learn.telerikacademy.com>
