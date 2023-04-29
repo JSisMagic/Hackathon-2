@@ -548,8 +548,8 @@ const compose = (...fns) => {
   return (input) => {
     return (input) => {
       const functions = [...fns]; // Create a new array with the provided functions
-      functions.reverse(); // Reverse the order of the functions
-      functions.forEach((fn) => { // Apply each function to the input in reverse order
+      const reversed = functions.reverse(); // Reverse the order of the functions
+      reversed.forEach((fn) => { // Apply each function to the input in reverse order
         input = fn(input);
       });
       return input; // Return the result of applying all functions to the input
