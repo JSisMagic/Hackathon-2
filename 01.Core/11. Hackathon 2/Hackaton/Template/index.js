@@ -141,7 +141,36 @@ const mapTest = () => {
 
 // mapTest();
 
-// flatMapTest();
+/**
+ * Test function for flatMap
+ *
+ * This test demonstrates the usage of the flatMap function, which applies a given function to each element
+ * in an array and then flattens the result by one level.
+ * In this test, we apply a transformation to an array of toys.
+ *
+ * @author Gergana Dragoeva Quievy  <gergana.dragoeva.a49@learn.telerikacademy.com>
+ *
+ */
+const flatMapTest = () => {
+  const mapperFn = (toy) => [
+    { name: `${toy.name} Deluxe`, price: toy.price + 10 },
+  ];
+  const arr = [
+    { name: 'Lego Simpsons', price: 15 },
+    { name: 'Transformers', price: 20 },
+    { name: 'Hot Wheels', price: 25 },
+  ];
+  const flatMappedArr = flatMap(mapperFn)(arr);
+  console.log(flatMappedArr);
+  // [
+  //   { name: 'Lego Simpsons Deluxe', price: 25 },
+  //   { name: 'Transformers Deluxe', price: 30 },
+  //   { name: 'Hot Wheels Deluxe', price: 35 },
+  // ]
+};
+
+flatMapTest();
+
 
 const composeTest = () => {
   const test1 = compose((el) => {

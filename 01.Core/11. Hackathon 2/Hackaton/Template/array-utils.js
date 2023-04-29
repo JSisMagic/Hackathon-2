@@ -1,3 +1,4 @@
+/* eslint-disable valid-jsdoc */
 // easy
 
 /**
@@ -606,6 +607,7 @@ const flatMap = (mapperFn) => {
 };
 
 // eslint-disable-next-line valid-jsdoc
+
 /**
  * Creates an object that will group the array values by a passed grouping function.
  *
