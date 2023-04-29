@@ -293,15 +293,16 @@ const filter = (predicate) => {
   /**
    * @function filterFunc
    * @param {Array} arr: array to iterate over
-   * @return {Boolean}: result of predicate function
+   * @return {Array}: new array with elements that pass the predicate test
    */
   return (arr) => {
     const result = [];
-    return arr.map((el) => {
-      if (predicate(el) === true) {
+    arr.forEach((el) => {
+      if (predicate(el)) {
         result.push(el);
       }
     });
+    return result;
   };
 };
 
@@ -561,18 +562,15 @@ const flat = (arr) => {
    * @param {el} any An element through which we will take an element from the array
    * @return {arr}. flat array.
    */
-  return () => {
-    const reduceOverEl = arr.reduce((acc, el) => {
-      if (Array.isArray(el)) {
-        acc.push(...el);
-      } else {
-        acc.push(el);
-      }
-      return acc;
-    }, []);
-    return reduceOverEl;
-  };
-  // [1, 2, [3, 4]]
+  const reduceOverEl = arr.reduce((acc, el) => {
+    if (Array.isArray(el)) {
+      acc.push(...el);
+    } else {
+      acc.push(el);
+    }
+    return acc;
+  }, []);
+  return reduceOverEl;
 };
 
 /**
